@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">From first visit to next reward.</title><desc id="desc">Share the join link; the customer signs in and joins, opens their card, and presents their QR. Staff scan the QR and confirm a stamp or redemption.</desc>
+<defs><linearGradient id="wash" x2="1" y2="1"><stop stop-color="#F6F3FF"/><stop offset="1" stop-color="#F8FAF6"/></linearGradient></defs>
+<rect width="760" height="540" rx="20" fill="url(#wash)"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="32" y="38" font-size="12" fill="#5B5E67">THE CUSTOMER JOURNEY</text><text x="32" y="75" font-size="27" font-weight="600" letter-spacing="-.8" fill="#171A18">From first visit to next reward.</text>
+<path d="M54 130V466" stroke="#CFC5E9" stroke-width="1.5"/>
+<g transform="translate(0 101)">
+<circle cx="54" cy="29" r="15" fill="white" stroke="#D9D3E5"/>
+<text x="54" y="34" text-anchor="middle" font-size="13" fill="#5B5E67">1</text>
+<rect x="87" y="0" width="640" height="69" rx="12" fill="white" stroke="#E2E2E9"/>
+<rect x="101" y="13" width="43" height="43" rx="11" fill="#EEE7FC"/>
+<g transform="translate(110 22)" fill="none" stroke="#6B42FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m10 13 4-4M8 16l-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 1 1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/></g>
+<text x="162" y="28" font-size="18" font-weight="600" letter-spacing="-.3" fill="#171A18">Share the join link</text>
+<text x="162" y="50" font-size="13" fill="#5B5E67">Your team shares the programme’s link or QR sign.</text></g>
+<g transform="translate(0 183)">
+<circle cx="54" cy="29" r="15" fill="white" stroke="#D9D3E5"/>
+<text x="54" y="34" text-anchor="middle" font-size="13" fill="#5B5E67">2</text>
+<rect x="87" y="0" width="640" height="69" rx="12" fill="white" stroke="#E2E2E9"/>
+<rect x="101" y="13" width="43" height="43" rx="11" fill="#EBF2E2"/>
+<g transform="translate(110 22)" fill="none" stroke="#43583B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="7" r="4"/><path d="M2 21v-2a8 8 0 0 1 16 0v2M18 8h6M21 5v6"/></g>
+<text x="162" y="28" font-size="18" font-weight="600" letter-spacing="-.3" fill="#171A18">Sign in and join</text>
+<text x="162" y="50" font-size="13" fill="#5B5E67">The customer joins with their own Kardy account.</text></g>
+<g transform="translate(0 265)">
+<circle cx="54" cy="29" r="15" fill="white" stroke="#D9D3E5"/>
+<text x="54" y="34" text-anchor="middle" font-size="13" fill="#5B5E67">3</text>
+<rect x="87" y="0" width="640" height="69" rx="12" fill="white" stroke="#E2E2E9"/>
+<rect x="101" y="13" width="43" height="43" rx="11" fill="#EEE7FC"/>
+<g transform="translate(110 22)" fill="none" stroke="#6B42FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 9h20M6 15h4"/></g>
+<text x="162" y="28" font-size="18" font-weight="600" letter-spacing="-.3" fill="#171A18">Open the membership card</text>
+<text x="162" y="50" font-size="13" fill="#5B5E67">Their branded card and progress live in Kardy.</text></g>
+<g transform="translate(0 347)">
+<circle cx="54" cy="29" r="15" fill="white" stroke="#D9D3E5"/>
+<text x="54" y="34" text-anchor="middle" font-size="13" fill="#5B5E67">4</text>
+<rect x="87" y="0" width="640" height="69" rx="12" fill="white" stroke="#E2E2E9"/>
+<rect x="101" y="13" width="43" height="43" rx="11" fill="#EBF2E2"/>
+<g transform="translate(110 22)" fill="none" stroke="#43583B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4M2 12h20"/></g>
+<text x="162" y="28" font-size="18" font-weight="600" letter-spacing="-.3" fill="#171A18">Show and scan the Kardy QR</text>
+<text x="162" y="50" font-size="13" fill="#5B5E67">Your team selects the outlet and scans the customer’s QR.</text></g>
+<g transform="translate(0 429)">
+<circle cx="54" cy="29" r="15" fill="#171A18" stroke="#171A18"/>
+<text x="54" y="34" text-anchor="middle" font-size="13" fill="white">5</text>
+<rect x="87" y="0" width="640" height="69" rx="12" fill="white" stroke="#E2E2E9"/>
+<rect x="101" y="13" width="43" height="43" rx="11" fill="#EEE7FC"/>
+<g transform="translate(110 22)" fill="none" stroke="#6B42FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></g>
+<text x="162" y="28" font-size="18" font-weight="600" letter-spacing="-.3" fill="#171A18">Confirm a stamp or redemption</text>
+<text x="162" y="50" font-size="13" fill="#5B5E67">Choose the right action and wait for confirmation.</text></g>
+<text x="727" y="524" text-anchor="end" font-size="11" fill="#5B5E67">kardy · Illustrated guide</text></g></svg>

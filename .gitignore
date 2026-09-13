@@ -1,0 +1,7 @@
+node_modules/
+.mintlify/
+.mint/
+.env*
+.DS_Store
+.husky/_/
+*.tsbuildinfo

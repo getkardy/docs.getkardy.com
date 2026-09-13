@@ -1,0 +1,131 @@
+---
+title: Connect your agent
+description: Connect Claude, Codex or another AI agent to your Kardy merchant workspace.
+---
+
+<Note>
+  Agent connections share the workspace's [MCP
+  allowance](/features/usage-limits). Check **Settings → Usage & limits** for
+  usage and the reset date.
+</Note>
+
+Ask your agent **“What rewards do we offer?”** or **“Where can they be claimed?”**
+Kardy shares your programme, rewards and outlets. Your agent can read them, but cannot change anything.
+
+<Info>
+  Merchant-only · Available on dev. Production rollout is separate. You must be
+  the Owner of a merchant with an active subscription.
+</Info>
+
+## Connect in three steps
+
+**OAuth means signing in to Kardy and approving access—no API key to copy.**
+
+![Add Kardy in your agent, sign in and choose permissions, then return to your agent.](/images/mcp-oauth-flow.svg)
+
+<Steps>
+  <Step title="Copy your connection address">
+    Open the merchant portal → **Settings → Agent connections**. Copy the **MCP
+    endpoint**.
+  </Step>
+  <Step title="Add Kardy to your agent">
+    Choose your client below and follow its instructions. Your agent will open
+    Kardy in your browser.
+  </Step>
+  <Step title="Review and approve">
+    Sign in to Kardy, choose your merchant and review the permissions. Select
+    **Allow read-only access**, then return to your agent.
+  </Step>
+</Steps>
+
+## Choose your agent
+
+<Tabs>
+  <Tab title="Codex">
+    Use the endpoint from Settings:
+
+    ```sh
+    codex mcp add kardy --url https://merchant.getkardy.com/api/mcp
+    codex mcp login kardy
+    ```
+
+    Follow the browser sign-in. [Codex
+    help](https://developers.openai.com/codex/mcp).
+
+  </Tab>
+  <Tab title="Claude Code">
+    Use your merchant endpoint:
+
+    ```sh
+    claude mcp add --transport http kardy https://merchant.getkardy.com/api/mcp
+    ```
+
+    Run `/mcp` inside
+    Claude Code, select Kardy and authenticate. [Claude Code
+    help](https://code.claude.com/docs/en/mcp).
+
+  </Tab>
+  <Tab title="Claude / Desktop">
+    Open **Customize → Connectors → Add custom connector**. Paste the merchant
+    endpoint, then connect and sign in to Kardy. Availability depends on your
+    plan and organisation settings. [Claude
+    help](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp).
+  </Tab>
+  <Tab title="Other clients">
+    In VS Code, choose **MCP: Add Server → HTTP**, paste your endpoint and
+    authenticate. For another client, select **Streamable HTTP** with **OAuth**.
+    [VS Code
+    help](https://code.visualstudio.com/docs/agent-customization/mcp-servers).
+  </Tab>
+</Tabs>
+
+<Note>
+  The localhost examples are for agents running on your computer. Cloud
+  connectors, including Claude’s remote connector, need a reachable HTTPS
+  merchant address. Do not publish your local dev server to work around this.
+</Note>
+
+## What the approval page looks like
+
+If you are signed out, Kardy first asks for your merchant email and password.
+After sign-in, you’ll see a permission screen like this:
+
+<Frame caption="Illustrative preview of the real Kardy consent screen. The client, return address and merchant vary with your connection.">
+  <img
+    src="/images/mcp-oauth-consent.svg"
+    alt="Kardy approval page with a client identity warning, merchant selector, read permissions, Cancel and Allow read-only access."
+    style={{ maxWidth: "460px", width: "100%", margin: "0 auto" }}
+  />
+</Frame>
+
+Check the client’s **name and return address**. Only approve a connection you started.
+Choose one merchant, and untick anything you do not want to share. **Cancel** grants no access.
+
+Your agent can read only the permissions you approve. Customer records, QR codes,
+stamp balances, billing and team settings are not shared.
+
+## Try it, then manage access
+
+Ask **“List our active rewards and their stamp goals.”** If a tool is missing,
+reconnect and approve its permission.
+
+Your connection lasts up to **30 days**. To disconnect sooner, open
+**Settings → Agent connections → Revoke**. New requests stop immediately;
+information already shared with your agent cannot be recalled.
+
+<AccordionGroup>
+  <Accordion title="My client needs an API key instead">
+    In Agent connections, choose **Create a manual API key**. Name it, choose
+    read permissions and an expiry, then copy it once into your client’s secret
+    settings. Use a Bearer Authorization header. Never paste the key into a chat
+    or URL.
+  </Accordion>
+  <Accordion title="I cannot connect">
+    Check that you are the Owner, the merchant subscription is active, and your
+    agent can reach the endpoint. If access has expired or been revoked,
+    reconnect. Managers and Staff cannot approve connections.
+  </Accordion>
+</AccordionGroup>
+
+Building an integration? See the [MCP technical reference](/technical/mcp-reference)
+for tool schemas, security rules and deployment details.

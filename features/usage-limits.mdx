@@ -1,0 +1,79 @@
+---
+title: Usage and capacity limits
+sidebarTitle: Usage & limits
+description: See what is included and plan before your workspace reaches capacity.
+---
+
+import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+
+**Where:** Merchant **Settings → Usage & limits**, visible to the Owner.
+
+<Frame caption="Illustrative capacity meter. Your actual allowances and usage appear in Settings.">
+  <FeatureIllustration type="usage-limits" />
+</Frame>
+
+## Read your usage overview
+
+Open **Settings → Usage & limits** as the organisation Owner. The overview lists
+**MCP tool calls**, **Broadcast recipients**, stored members, active outlets,
+team members and stored rewards. Each row shows **used / limit**, a capacity bar,
+and a warning when nearing or reaching the limit.
+
+Below the table, **MCP usage** and **Broadcast usage** each show **Used**,
+**Remaining**, **Monthly limit**, and the next reset date. Remaining capacity never
+displays below zero. **No allowance** means the workspace has no configured capacity
+for that resource; it does not mean unlimited usage.
+
+Use **Refresh usage** to request the latest totals. Monthly usage covers the current
+UTC calendar month, not a rolling 30-day window. Daily usage history and historical
+date filters are not available yet. These usage totals are separate from visit,
+reward-redemption and referral performance charts.
+
+The demo shows clearly labelled illustrative September 2026 usage. Its sample
+allowances are not included-plan promises. Use your live workspace for actual limits.
+
+## Growth defaults
+
+| Resource           | Allowance per workspace                             |
+| ------------------ | --------------------------------------------------- |
+| Stored members     | 1,000, including paused and expired memberships     |
+| MCP tool calls     | 1,000 per UTC calendar month                        |
+| Active outlets     | 1                                                   |
+| Staff and managers | 10, excluding the Owner unless also listed as staff |
+| Stored rewards     | 25, including archived history                      |
+| Email recipients   | 0 until separately agreed and configured            |
+
+Scale uses agreed finite allowances, not unlimited capacity. Adding an outlet or
+another agent does not automatically multiply allowances.
+
+## At the limit
+
+The usage page warns at 80%. New capacity-consuming operations stop at the cap;
+existing memberships and earned rewards are not automatically deleted. There are
+no automatic overage charges. Contact Kardy to arrange additional capacity.
+
+Monthly MCP and email counters reset on the first day of the month at **00:00 UTC**,
+not on the subscription renewal date. Stored-member capacity does not reset monthly.
+Switching keys, reconnecting OAuth or changing member status does not reset usage.
+
+<Card
+  title="Plans, activation and billing"
+  icon="credit-card"
+  href="/merchants/billing"
+>
+  Subscription boundaries and additional capacity.
+</Card>
+
+## What counts
+
+- **MCP:** each authorised tool request and results page counts once. Manual keys
+  and OAuth clients share the counter. Connection setup and discovery do not consume
+  monthly calls; separate burst limits still apply.
+- **Email:** each recipient reserves allowance when queued, including recipients
+  later suppressed or failed. Retries do not reserve it again. An over-budget batch
+  is rejected rather than partially queued.
+- **Stored capacity:** paused or expired memberships and archived rewards still count.
+  Existing over-limit records remain, but further capacity-consuming additions stop.
+
+An active subscription is still required for paid operations. An allowance alone
+does not enable email delivery or activate an unpaid programme.

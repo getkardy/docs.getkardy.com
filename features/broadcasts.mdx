@@ -1,0 +1,106 @@
+---
+title: Email broadcasts
+description: Save organisation email drafts, respect member consent and review delivery status.
+---
+
+import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+
+**Where:** Merchant workspace → **Broadcasts**.
+
+<Frame caption="Illustrative draft. Saving does not send; delivery requires setup and an email allowance.">
+  <FeatureIllustration type="broadcasts" />
+</Frame>
+
+<Warning>
+  Email delivery starts disabled. Saving, reviewing and downloading a draft do
+  not contact members. Your workspace must have completed broadcast setup before
+  you can queue emails. Demo mode does not save drafts.
+</Warning>
+
+## Compose and save
+
+Open **Broadcasts** as an organisation Owner or Manager. Staff cannot access broadcasts.
+
+1. Choose all opted-in members, members with no visits in 30 days, or members whose stamp reward is ready.
+2. Write a subject and message. Subjects allow 120 characters; messages allow 5,000.
+3. Select **Save draft**. Saved drafts appear in your organisation's broadcast list and can be reopened later.
+4. Select **Review broadcast**. Save any further changes before confirming the queue.
+
+Drafts are not automatically saved. Save current edits before opening another draft.
+Downloading keeps a sanitized text copy. A queued broadcast's content cannot be edited.
+
+## Content safety
+
+The content preview supports Markdown and basic HTML text formatting. Scripts,
+images, event handlers, forms, embeds and custom styles are removed. Only absolute
+HTTPS links without credentials are allowed, with destination domains visible in
+the preview. External links are not endorsements.
+
+Delivery uses sanitized plain text in an escaped email body. Formatting is removed
+and allowed link destinations are retained as text. The server validates the
+content independently of the browser. Raw draft HTML is never sent as email HTML.
+
+## Who receives a broadcast
+
+Members must explicitly opt into email marketing for your organisation in their
+membership email preferences. Joining a programme, adding a wallet pass or giving
+a sign-in email does not count as marketing consent. Consent for another
+organisation cannot be reused.
+
+Recipients need an active, unexpired membership and a verified email. Kardy
+deduplicates addresses when queueing and checks consent and membership again before
+sending. Changing an email after queueing suppresses that pending delivery.
+
+Every email has the email service's unsubscribe controls and an organisation-specific
+preference link. Opening the organisation link shows a confirmation; submitting
+it stops that organisation's marketing. Unsubscribing leaves stamps, membership
+and essential account messages available. It cannot recall an email already being sent.
+
+## Delivery availability
+
+Members manage their own [email preferences](/features/email-preferences). Queueing
+requires sufficient [email allowance](/features/usage-limits#what-counts).
+
+Custom email uses InsForge's managed email service on a paid backend plan. Kardy
+also requires an active paid merchant subscription. Delivery stays unavailable
+until server configuration and the backend delivery gate are both enabled.
+
+Messages leave the queue gradually within the service quota. Queueing itself is
+not confirmation of delivery. Kardy does not process a consumer checkout payment
+for a broadcast and does not quote a per-message price in the composer. Email
+service usage remains subject to the configured paid plan.
+
+## Read the status
+
+### Check broadcast usage
+
+The Owner can open **Settings → Usage & limits → Broadcast usage** to see recipients
+used, remaining capacity, the monthly limit and the reset date. One broadcast queued
+to 100 eligible recipients uses **100 recipients**, not one broadcast. Writing,
+reviewing, saving or downloading a draft does not reserve recipient allowance.
+
+Recipients count when queued, even if a later delivery is suppressed or fails.
+Retries do not reserve the same recipient again. A batch exceeding the available
+allowance is rejected rather than partially queued. The counter is not a measure
+of delivered emails, opens or clicks; read the broadcast's delivery summary for status.
+
+The allowance resets on the first day of each month at **00:00 UTC**, independently
+of your subscription renewal date. A zero allowance needs to be arranged with Kardy;
+having allowance does not by itself enable delivery. See [Usage and capacity limits](/features/usage-limits).
+
+### Delivery statuses
+
+- **Queued:** waiting for processing, including a rate-limit retry.
+- **Sending:** a worker has claimed the message.
+- **Accepted by email service:** the provider accepted the request; inbox delivery is not confirmed.
+- **Suppressed:** consent, membership, email eligibility or provider suppression prevented sending.
+- **Failed:** the provider explicitly rejected the request, or rate-limit retries were exhausted.
+- **Uncertain:** a timeout or interrupted send needs investigation. Kardy does not automatically resend it.
+
+Reopen a queued broadcast to refresh its delivery summary. Explicit rate-limit
+rejections retry after one hour, up to five attempts. Duplicate queue requests
+do not create another copy of the same broadcast for a member.
+
+SMS, WhatsApp, wallet push, open/click tracking and delivery-confirmation webhooks
+are not enabled by this email feature. Do not upload purchased contact lists or
+share login credentials to send marketing.

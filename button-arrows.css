@@ -1,0 +1,93 @@
+/* Stripe motion: only the tip moves 3px; the shaft fades. No SVG movement,
+   rotation animation, dash drawing, or brightness filtering. Shared with docs. */
+:is(button, a):has(
+  > :is(.t-button-arrow, .lucide-arrow-right, .lucide-arrow-up-right)
+) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 150ms;
+}
+:is(button, a)
+  > :is(.t-button-arrow, .lucide-arrow-right, .lucide-arrow-up-right) {
+  order: 1;
+  flex-shrink: 0;
+}
+:is(button, a) > .lucide-arrow-up-right {
+  rotate: 45deg;
+}
+:is(button, a) > .t-button-arrow {
+  width: 14px;
+  height: 14px;
+}
+.arrow-icon__tip,
+:is(button, a) > .lucide-arrow-right > path:last-child {
+  transform: translateX(-3px);
+  transition: transform 150ms;
+}
+:is(button, a) > .lucide-arrow-up-right > path:first-child {
+  transform: translate(-2.1213px, 2.1213px);
+  transition: transform 150ms;
+}
+.arrow-icon__line,
+:is(button, a) > .lucide-arrow-right > path:first-child,
+:is(button, a) > .lucide-arrow-up-right > path:last-child {
+  opacity: 0;
+  transition: opacity 150ms;
+}
+:is(button, a):not(:disabled):not([aria-disabled="true"]):not(
+    [aria-busy="true"]
+  ):is(:hover, :focus-visible)
+  > .t-button-arrow
+  .arrow-icon__tip,
+:is(button, a):not(:disabled):not([aria-disabled="true"]):not(
+    [aria-busy="true"]
+  ):is(:hover, :focus-visible)
+  > .lucide-arrow-right
+  > path:last-child,
+:is(button, a):not(:disabled):not([aria-disabled="true"]):not(
+    [aria-busy="true"]
+  ):is(:hover, :focus-visible)
+  > .lucide-arrow-up-right
+  > path:first-child {
+  transform: translateX(0);
+}
+:is(button, a):not(:disabled):not([aria-disabled="true"]):not(
+    [aria-busy="true"]
+  ):is(:hover, :focus-visible)
+  > .t-button-arrow
+  .arrow-icon__line,
+:is(button, a):not(:disabled):not([aria-disabled="true"]):not(
+    [aria-busy="true"]
+  ):is(:hover, :focus-visible)
+  > .lucide-arrow-right
+  > path:first-child,
+:is(button, a):not(:disabled):not([aria-disabled="true"]):not(
+    [aria-busy="true"]
+  ):is(:hover, :focus-visible)
+  > .lucide-arrow-up-right
+  > path:last-child {
+  opacity: 1;
+}
+.t-button-primary:not(:disabled):not([aria-disabled="true"]):is(
+    :hover,
+    :focus-visible
+  ) {
+  background-color: color-mix(in srgb, hsl(var(--ink)) 80%, black);
+}
+.t-button-signal:not(:disabled):not([aria-disabled="true"]):is(
+    :hover,
+    :focus-visible
+  ) {
+  background-color: hsl(var(--signal-hover));
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(button, a):has(
+    > :is(.t-button-arrow, .lucide-arrow-right, .lucide-arrow-up-right)
+  ),
+  .arrow-icon__tip,
+  .arrow-icon__line,
+  :is(button, a) > :is(.lucide-arrow-right, .lucide-arrow-up-right) > path {
+    transition: none !important;
+  }
+}

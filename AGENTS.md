@@ -1,0 +1,18 @@
+# Kardy documentation
+
+This is the standalone Mintlify documentation repository. `docs.json` is at the
+repository root; configure Mintlify's docs directory as the root, not `/docs`.
+The public host is `docs.getkardy.com`. Consumer and merchant apps live separately
+at `getkardy.com` and `merchant.getkardy.com`.
+
+Run `pnpm install`, `pnpm dev` (port 3002), and `pnpm check`. Before committing,
+Husky runs staged formatting/lint fixes, TypeScript checks, branding tests and
+Mintlify build/link validation. Commit generated `navigation-progress.js` whenever
+its TypeScript source changes. Do not edit the generated bundle directly.
+
+Mintlify supplies React hooks to JSX snippets; keep their global declarations.
+Do not add Next.js, app auth, backend credentials, migrations or app runtime code.
+Use clearly labelled fictional illustrations. Distinguish implemented behaviour
+from deployment gates and concepts; never infer a live service from a preview.
+Keep internal implementation notes in the app repository, not the published docs.
+Use `apply_patch` for edits and preserve other uncommitted work.

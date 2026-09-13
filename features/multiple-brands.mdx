@@ -1,0 +1,41 @@
+---
+title: Multiple brands
+description: Create and switch organisations with separate teams, customers, and billing.
+---
+
+import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+
+**Where:** Merchant workspace → **organisation menu**.
+
+<Frame caption="Concept illustration: one account, separate brand workspaces.">
+  <FeatureIllustration type="multiple-brands" />
+</Frame>
+
+<Note>
+  Implemented on the development backend; production rollout is separate.
+</Note>
+
+## Separate brands from outlets
+
+Sunday Coffee and Forma Studio are separate brands, each with its own organisation,
+programme, team, subscription, and outlets. Two Sunday Coffee counters belong to
+one organisation and should be added in **Locations**, not as separate brands.
+
+## Create another organisation
+
+Choose **Create organisation** in the organisation menu and complete setup. The
+new organisation becomes your selected one. Each organisation has its own subscription;
+creating it does not activate a paid plan or charge a payment method.
+
+## Switch organisations
+
+When you have access to multiple organisations, use the organisation selector above
+the portal and select **Switch organisation**. It shows your role for each brand.
+The selector is also available while a selected organisation is awaiting activation.
+
+The selection is saved in an HTTP-only cookie, but that cookie does not grant access:
+the server verifies your current relationship to the selected organisation on every
+load. Billing actions also check that you own the selected organisation.
+
+Accepting a [team invitation](/features/team-access) adds that organisation to your choices.
+Use one Kardy account; separate consumer accounts are not necessary.

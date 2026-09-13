@@ -1,0 +1,71 @@
+---
+title: Team roles and access
+sidebarTitle: Team & access
+description: Invite teammates, manage organisation roles, and transfer ownership securely.
+---
+
+import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+
+**Where:** Merchant workspace → **Settings → Team & access**.
+
+<Frame caption="Illustrative roles. Permissions belong to the organisation, not individual outlets.">
+  <FeatureIllustration type="team-access" />
+</Frame>
+
+<Note>
+  These controls are implemented on the development backend. Production rollout
+  is separate. Email-code verification requires working auth email delivery;
+  invitations currently produce a link to share, rather than sending an
+  invitation email.
+</Note>
+
+## A role belongs to an organisation
+
+One account can have different roles across brands. Switching organisations changes
+the data and permission context; it does not combine their customers or billing.
+
+| Role    | Access                                                                                                                                             |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Owner   | Organisation configuration, team invitations and role changes, ownership transfer, and billing.                                                    |
+| Manager | Day-to-day loyalty operations and permitted reward, location, and design management. No team administration, ownership changes, or billing access. |
+| Staff   | Authorised member and loyalty operations. No team administration or configuration writes.                                                          |
+
+Permissions are checked by server actions and database functions/policies—not just
+by hiding buttons. Some configuration forms remain owner-only.
+
+## Invite a teammate
+
+Open **Settings → Team & access** under Organisation settings. Enter the person's
+email and choose **Manager** or **Staff**, then select **Create invitation**.
+Copy the generated link and share it directly with that person.
+
+The recipient signs in with the invited email, verifies that email, returns to the
+invitation link, and accepts. Links expire after seven days and cannot be accepted
+by another email. An owner can revoke a pending invitation. Duplicate pending
+invitations and invitations to existing teammates are rejected.
+
+Acceptance must fit the workspace's [team allowance](/features/usage-limits).
+An invitation cannot promote an existing Staff member; use the role controls instead.
+
+## Change or remove access
+
+The owner can select a teammate's role and choose **Save role**, or choose **Remove**
+and confirm. The Owner badge is separate: an owner cannot be downgraded or removed
+through the teammate controls. Removed teammates lose access on subsequent requests.
+
+## Transfer ownership
+
+1. Invite the new owner as a teammate and have them accept first.
+2. In **Ownership transfer**, send a code to your sign-in email and verify it.
+3. Select the teammate and request the transfer.
+4. The teammate opens Organisation settings, verifies their own identity, accepts
+   the responsibilities, and selects **Accept ownership** within 24 hours.
+
+Verification is single-use and valid for five minutes. The owner can cancel a pending
+transfer. Acceptance changes ownership atomically and makes the previous owner a
+Manager; unaccepted team invitations from the old ownership are revoked.
+
+The organisation's subscription stays with it. Billing-provider payment details are
+not automatically transferred—review those separately after the handover.
+
+Never share an owner's login as a substitute for inviting teammates.

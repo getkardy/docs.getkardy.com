@@ -1,0 +1,62 @@
+---
+title: Browser wallet and PWA
+sidebarTitle: Browser wallet
+description: Keep memberships and current stamp progress together without an app-store download.
+---
+
+import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+
+**Where:** Consumer portal → **Wallet**.
+
+<Frame caption="Concept illustration. Customers choose whether to add Kardy to their home screen.">
+  <FeatureIllustration type="browser-wallet" />
+</Frame>
+
+Kardy's mobile-first progressive web app holds a universal Kardy identity and
+merchant-branded memberships. Each brand keeps its own reward progress.
+
+## What members can do
+
+- Open a brand's card and show their Kardy QR at the counter.
+- Check current stamp progress and reward availability.
+- Find merchant-specific referral links and referral tracking.
+- Open account settings and [membership email preferences](/features/email-preferences).
+- Review recent membership activity. On mobile, use **Wallet**, **Places**,
+  **Rewards** and **Activity** to move between the consumer sections.
+
+## Add Kardy to the home screen
+
+Follow [Add Kardy to your home screen](/customer-journey/home-screen). Installation
+is the customer's choice; viewing an illustration or signing up does not install it.
+
+<Note>
+  The browser wallet is the place to check current progress. Do not promise
+  offline earning or automatic updates to Apple/Google Wallet passes.
+</Note>
+
+## Claims and notifications
+
+After staff confirm a redemption, check the current membership in Kardy and refresh
+if needed. A saved card image or a native wallet pass is not a live reward balance.
+
+The public coffee-claim walkthrough uses the PWA interface and an iPhone-style
+Kardy notification. It is labelled **Notification concept**: production push
+delivery is not implemented. Home-screen installation does not enable claim
+notifications, and the animation is not a real transaction receipt.
+
+<CardGroup cols={2}>
+  <Card
+    title="Find and show a card"
+    icon="wallet"
+    href="/customer-journey/wallet"
+  >
+    Help members at the counter.
+  </Card>
+  <Card
+    title="Native wallet passes"
+    icon="mobile-screen"
+    href="/features/native-wallets"
+  >
+    Understand the separate save-to-wallet feature.
+  </Card>
+</CardGroup>

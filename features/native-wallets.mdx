@@ -1,0 +1,50 @@
+---
+title: Apple Wallet and Google Wallet
+sidebarTitle: Apple & Google Wallet
+description: Save native QR passes and understand their signing and update boundaries.
+---
+
+import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+
+**Where:** Consumer wallet save controls, when enabled on your deployment.
+
+For device steps, follow [Save a native wallet pass](/customer-journey/save-wallet).
+
+<Frame caption="Concept illustration. Native pass issuance requires configuration; check Kardy for live progress.">
+  <FeatureIllustration type="native-wallets" />
+</Frame>
+
+Server-side signing is implemented, but external wallet issuance is disabled by default.
+It requires issuer credentials, the wallet migration, and integration with the merchant
+scanner. The iPhone shown during setup remains a preview. Generated test signatures
+do not verify a live Apple or Google issuer or prove a pass was installed.
+
+The Apple endpoint produces a signed `.pkpass`. Google produces a signed save link for
+an existing Generic class; Kardy does not create issuer classes or contact Google when
+generating the link. Members choose whether to open and save it.
+
+Passes carry the same opaque account QR across Kardy and merchant branding. They do
+not display a stamp balance because automatic pass updates are not implemented.
+Current reward progress remains in the browser wallet. Replacing the account QR
+invalidates the old Kardy account QR and native passes using it; members must save
+fresh passes and remove old ones. Historical membership QR tokens and manual member
+codes remain unchanged and continue to be accepted by the scanner.
+Revocation does not remotely delete a pass from a device.
+
+The public coffee-claim preview is a **Kardy PWA** scene, not an Apple Wallet
+screen. Its iPhone-style notification is a concept and does not represent native
+pass updates or enabled push delivery. Follow [claiming a reward](/customer-journey/rewards)
+for the actual confirmation workflow.
+
+See the app repository's internal `engineering/technical/wallet-implementation.md` for configuration,
+API contracts, migration ordering, offline tests and integration requirements.
+
+## Browser cards and other integrations
+
+Native passes do not inherit every [browser card design](/features/branded-cards)
+option. Use the [browser wallet](/features/browser-wallet) for current reward progress.
+
+[Merchant MCP](/features/merchant-mcp) provides scoped, read-only agent access. Kardy
+does not publish a general write API or webhook contract. Do not rely on internal
+app routes as stable integration APIs; [contact Kardy](https://getkardy.com/contact)
+before planning a custom integration.

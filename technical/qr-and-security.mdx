@@ -1,0 +1,26 @@
+---
+title: QR codes and security
+description: Distinguish join links from membership identifiers and understand organization access and audit history.
+---
+
+## Two different QR codes
+
+| QR            | What it does                                                                | How to handle it                                  |
+| ------------- | --------------------------------------------------------------------------- | ------------------------------------------------- |
+| Join QR       | Opens your organization's membership link.                                  | Share with customers.                             |
+| Membership QR | Resolves an opaque, revocable identifier to a Kardy identity or membership. | Keep private; do not retain customer screenshots. |
+
+A membership QR must not contain an email, phone number, password, or other personal
+details. It is not a payment code. Branding can differ while the underlying identity remains the same.
+
+## Access and event history
+
+Organization data is tenant-scoped. A valid QR does not give a caller permission to
+award stamps: the operation also requires authorized organization access.
+Stamp and redemption events are append-only audit history, not editable receipts.
+
+If confirmation is delayed, check the result before retrying. Record the outlet, time,
+and error for [Support](https://getkardy.com/support), without including a private QR.
+
+Passwords are handled by the authentication provider. Signing keys, payment secrets,
+and service credentials belong on the server, never in public pages or browser code.

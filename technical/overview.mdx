@@ -1,0 +1,35 @@
+---
+title: Platform overview
+description: Understand how your organization, the customer wallet, and Kardy’s backend work together.
+---
+
+Kardy has two application surfaces. Your organization uses the management portal;
+customers use the browser wallet. The backend stores memberships and confirms operations.
+
+The repository has **three projects**: the consumer Next.js app (public site and
+browser wallet), the merchant Next.js app, and this standalone Mintlify docs site.
+All three use a thin purple navigation-progress indicator. Documentation is also
+linked from the public footer and the Support help panel.
+
+<Frame>
+  <img
+    src="/images/platform-overview.svg"
+    alt="The merchant portal and customer wallet connect to authenticated server operations, which maintain organisation-scoped memberships and stamp and redemption history."
+  />
+</Frame>
+
+## Where information lives
+
+| Component                   | Responsibility                                                                      |
+| --------------------------- | ----------------------------------------------------------------------------------- |
+| Organization portal         | Configure the programme, manage outlets, and operate scans.                         |
+| Customer wallet             | Join programmes, present a QR, and view membership progress.                        |
+| Backend                     | Authenticate requests, enforce organization access, and record changes.             |
+| Wallet integration boundary | Sign native QR passes when issuer credentials and scanner readiness are configured. |
+
+The apps use Next.js and TypeScript, with InsForge for authentication and data.
+Merchant-only, read-only agent access is documented in [Merchant MCP](/technical/merchant-mcp).
+It uses scoped Owner-approved OAuth connections or expiring manual keys; there is no consumer MCP or general-purpose database API.
+
+For a rollout, read [QR and security](/technical/qr-and-security),
+[wallet integrations](/features/native-wallets), and [availability](/availability).

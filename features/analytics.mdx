@@ -1,0 +1,87 @@
+---
+title: Dashboard and reporting
+sidebarTitle: Reporting
+description: Filter recorded visits, reward claims and outlet performance by date.
+---
+
+import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+
+**Where:** Merchant workspace → **Overview**.
+
+<Frame caption="Illustrative reporting, not live business totals.">
+  <FeatureIllustration type="analytics" />
+</Frame>
+
+## Core metrics and filters
+
+| Metric           | Meaning                                            |
+| ---------------- | -------------------------------------------------- |
+| Visits           | Recorded stamp events during the reporting period  |
+| Rewards redeemed | Recorded reward claims during the reporting period |
+| Active stores    | Current active outlets in the programme            |
+
+Overview starts at **This month · UTC**. Use **Add filter** or the Store chip to choose a store, and open
+**Dates**. The calendar has quick presets, two months side by side, and editable
+start/end dates. Choose **Apply** to update totals and location rankings, or
+**Cancel** to leave the current dates unchanged. One top filter row controls the
+totals, chart and location performance. Ranges support up to 366 days, including
+today (partial). Active stores and
+member progress are current snapshots, not historical counts. Sample data is
+labelled separately.
+
+## Filter and inspect graphs
+
+Overview's **Show** selector switches between **Member visits** and **Rewards
+redeemed**, using the same dates and store as the summary cards. Visits mean
+stamp-issued events, not unique visitors. The chart's vertical scale shows event
+counts and its horizontal scale shows UTC dates. When today is included, the
+current period is partial and comparison is against the full previous period.
+
+Outside Overview, Reward redemptions and Successful referrals have their own
+filter row with **Dates** and **Compare** chips. Choose a preset such as Last 7 days, Last 30
+days or Last 90 days, or click a start and end date, then choose **Apply**.
+Ranges support up to **366 complete UTC days**, ending before today; unavailable
+presets and future dates cannot be selected.
+These other graph dates are independent of Overview and reward/referral tables.
+
+Graphs compare against the immediately preceding equal-length period. Remove the
+**Compare** chip to hide it, or choose **Compare** under **Add filter** to restore
+it. Hover to inspect a day; the tooltip follows
+the plotted value. Click a start date, move across the graph, then click an end
+date to finish highlighting a range. **Clear** or Escape removes the selection.
+With the graph focused, use arrow keys to move and Enter or Space to set each
+boundary. The selected total does not change the date filter.
+
+Rewards, Referrals and store graphs also offer **View data** for the underlying
+values. Overview offers **View live** instead.
+
+## Activities and Live view
+
+Choose **View live** on Member activity to open the [Live view globe](/features/live-view)
+and latest recorded events. Use [Activities](/features/activities) to search the
+audit history by member and filter by store or event type. These views require
+Owner or Manager access; map pins represent stores, not customer positions.
+
+## Location and member progress
+
+**Location performance** shows visit/redemption leaders and the top three locations
+by visits. Ties remain visible. Only activity attributed to an outlet belongs in
+that outlet's totals. **View all locations** opens the full locations view.
+
+**Working towards a reward** groups loaded active members into Goal reached, On
+track and Not started. This is a current snapshot, not a forecast.
+
+<Note>
+  Individual location pages retain Daily · Last 30 days and Monthly · Last 12
+  months views. Unlike the complete-day graphs above, these include today's or
+  this month's partial activity. Location activity timestamps use the outlet's
+  time zone; reporting buckets use UTC.
+</Note>
+
+Unavailable data is not zero. Complete daily history reads are bounded; if the
+requested period exceeds the read limit, narrow the dates and retry rather than
+treating a partial trend as complete. Do not infer revenue, conversion or profit
+from visit counts alone.
+
+For store configuration, see [Outlet management](/features/outlets). Reward-specific
+claim definitions live in [reward performance](/features/rewards#understand-performance).

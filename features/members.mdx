@@ -1,0 +1,76 @@
+---
+title: Member management
+description: Find memberships and review progress within your own brand.
+---
+
+import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+
+**Where:** Merchant workspace → **Members**.
+
+<Frame caption="Illustrative members, not customer records.">
+  <FeatureIllustration type="members" />
+</Frame>
+
+## Find a member
+
+Search by **name, member code, email or phone**. Search filters the loaded members,
+not an unlimited server-wide directory; the footer shows the loaded count and
+pagination displays ten records per page. If someone is missing, check the selected
+brand and whether the list finished loading.
+
+## Review activity
+
+Open a member row or its **More details** button. The detail panel shows current
+stamps, rewards ready, total visits and redemptions. Under **Activity history**, choose **All
+activity**, **Visits** or **Redemptions**, then page through the results. Events
+show their date and outlet; reward claims include the recorded reward name.
+
+Use **Retry** if history fails to load. An error is not an empty history. The panel
+is for inspection, not editing or deleting audit events.
+
+Choose **View all activities** to open the [Activities page](/features/activities)
+filtered to that member, with store and event-type filters.
+
+## Rewards ready and power customers
+
+**Rewards ready** counts one currently eligible reward per membership, not all
+future rewards that excess stamps might cover. It requires an active, unexpired
+membership, an active reward and enough stamps. Staff still confirm the claim
+through Scan, including outlet eligibility.
+
+**Power customers** highlights the top three among the loaded member list, ranked
+by all-time recorded visits, then redemptions and name to break ties. Members with
+no recorded visits are not ranked. The compact strip lives only in **Members**, not
+in a separate dashboard or navigation item. Each entry shows visits, redemptions
+and rewards ready. Select it to open the existing member detail panel for stamp
+progress, join date, latest visit/outlet and activity history.
+Searching the member table does not change the top-three ranking.
+The caption gives the loaded-member scope; this is not an unlimited brand-wide ranking.
+
+## Understand the information
+
+Membership progress belongs to the brand, not an individual outlet. A member's
+saved reward and goal determine their current progress. Historical referral awards
+are not necessarily their remaining stamp balance.
+
+Keep customer contact details inside authorised workspace tools. MCP agents cannot
+read customer records, even when the owner grants all available MCP scopes.
+
+## Capacity
+
+See [stored-member counting rules](/features/usage-limits). Pausing or expiring a
+membership does not free capacity.
+
+<Note>
+  Incomplete reads and unavailable metrics must not be interpreted as zero
+  members or zero activity.
+</Note>
+
+<CardGroup cols={2}>
+  <Card title="Member capacity" icon="gauge" href="/features/usage-limits">
+    Check limits and upgrade planning.
+  </Card>
+  <Card title="Stamps at the counter" icon="qrcode" href="/features/scanning">
+    Use the authorised scan workflow.
+  </Card>
+</CardGroup>

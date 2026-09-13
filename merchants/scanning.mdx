@@ -1,0 +1,57 @@
+---
+title: Scan, stamp, and redeem
+description: Use a phone to scan the customer's Kardy QR at the correct outlet.
+---
+
+You do not need a dedicated barcode-scanner device. Use a supported phone browser,
+or enter the member code using the available manual field.
+
+<Steps>
+  <Step title="Choose the outlet">
+    Open the merchant scan flow and select the outlet serving the member.
+  </Step>
+  <Step title="Ask for the member's QR">
+    The customer opens their Kardy wallet and shows their pass.
+  </Step>
+  <Step title="Scan or enter the code">
+    Choose **Start camera** and allow camera access. Keep the whole Kardy QR
+    inside the four corners with some space around it. A recognised QR starts a
+    membership check; manual entry requires **Check membership**.
+  </Step>
+  <Step title="Choose the action">
+    Use **Check membership** to check an existing reward without adding a stamp.
+    After checking, use **Add stamp** only to record a qualifying visit.
+  </Step>
+  <Step title="Wait for confirmation">
+    Check the result and stamp count. Do not repeatedly submit while waiting.
+  </Step>
+  <Step title="Redeem when ready">
+    When the flow shows an available reward, confirm it with the customer and
+    use the redeem action. You do not need to award another stamp to reach this
+    action. Wait for the redemption result before handing over the reward.
+  </Step>
+</Steps>
+
+## When something goes wrong
+
+Hold both devices steady, adjust their distance until the code is sharp, and turn
+up the customer's screen brightness. Tilt away from reflections. **Close camera**
+stops scanning; manual member-code entry remains available if camera access fails.
+
+Only supported Kardy membership QR formats are accepted by the camera. Website
+links, join-page QR codes, scripts and malformed payloads are rejected, not opened
+or executed. A correctly formatted code must still pass server-side membership,
+access and outlet checks. Scanning alone never awards a stamp or redeems a reward.
+Changing the code or outlet requires checking the membership again before acting.
+
+If a redemption response is interrupted, use **Retry redemption** to check the same
+request. Do not start another claim until Kardy confirms the result.
+
+- **Camera unavailable:** check browser permissions, lighting, and browser support; use manual entry if offered.
+- **Code not recognised:** ask the member to reopen their current pass and check that you selected the correct business context.
+- **Access or subscription error:** ask the owner to check activation and authorised access.
+- **Reward unavailable at this outlet:** ask the Manager to check the reward's eligible active outlets. Do not bypass the restriction.
+- **Unexpected stamp or redemption:** retain the details and contact support. Do not delete audit history or promise an undo feature.
+
+A QR contains an opaque identifier, not the member's email, phone number, or password.
+Treat a member's QR as private and do not post screenshots publicly.

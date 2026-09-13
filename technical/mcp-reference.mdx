@@ -1,0 +1,139 @@
+---
+title: MCP technical reference
+description: Protocol, permissions and deployment details for developers integrating with Kardy.
+---
+
+For everyday setup, start with [Connect your agent](/technical/merchant-mcp).
+
+## Permissions and tools
+
+| Permission       | Tool            | Returned data                                                   |
+| ---------------- | --------------- | --------------------------------------------------------------- |
+| `programme:read` | `get_programme` | Brand name, slug, tagline and read-only indicator.              |
+| `rewards:read`   | `list_rewards`  | Active reward IDs, labels, stamp goals and eligible outlet IDs. |
+| `outlets:read`   | `list_outlets`  | Active outlet IDs, names and business addresses.                |
+
+`get_programme` takes an empty argument object. Both list tools take an optional integer
+`offset` (default `0`, maximum `10000`) and return `items`, `total` and `nextOffset`.
+Each page contains up to 50 entries. Follow `nextOffset` until it is `null`.
+An empty `redemption_location_ids` array means a reward is available at every active outlet.
+Deleted/inactive rewards and inactive outlets do not appear. Unknown arguments and tools
+are rejected. There is no merchant-ID argument: the key fixes the workspace.
+
+There are **no** tools for consumer accounts, member lists, balances, QR codes, stamps,
+redemptions, billing, broadcasts, invitations, ownership or arbitrary database queries.
+Managers and Staff cannot manage keys, even if they can perform some of these tasks in the app.
+
+## Rotate or revoke a key
+
+Create a replacement, update your agent and verify it works, then **Revoke** the old key.
+If you suspect a leak, revoke first. New requests stop immediately; already returned data
+cannot be recalled from an external agent. Keys also stop at expiry or while the subscription
+is inactive. Ownership transfer permanently revokes all existing keys, even if ownership is
+later transferred back.
+
+Settings shows the key name, safe prefix, permissions, expiry, status and last-used time.
+Use **Refresh** to update usage information. The list shows up to 100 keys, active first,
+then inactive history; secrets cannot be recovered or reactivated. Never share the Owner’s password
+or an InsForge admin key with your agent.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="401: key unavailable">
+    Check that the full key is in the Authorization header, has not expired or
+    been revoked, and belongs to an active organisation with unchanged
+    ownership. Browser sign-in cookies do not authenticate MCP. Create a new key
+    if the secret was lost.
+  </Accordion>
+  <Accordion title="403: origin not allowed">
+    Browser-origin connections must match the merchant origin or an explicit
+    server-side `MCP_ALLOWED_ORIGINS` comma-separated allowlist. Never use a
+    wildcard. Native clients may omit Origin. The server uses
+    `NEXT_PUBLIC_MERCHANT_PORTAL_URL` for this check; configure the actual
+    merchant HTTPS origin before deployment. Wildcard CORS is not enabled.
+  </Accordion>
+  <Accordion title="A tool is missing or access was denied">
+    Your key may not include its read permission, or access changed during the
+    request. Create a replacement with the permissions you need. Requests cannot
+    select another brand.
+  </Accordion>
+  <Accordion title="429: too many requests">
+    Wait one minute. Each workspace and each key allow 120 database calls per
+    minute. Authentication uses one call; a tool request uses another for its
+    scoped read (typically up to 60 tool requests per minute, less when
+    discovering tools). Avoid polling an unchanged workspace.
+  </Accordion>
+  <Accordion title="Monthly MCP allowance reached">
+    The tool returns an error with the reset date; switching keys will not
+    bypass it. See [MCP counting rules](/features/usage-limits#what-counts) for
+    the shared allowance. The Owner can check **Settings → Usage & limits** or
+    contact Kardy for a higher allowance. No automatic overage charges apply.
+  </Accordion>
+  <Accordion title="405, 413 or 503">
+    GET streaming is not offered; use POST Streamable HTTP with JSON responses.
+    Requests over 16 KiB are rejected. A 503 means the backend is unavailable or
+    the MCP migration has not been applied; retry later or check development
+    setup.
+  </Accordion>
+</AccordionGroup>
+
+## Implementation and testing
+
+The official MCP SDK handles initialization, tool discovery and protocol validation.
+Transport is stateless; each request must carry the key. POST clients send both
+`application/json` and `text/event-stream` in Accept, and `application/json` in Content-Type.
+Agents never receive session cookies, consumer credentials or server admin keys.
+
+### OAuth endpoints and deployment
+
+Access tokens last one hour; refresh grants last at most 30 days. Refresh tokens rotate
+on each use. Replaying a used refresh token revokes the entire connection, so clients
+must serialize refresh requests. Missing requested scopes default to `programme:read`.
+Public dynamic client registration is supported; client-ID metadata documents and
+confidential-client authentication are not implemented.
+
+All paths below are on the merchant host:
+
+| Endpoint                                        | Purpose                                                                  |
+| ----------------------------------------------- | ------------------------------------------------------------------------ |
+| `/.well-known/oauth-protected-resource/api/mcp` | Resource metadata, also linked from the 401 challenge.                   |
+| `/.well-known/oauth-authorization-server`       | Issuer and supported OAuth capabilities.                                 |
+| `/api/oauth/register`                           | Public dynamic client registration (`token_endpoint_auth_method: none`). |
+| `/oauth/authorize`                              | Owner sign-in and explicit consent.                                      |
+| `/api/oauth/token`                              | Authorization-code exchange and refresh rotation.                        |
+| `/api/oauth/revoke`                             | Revoke using an access or refresh token and its client ID.               |
+
+Configure `NEXT_PUBLIC_MERCHANT_PORTAL_URL` to the exact merchant origin and a **server-only**
+`INSFORGE_ADMIN_KEY` for the same backend. OAuth storage uses service-only RPCs, not a
+public generic proxy. Production token operations require HTTPS. Browser origins are
+explicitly allowed; native clients can omit Origin. Discovery and public OAuth endpoints
+use credential-free CORS; the consent page cannot be framed.
+
+Authorization and token requests must send `resource` equal to the full `/api/mcp` URL,
+without a trailing slash, query or fragment. Redirects must exactly match registration:
+HTTPS, or HTTP on localhost/loopback for native clients. Only authorization code with
+S256 PKCE is accepted; codes expire after two minutes and are atomically consumed.
+Callbacks include the issuer (`iss`). Refresh can narrow scopes, never expand them.
+Client registrations expire after 30 days without new consent. Tokens are never logged
+or stored in plaintext. Redact OAuth request bodies, codes and Authorization headers in
+deployment logging as well as application monitoring.
+
+Database-backed limits apply globally: 20 registrations, 120 consent grants, 600 token
+requests and 600 revocations per minute; at most 1,000 client registrations are retained.
+Use deployment-level abuse protection as well. OAuth bodies are limited to 16 KiB.
+See the [MCP authorization specification](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization).
+
+`merchant_mcp_keys` stores only SHA-256 hashes of 256-bit random secrets, plus metadata
+and rate-limit counters. Normal clients cannot write the table or read hashes.
+Owner-authenticated functions create/revoke keys. The narrow `merchant_mcp_read` function
+validates the token, scope, expiry, ownership, subscription and quota before projecting data.
+Never log Authorization headers or the function’s token argument in monitoring tools.
+
+Run `pnpm test:backend` for the local database security suite and real MCP SDK client tests.
+Apply `20260908170237_merchant-mcp-access.sql` and `20260908172030_merchant-mcp-oauth.sql`
+only to the verified persistent dev branch
+until release is explicitly approved. Test the merchant UI at mobile and desktop sizes.
+
+Read the [MCP transport specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports)
+for protocol details. For organisation roles, see [Team & access](/features/team-access).

@@ -1,0 +1,80 @@
+{
+  "generatedWith": "Built-in image_gen",
+  "date": "2026-09-09",
+  "purpose": "Concept illustrations, not screenshots or live records",
+  "commonPrompt": "Use case: stylized-concept. Asset type: original editorial feature illustration for Kardy loyalty documentation. Create one landscape 1536x1024 raster image. Premium minimal soft-paper product illustration, mostly flat with very subtle dimensional edges and natural soft shadows, crisp dark outlines, not a full app screenshot. Cool pale grey #F6F6F9 full-bleed backdrop, warm white objects, vivid Kardy purple #6B42FF, muted sage #DCE6D4, dark ink #202620. One large focal composition centered with 12% clear margin; visible objects occupy 65% of frame. Refined tactile paper and frosted glass material, gentle daylight. Legible at 320px wide. No paragraphs, no tiny UI text, no decorative confetti, no random floating shapes, no money, no barcodes. Any QR-like graphic must be clearly schematic and non-functional. Only text explicitly requested below, no other text or letters. This is a conceptual illustration, not a claim of live operations. ",
+  "images": [
+    {
+      "file": "branded-cards.webp",
+      "prompt": "A large beautifully designed lavender loyalty card with a distinctive dark-green coffee-cup emblem, exactly eight stamp circles in two rows of four, five purple filled and three empty. Beside it a small material swatch fan of purple, sage, and ink showing customisable brand colours. No text."
+    },
+    {
+      "file": "rewards.webp",
+      "prompt": "A lavender loyalty card with exactly eight stamp circles all filled, a clear slender arrow leading to a single elegant ceramic coffee cup on a saucer. Visually explain completing stamps to claim coffee. No text."
+    },
+    {
+      "file": "scanning.webp",
+      "prompt": "Two elegant generic mobile devices, one displaying a large schematic QR-like square with three corner markers, the other displaying a camera viewfinder around the same square and a small green confirmation check. The square is abstract and non-functional. No barcode. No text."
+    },
+    {
+      "file": "referrals.webp",
+      "prompt": "Two rounded portrait-avatar chips linked through a coffee cup and a single stamp impression in the center: invite, first coffee purchase stamped, then both people rewarded. Lower left a lavender bonus chip text '+2', lower right a sage bonus chip text '+1', connected to respective avatars. Only text '+2' and '+1'. No money or ticket barcode."
+    },
+    {
+      "file": "qr-signs.webp",
+      "prompt": "A beautiful physical tabletop A-frame coffee-shop sign beside a neatly rolled A4 print sheet. Sign has a coffee cup emblem and large schematic QR-like square with three corner markers. Small phone beside it opening a lavender membership card to imply joining. No actual QR data, no text."
+    },
+    {
+      "file": "join-pages.webp",
+      "prompt": "One neat front-facing phone displaying a simplified coffee membership join card: coffee cup emblem, three simple empty form lines, one purple action strip. Beside it a separate small membership card with a check mark implying successful joining. Clear simple composition, no words, no keyboard."
+    },
+    {
+      "file": "browser-wallet.webp",
+      "prompt": "One elegant front-facing phone with an open digital wallet containing three overlapping brand membership cards in lavender, sage, and pale peach, each distinctive emblem coffee cup, leaf, flower. A small floating rounded purple home-screen app tile with an abstract white wallet icon and an install arrow toward the phone's home-screen edge. No vendor logo, no text."
+    },
+    {
+      "file": "native-wallets.webp",
+      "prompt": "One universal schematic QR identity tile above a Y-shaped thin connection splitting toward two distinct generic mobile wallet pass sleeves, one charcoal and one warm white, both carrying the same schematic abstract QR pattern. Small key-and-shield approval symbol along shared branch to imply configured issuance. No stamp balances, no Apple/Google logos, no text."
+    },
+    {
+      "file": "kardy-network.webp",
+      "prompt": "A restrained folded neighbourhood street map with three simple storefront pins, one coffee cup, one leaf, one flower. A large search magnifying glass highlights the coffee storefront and a little lavender reward card. No graphs, no text."
+    },
+    {
+      "file": "email-preferences.webp",
+      "prompt": "Two simple stacked organisation preference cards, coffee emblem and leaf emblem. Each has one large toggle: coffee row purple toggle switched ON, leaf row grey toggle OFF. A single envelope symbol beside them makes email meaning clear. Emphasise independent per-brand choice. No text."
+    },
+    {
+      "file": "members.webp",
+      "prompt": "A neatly arranged stack of three member directory rows, each a distinct portrait avatar and simple stamp-progress dots. One row pulled forward and highlighted lavender; a magnifying glass highlights its avatar. No contact information or words, no editing or trash controls."
+    },
+    {
+      "file": "analytics.webp",
+      "prompt": "A simple beautiful reporting surface showing only three large icons each paired with a modest short static horizontal bar: coffee visit, gift redemption, storefront location. Tiny calendar-shaped tile with blank squares to imply monthly period. No trend lines, no growing arrows, no numbers, no fake live charts, no text."
+    },
+    {
+      "file": "outlets.webp",
+      "prompt": "Three elegant miniature coffee storefront facades connected by a thin branch to one shared lavender membership card above them. Same coffee cup emblem on every storefront, one has a tiny main-store star badge. Show one programme across physical locations. No map text or numbers."
+    },
+    {
+      "file": "team-access.webp",
+      "prompt": "A single organisation workspace frame containing three distinct friendly avatar role tiles: owner with small key, manager with settings sliders, staff with scanner icon. Keep all tiles inside the same organisation boundary, with clear hierarchy by placement rather than tiny labels. No text."
+    },
+    {
+      "file": "multiple-brands.webp",
+      "prompt": "One account portrait chip at top branches to two clearly separated workspace folders below: a sage coffee-brand folder with coffee emblem and a lavender flower-brand folder with flower emblem. Each folder contains its own small membership cards. No cross-links between brand records, no text."
+    },
+    {
+      "file": "broadcasts.webp",
+      "prompt": "An elegant unsent email draft sheet with coffee emblem, two simple grey message lines and folded-envelope corner. Beneath a single guarded connection a small consent check symbol before three recipient avatar circles. Purple action strip marked exactly 'Draft'. No send success indicators, no real logos, no other text."
+    },
+    {
+      "file": "merchant-mcp.webp",
+      "prompt": "A central charcoal merchant workspace tile with simple white coffee cup emblem, connected through a small shield with keyhole to three different generic agent client tiles: a soft orange asterisk, a monochrome terminal-like symbol, a purple plug. Connections convey read-only access, with small eye icon on shield. No actual company logos or text, no customer records."
+    },
+    {
+      "file": "usage-limits.webp",
+      "prompt": "A clean capacity meter in a rounded white panel with eight filled lavender segments and two empty grey segments, stopping at a clear dark end-cap. Two small resource tiles below: member avatar stack and agent plug symbol. A restrained amber warning dot near the meter. No bills or money, no unlimited symbol, no text."
+    }
+  ]
+}

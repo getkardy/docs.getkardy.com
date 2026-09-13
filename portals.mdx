@@ -1,0 +1,46 @@
+---
+title: Kardy portals
+description: Find Kardy's consumer wallet, merchant workspace and public rewards network.
+---
+
+These are Kardy's configured public destinations. Their availability depends on
+deployment and DNS setup; a local preview does not publish the apps.
+
+## Merchant
+
+Manage your organisation, members and rewards with your merchant team account.
+
+<a
+  href="https://merchant.getkardy.com"
+  className="inline-flex rounded-lg bg-primary px-4 py-2 font-semibold text-white no-underline"
+>
+  Open merchant portal
+</a>
+
+Address: `https://merchant.getkardy.com`
+
+## Consumer
+
+View your membership cards, current progress and Kardy QR.
+
+<a
+  href="https://getkardy.com/member"
+  className="inline-flex rounded-lg bg-primary px-4 py-2 font-semibold text-white no-underline"
+>
+  Open consumer portal
+</a>
+
+Address: `https://getkardy.com/member`. Sign in if prompted.
+
+## Kardy Network
+
+[Browse rewards](https://getkardy.com/marketplace) to discover eligible published
+perks and shops. The network is public; joining a programme requires an account.
+
+## Local development
+
+From the **app repository**, run `pnpm dev:consumer` for `http://localhost:3000`
+and `pnpm dev:merchant` for `http://localhost:3001`. From the separate
+**docs.getkardy.com repository**, run `pnpm dev` for `http://localhost:3002`.
+These addresses only work while the corresponding local
+servers are running. Use synthetic accounts with the development backend.

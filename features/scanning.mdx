@@ -1,0 +1,52 @@
+---
+title: QR scanning and redemption
+sidebarTitle: Scan and redeem
+description: Identify a member and confirm stamps or claims at the counter.
+---
+
+import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+
+**Where:** Merchant workspace → **Scan**.
+
+<Frame caption="Concept illustration. Staff confirm the operation; the QR artwork is not usable.">
+  <FeatureIllustration type="scanning" />
+</Frame>
+
+Use a supported phone camera or manual code entry. A scan identifies the account;
+staff still confirm the correct membership, outlet and operation.
+
+## At the counter
+
+<Steps>
+  <Step title="Choose an active outlet">
+    Use the outlet where the purchase takes place.
+  </Step>
+  <Step title="Scan the customer's Kardy QR">
+    Check the returned member and reward information. Do not keep a photo of the
+    QR.
+  </Step>
+  <Step title="Confirm the operation">
+    Issue the qualifying stamp or confirm an available reward claim. Each claim
+    is separate.
+  </Step>
+</Steps>
+
+## Permissions and safeguards
+
+Authorised staff need an active brand subscription. Redemption is checked against
+the reward's eligible outlets. Recorded events are audit history; retries must not
+create duplicate stamps or claims. A QR contains an opaque token, not contact details.
+
+<Note>
+  Scanning in the demo does not record real events. A camera permission failure
+  does not make manual code entry unavailable.
+</Note>
+
+<CardGroup cols={2}>
+  <Card title="Counter guide" icon="qrcode" href="/merchants/scanning">
+    Day-to-day scanning instructions.
+  </Card>
+  <Card title="QR security" icon="shield" href="/technical/qr-and-security">
+    Identity and token boundaries.
+  </Card>
+</CardGroup>

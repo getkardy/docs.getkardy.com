@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 680" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">One Kardy account, a role in each organisation</title>
+  <desc id="desc">Illustrative account for Amelia Tan: Owner of Sunday Coffee, Manager at Forma Studio, and Staff at Good Company. Each outlet shows an illustrative manager and two staff members with initial avatars. These example outlet teams do not define access: permissions belong to the organisation.</desc>
+  <defs>
+    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".65" fill="#E2E2E9"/></pattern>
+    <linearGradient id="avatar" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#C9F269"/><stop offset=".45" stop-color="#D9EBCB"/><stop offset=".75" stop-color="#DBD1F8"/><stop offset="1" stop-color="#F2D4AF"/></linearGradient>
+    <filter id="shadow" x="-15%" y="-20%" width="130%" height="155%" color-interpolation-filters="sRGB"><feDropShadow dy="3" stdDeviation="4" flood-color="#171A18" flood-opacity=".045"/></filter>
+    <g id="pin" fill="none" stroke="#5B5E67" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8c0 5-6 10-6 10S5 13 5 8a6 6 0 1 1 12 0Z"/><circle cx="11" cy="8" r="2"/></g>
+  </defs>
+  <rect width="800" height="680" rx="18" fill="#F7F7FA"/>
+  <rect width="800" height="680" rx="18" fill="url(#dots)"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#171A18">
+    <g filter="url(#shadow)">
+      <rect x="250" y="26" width="300" height="103" rx="12" fill="white" stroke="#E2E2E9"/>
+      <path d="M262 26h276a12 12 0 0 1 12 12v22H250V38a12 12 0 0 1 12-12Z" fill="#E8EDF8"/>
+      <text x="269" y="48" fill="#5B6781" font-size="10" letter-spacing="1">ONE KARDY ACCOUNT</text>
+      <circle cx="288" cy="93" r="19" fill="url(#avatar)" stroke="#E5EAE4"/>
+      <text x="322" y="88" font-size="16" font-weight="600" letter-spacing="-.3">Amelia Tan</text>
+      <text x="322" y="109" font-size="12" fill="#5B5E67">Own brands. Join other teams.</text>
+    </g>
+    <path d="M400 129v60M146 205v-10a6 6 0 0 1 6-6h496a6 6 0 0 1 6 6v10M400 189v16" fill="none" stroke="#C9CAD6" stroke-width="1.4"/>
+    <rect x="313" y="153" width="174" height="27" rx="13.5" fill="white" stroke="#E2E2E9"/>
+    <text x="400" y="171" text-anchor="middle" fill="#5B5E67" font-size="11">A role in each organisation</text>
+    <g transform="translate(36 205)">
+      <g filter="url(#shadow)">
+        <rect width="220" height="106" rx="12" fill="white" stroke="#E2E2E9"/>
+        <path d="M12 0h196a12 12 0 0 1 12 12v20H0V12A12 12 0 0 1 12 0Z" fill="#E5F0EB"/>
+        <text x="15" y="21" font-size="10" letter-spacing=".8" fill="#536D64">ORGANISATION</text>
+        <rect x="15" y="49" width="35" height="35" rx="9" fill="#E8DEF9"/>
+        <text x="32.5" y="73" text-anchor="middle" font-size="22" font-weight="600" fill="#291C44">S</text>
+        <text x="62" y="61" font-size="15" font-weight="600" letter-spacing="-.3">Sunday Coffee</text>
+        <text x="62" y="85" font-size="14" fill="#5B5E67">Owner</text>
+      </g>
+      <path d="M15 106v190" fill="none" stroke="#C9CAD6" stroke-width="1.2"/>
+      <text x="28" y="128" font-size="10" fill="#5B5E67">2 outlets</text>
+      <path d="M15 156h13" stroke="#C9CAD6" stroke-width="1.2" fill="none"/>
+      <g transform="translate(28 140)">
+        <rect width="192" height="128" rx="10" fill="white" stroke="#E2E2E9"/>
+        <use href="#pin" x="9" y="9"/>
+        <text x="38" y="24" font-size="12" font-weight="600">Orchard</text>
+        <path d="M12 36h168" stroke="#EEEEF3"/>
+        <circle cx="26" cy="60" r="14" fill="#E8DEF9"/>
+        <text x="26" y="64" text-anchor="middle" font-size="10" font-weight="600" fill="#60429A">RL</text>
+        <text x="49" y="57" font-size="12" font-weight="600">Rachel Lim</text>
+        <text x="49" y="72" font-size="10" fill="#777985">Manager</text>
+        <circle cx="26" cy="101" r="13" fill="#E4EED6" stroke="white" stroke-width="2"/>
+        <text x="26" y="105" text-anchor="middle" font-size="10" fill="#405537">K</text>
+        <circle cx="46" cy="101" r="13" fill="#F3DCC8" stroke="white" stroke-width="2"/>
+        <text x="46" y="105" text-anchor="middle" font-size="10" fill="#805337">M</text>
+        <text x="67" y="98" font-size="11" font-weight="600">Kai · Mei</text>
+        <text x="67" y="113" font-size="10" fill="#777985">Staff</text>
+      </g>
+      <path d="M15 296h13" stroke="#C9CAD6" stroke-width="1.2" fill="none"/>
+      <g transform="translate(28 280)">
+        <rect width="192" height="128" rx="10" fill="white" stroke="#E2E2E9"/>
+        <use href="#pin" x="9" y="9"/>
+        <text x="38" y="24" font-size="12" font-weight="600">Joo Chiat</text>
+        <path d="M12 36h168" stroke="#EEEEF3"/>
+        <circle cx="26" cy="60" r="14" fill="#E8DEF9"/>
+        <text x="26" y="64" text-anchor="middle" font-size="10" font-weight="600" fill="#60429A">DT</text>
+        <text x="49" y="57" font-size="12" font-weight="600">Daniel Tan</text>
+        <text x="49" y="72" font-size="10" fill="#777985">Manager</text>
+        <circle cx="26" cy="101" r="13" fill="#E4EED6" stroke="white" stroke-width="2"/>
+        <text x="26" y="105" text-anchor="middle" font-size="10" fill="#405537">Z</text>
+        <circle cx="46" cy="101" r="13" fill="#F3DCC8" stroke="white" stroke-width="2"/>
+        <text x="46" y="105" text-anchor="middle" font-size="10" fill="#805337">B</text>
+        <text x="67" y="98" font-size="11" font-weight="600">Zoe · Ben</text>
+        <text x="67" y="113" font-size="10" fill="#777985">Staff</text>
+      </g>
+    </g>
+    <g transform="translate(290 205)">
+      <g filter="url(#shadow)">
+        <rect width="220" height="106" rx="12" fill="white" stroke="#E2E2E9"/>
+        <path d="M12 0h196a12 12 0 0 1 12 12v20H0V12A12 12 0 0 1 12 0Z" fill="#E5F0EB"/>
+        <text x="15" y="21" font-size="10" letter-spacing=".8" fill="#536D64">ORGANISATION</text>
+        <rect x="15" y="49" width="35" height="35" rx="9" fill="#F3D7E5"/>
+        <text x="32.5" y="73" text-anchor="middle" font-size="22" font-weight="600" fill="#683552">F</text>
+        <text x="62" y="61" font-size="15" font-weight="600" letter-spacing="-.3">Forma Studio</text>
+        <text x="62" y="85" font-size="14" fill="#5B5E67">Manager</text>
+      </g>
+      <path d="M15 106v190" fill="none" stroke="#C9CAD6" stroke-width="1.2"/>
+      <text x="28" y="128" font-size="10" fill="#5B5E67">2 outlets</text>
+      <path d="M15 156h13" stroke="#C9CAD6" stroke-width="1.2" fill="none"/>
+      <g transform="translate(28 140)">
+        <rect width="192" height="128" rx="10" fill="white" stroke="#E2E2E9"/>
+        <use href="#pin" x="9" y="9"/>
+        <text x="38" y="24" font-size="12" font-weight="600">Tanjong Pagar</text>
+        <path d="M12 36h168" stroke="#EEEEF3"/>
+        <circle cx="26" cy="60" r="14" fill="#E8DEF9"/>
+        <text x="26" y="64" text-anchor="middle" font-size="10" font-weight="600" fill="#60429A">AT</text>
+        <text x="49" y="57" font-size="12" font-weight="600">Amelia Tan</text>
+        <text x="49" y="72" font-size="10" fill="#777985">Manager</text>
+        <circle cx="26" cy="101" r="13" fill="#E4EED6" stroke="white" stroke-width="2"/>
+        <text x="26" y="105" text-anchor="middle" font-size="10" fill="#405537">S</text>
+        <circle cx="46" cy="101" r="13" fill="#F3DCC8" stroke="white" stroke-width="2"/>
+        <text x="46" y="105" text-anchor="middle" font-size="10" fill="#805337">I</text>
+        <text x="67" y="98" font-size="11" font-weight="600">Sara · Ian</text>
+        <text x="67" y="113" font-size="10" fill="#777985">Staff</text>
+      </g>
+      <path d="M15 296h13" stroke="#C9CAD6" stroke-width="1.2" fill="none"/>
+      <g transform="translate(28 280)">
+        <rect width="192" height="128" rx="10" fill="white" stroke="#E2E2E9"/>
+        <use href="#pin" x="9" y="9"/>
+        <text x="38" y="24" font-size="12" font-weight="600">River Valley</text>
+        <path d="M12 36h168" stroke="#EEEEF3"/>
+        <circle cx="26" cy="60" r="14" fill="#E8DEF9"/>
+        <text x="26" y="64" text-anchor="middle" font-size="10" font-weight="600" fill="#60429A">PS</text>
+        <text x="49" y="57" font-size="12" font-weight="600">Priya Shah</text>
+        <text x="49" y="72" font-size="10" fill="#777985">Manager</text>
+        <circle cx="26" cy="101" r="13" fill="#E4EED6" stroke="white" stroke-width="2"/>
+        <text x="26" y="105" text-anchor="middle" font-size="10" fill="#405537">N</text>
+        <circle cx="46" cy="101" r="13" fill="#F3DCC8" stroke="white" stroke-width="2"/>
+        <text x="46" y="105" text-anchor="middle" font-size="10" fill="#805337">E</text>
+        <text x="67" y="98" font-size="11" font-weight="600">Noah · Eva</text>
+        <text x="67" y="113" font-size="10" fill="#777985">Staff</text>
+      </g>
+    </g>
+    <g transform="translate(544 205)">
+      <g filter="url(#shadow)">
+        <rect width="220" height="106" rx="12" fill="white" stroke="#E2E2E9"/>
+        <path d="M12 0h196a12 12 0 0 1 12 12v20H0V12A12 12 0 0 1 12 0Z" fill="#E5F0EB"/>
+        <text x="15" y="21" font-size="10" letter-spacing=".8" fill="#536D64">ORGANISATION</text>
+        <rect x="15" y="49" width="35" height="35" rx="9" fill="#E4EED6"/>
+        <text x="32.5" y="73" text-anchor="middle" font-size="22" font-weight="600" fill="#405537">G</text>
+        <text x="62" y="61" font-size="15" font-weight="600" letter-spacing="-.3">Good Company</text>
+        <text x="62" y="85" font-size="14" fill="#5B5E67">Staff</text>
+      </g>
+      <path d="M15 106v58" fill="none" stroke="#C9CAD6" stroke-width="1.2"/>
+      <text x="28" y="128" font-size="10" fill="#5B5E67">1 outlet</text>
+      <path d="M15 156h13" stroke="#C9CAD6" stroke-width="1.2" fill="none"/>
+      <g transform="translate(28 140)">
+        <rect width="192" height="128" rx="10" fill="white" stroke="#E2E2E9"/>
+        <use href="#pin" x="9" y="9"/>
+        <text x="38" y="24" font-size="12" font-weight="600">Tiong Bahru</text>
+        <path d="M12 36h168" stroke="#EEEEF3"/>
+        <circle cx="26" cy="60" r="14" fill="#E8DEF9"/>
+        <text x="26" y="64" text-anchor="middle" font-size="10" font-weight="600" fill="#60429A">LO</text>
+        <text x="49" y="57" font-size="12" font-weight="600">Lucas Ong</text>
+        <text x="49" y="72" font-size="10" fill="#777985">Manager</text>
+        <circle cx="26" cy="101" r="13" fill="#E4EED6" stroke="white" stroke-width="2"/>
+        <text x="26" y="105" text-anchor="middle" font-size="10" fill="#405537">A</text>
+        <circle cx="46" cy="101" r="13" fill="#F3DCC8" stroke="white" stroke-width="2"/>
+        <text x="46" y="105" text-anchor="middle" font-size="10" fill="#805337">J</text>
+        <text x="67" y="98" font-size="11" font-weight="600">Amelia · Jay</text>
+        <text x="67" y="113" font-size="10" fill="#777985">Staff</text>
+      </g>
+    </g>
+    <text x="400" y="646" text-anchor="middle" font-size="11" fill="#5B5E67">Illustrative outlet teams · Access is set by your role in the organisation.</text>
+    <text x="400" y="664" text-anchor="middle" font-size="10" fill="#777985">Separate organisations. Separate programmes and permissions.</text>
+  </g>
+</svg>

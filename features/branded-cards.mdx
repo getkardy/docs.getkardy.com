@@ -1,0 +1,71 @@
+---
+title: Branded membership cards
+sidebarTitle: Branded cards
+description: Make browser membership cards recognisably yours.
+---
+
+import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+
+**Where:** Merchant workspace → **Branding → Pass designer**.
+
+<Frame caption="Illustrative card design. Saved controls are described below.">
+  <FeatureIllustration type="branded-cards" />
+</Frame>
+
+Choose your logo, brand colour and saved card design. Browser membership cards and
+join pages use that design; branding does not change the identity behind the QR.
+
+## What you can change
+
+- Business name in **Settings → Business details**; logo and primary brand colour
+  in **Branding → Brand profile**. These are shared branding, not separate pass identities.
+- Saved background family, gradients/patterns, secondary colour and chop shapes.
+- Stamp-number display within the supported card design.
+
+## Shared profile and overrides
+
+**Brand profile** owns the shared logo, primary colour, category, tagline and
+description. The join page inherits these fields; it has no independent colour
+or logo editor. Profile edits preview across Branding tabs; choose **Save brand
+profile** to publish them. Demo edits are not saved.
+
+**Pass designer → Shared pass appearance** controls the secondary colour, gradients,
+patterns and stamp styling. These affect cards, including cards embedded on the
+join page—not the join-page background or sign accents. **QR sign** labels its
+ink and text as sign-only overrides; these do not change the shared profile.
+
+Reward-specific icon choices and preview stamp counts are illustrative. They do
+not issue stamps or create redemption events. Native wallet passes have different
+styling and update boundaries.
+
+## Use this feature
+
+<Steps>
+  <Step title="Open the correct brand">
+    Select your organisation, then open Branding.
+  </Step>
+  <Step title="Review the wallet-pass design">
+    Change supported design controls and switch between **Apple Wallet** and
+    **Kardy mobile app** previews. The mobile app is Kardy's browser/PWA card,
+    not a separate app-store download. Use **Preview stamps** to inspect
+    progress. Both modes share one design and preview stamp count; switching
+    modes does not reset either. The Kardy app is the default preview. Choose
+    **Save pass design** once to save the shared design. Join-page previews use
+    the same draft artwork.
+  </Step>
+  <Step title="Save and check the customer view">
+    Open the browser membership or join page to verify the saved result.
+  </Step>
+</Steps>
+
+## Other Branding tabs
+
+- [QR signs](/features/qr-signs): choose a format, outlet and print layout.
+- [Customer join pages](/features/join-pages): inspect the joining experience.
+- [Native wallet passes](/features/native-wallets): separate signing and update requirements.
+
+Use the switches for **Show stamp numbers** and **Publish in Kardy discovery**
+where available, then save your changes. Discovery is labelled **App only** because
+it controls public Kardy listings, not native-wallet installation. Demo previews do not save. The Wallet
+pass preview is not proof that a native pass has been issued or installed;
+its sample QR cannot identify a real membership.

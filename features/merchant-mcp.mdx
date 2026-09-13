@@ -1,0 +1,77 @@
+---
+title: Merchant MCP
+description: Connect an agent to read your programme, rewards and outlets.
+---
+
+import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+
+**Where:** Merchant **Settings → Agent connections**.
+
+<Frame caption="Concept illustration with generic client symbols. Merchant access is Owner-approved and read-only.">
+  <FeatureIllustration type="merchant-mcp" />
+</Frame>
+
+Connect Claude, Codex or another compatible MCP client using OAuth or an expiring
+manual key. Only the organisation Owner can approve connections and manage keys.
+
+## Available tools
+
+| Tool          | Reads                                              |
+| ------------- | -------------------------------------------------- |
+| get_programme | Brand name, slug and tagline                       |
+| list_rewards  | Active rewards, stamp goals and redemption outlets |
+| list_outlets  | Active outlets and business addresses              |
+
+Access is read-only. Customer records, loyalty changes, billing and team changes
+are outside the available tools.
+
+## Permissions and usage
+
+**Agent connections** shows an **MCP limits** summary before the setup controls:
+
+- **Growth:** 1,000 tool calls per UTC calendar month, shared across the workspace.
+- **Request rate:** 120 requests per minute per workspace; pause before retrying a rate-limit error.
+- **Connections:** up to 10 active connections per brand, including manual keys and OAuth.
+
+Scale has an agreed finite monthly allowance. Use **View your actual limit,
+remaining calls and reset date** to check the configured allowance, which may
+differ from the Growth default. These are existing limits, not automatic overage charges.
+
+The Owner chooses scopes and can revoke access. OAuth requests require the correct
+resource and approved redirect. Manual keys expire and are shown only once.
+
+All keys and OAuth clients share the [workspace allowance](/features/usage-limits).
+See its counting rules and reset date before scheduling agent activity.
+
+Open **Settings → Usage & limits → MCP usage** as the Owner to see calls used,
+remaining calls, the monthly limit and the next reset date. Choose **Refresh usage**
+for the latest totals. Each authorised tool request and each results page counts
+once. Setup and discovery do not consume monthly calls; separate burst limits apply.
+
+The allowance resets on the first day of the month at **00:00 UTC**, not on your
+billing renewal date. Replacing a key or reconnecting an agent does not reset it.
+At the cap, wait for the reset or contact Kardy for more capacity. Daily usage
+history is not available yet. This is Kardy workspace usage, not your agent
+provider's token usage or subscription balance.
+
+<Note>
+  Implemented on dev; production rollout is separate. Your agent provider may
+  apply its own subscription or usage charges.
+</Note>
+
+<CardGroup cols={2}>
+  <Card
+    title="Connect Claude, Codex or another client"
+    icon="plug"
+    href="/technical/merchant-mcp"
+  >
+    Simple setup steps and OAuth illustrations.
+  </Card>
+  <Card
+    title="Security and troubleshooting"
+    icon="shield"
+    href="/technical/mcp-reference"
+  >
+    Protocol details, scopes and errors.
+  </Card>
+</CardGroup>

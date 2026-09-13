@@ -1,0 +1,80 @@
+---
+title: Quick start
+description: Choose your role and get ready to use Kardy at your business.
+---
+
+import { GuideChecklist } from "/snippets/guide-checklist.jsx";
+
+New to Kardy? Start with your own account, the right organisation, and the guide
+for your role. Customer memberships and merchant team access are separate.
+
+<CardGroup cols={2}>
+  <Card title="Staff" icon="qrcode" href="/guides/staff">
+    Get ready for your shift, award stamps, and check or redeem rewards.
+  </Card>
+  <Card title="Manager" icon="sliders" href="/guides/manager">
+    Run daily operations and manage permitted rewards, outlets, and card
+    designs.
+  </Card>
+  <Card title="Owner" icon="shield" href="/guides/owner">
+    Set up your organisation, invite your team, and manage access and billing.
+  </Card>
+  <Card title="Customer" icon="wallet" href="/customer-journey/overview">
+    Join a programme, open your cards, and show your Kardy QR at the counter.
+  </Card>
+</CardGroup>
+
+<GuideChecklist
+  guide="quick-start"
+  title="Ready for your first sign-in?"
+  items={[
+    "I have my own account, not a shared Owner login.",
+    "I know which organisation I should join.",
+    "I know my role and who to ask for access.",
+    "I understand that demo actions do not save real visits.",
+  ]}
+/>
+
+## Your first sign-in
+
+<Steps>
+  <Step title="Use your own Kardy account">
+    Open the [merchant portal](/portals#merchant). Do not use a shared Owner
+    login. If you were invited, sign in with the invited email, verify it, and
+    accept the invitation using the link from your Owner.
+  </Step>
+  <Step title="Check your organisation and role">
+    Check the organisation selector before working. Your role can differ between
+    brands. If the organisation is missing, ask its Owner to check your
+    invitation. Creating a new organisation is not a way to join an existing
+    team.
+  </Step>
+  <Step title="Check that the programme is ready">
+    The Owner needs to confirm activation, an active outlet, and an available
+    reward before the team records real visits. Demo mode uses fictional data
+    and does not save scans or changes.
+  </Step>
+  <Step title="Follow your role guide">
+    Staff can start with [their first shift](/guides/staff). Managers should
+    [review the programme](/guides/manager). Owners should work through
+    [organisation setup](/guides/owner).
+  </Step>
+</Steps>
+
+<Note>
+  Check [feature availability](/availability) before a rollout. Team controls
+  are implemented on dev; production rollout is separate. Invitation links are
+  shared manually, and email verification requires working auth email delivery.
+</Note>
+
+## Find your way around
+
+Owners and Managers use **Overview** for date-filtered totals, **Members** for
+reward readiness and customer history, and **Activity → List view** for searchable events.
+**Live view** pairs the latest recorded events with a colour-coded store globe;
+it does not track customer positions. Staff should use the authorised Scan flow.
+
+On desktop, **Collapse sidebar** switches to an icon-only rail. Use the expand
+button to bring labels back. Your preference is remembered on this browser.
+
+Unsure what you can change? See [Accounts & access](/accounts/overview).

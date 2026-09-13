@@ -1,0 +1,371 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Kardy Docs",
+  "errors": {
+    "404": {
+      "redirect": false,
+      "title": "That guide isn’t here.",
+      "description": "The link may be old or the guide may have moved. [Start with Kardy Docs](/intro) or [find help](/help)."
+    }
+  },
+  "description": "Set up and run Kardy loyalty for your organization. Guides to card design, rewards, outlets, customer journeys, security, and wallet integrations.",
+  "colors": {
+    "primary": "#6B42FF",
+    "light": "#A48BFF",
+    "dark": "#5932D2"
+  },
+  "logo": {
+    "light": "/images/logo-light.svg",
+    "dark": "/images/logo-dark.svg",
+    "href": "/intro"
+  },
+  "favicon": "/images/favicon.svg",
+  "seo": {
+    "indexing": "navigable",
+    "metatags": {
+      "robots": "index, follow, max-image-preview:large",
+      "og:site_name": "Kardy Docs",
+      "og:type": "website",
+      "twitter:card": "summary_large_image"
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Back to Kardy",
+        "href": "https://getkardy.com"
+      },
+      {
+        "label": "Support",
+        "href": "https://getkardy.com/support"
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      {
+        "header": "Legal",
+        "items": [
+          {
+            "label": "Legal overview",
+            "href": "/legal"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "/privacy"
+          },
+          {
+            "label": "Terms & Conditions",
+            "href": "/terms"
+          }
+        ]
+      },
+      {
+        "header": "Portals",
+        "items": [
+          {
+            "label": "Merchant portal",
+            "href": "/portals#merchant"
+          },
+          {
+            "label": "Consumer portal",
+            "href": "/portals#consumer"
+          }
+        ]
+      },
+      {
+        "header": "Guides",
+        "items": [
+          {
+            "label": "Start here",
+            "href": "/intro"
+          },
+          {
+            "label": "Features",
+            "href": "/features/overview"
+          },
+          {
+            "label": "Quick start",
+            "href": "/guides/quick-start"
+          },
+          {
+            "label": "Launch guide",
+            "href": "/guides/owner"
+          },
+          {
+            "label": "Accounts & access",
+            "href": "/accounts/overview"
+          },
+          {
+            "label": "Customer journey",
+            "href": "/customer-journey/overview"
+          },
+          {
+            "label": "MCP",
+            "href": "/features/merchant-mcp"
+          },
+          {
+            "label": "Technical",
+            "href": "/technical/overview"
+          }
+        ]
+      },
+      {
+        "header": "Need help?",
+        "items": [
+          {
+            "label": "Help and support",
+            "href": "/help"
+          },
+          {
+            "label": "Feature availability",
+            "href": "/availability"
+          }
+        ]
+      }
+    ]
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Start here",
+        "groups": [
+          {
+            "group": "Kardy",
+            "pages": [
+              "intro",
+              "updates",
+              "concepts",
+              "availability",
+              "portals",
+              "help"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Features",
+        "groups": [
+          {
+            "group": "Features",
+            "pages": [
+              "features/overview",
+              {
+                "group": "Loyalty programme",
+                "pages": [
+                  "features/branded-cards",
+                  "features/rewards",
+                  "features/scanning",
+                  "features/referrals"
+                ],
+                "icon": "gift"
+              },
+              {
+                "group": "Customer experience",
+                "pages": [
+                  "features/qr-signs",
+                  "features/join-pages",
+                  "features/browser-wallet",
+                  "features/native-wallets",
+                  "features/kardy-network",
+                  "features/email-preferences"
+                ],
+                "icon": "wallet"
+              },
+              {
+                "group": "Merchant workspace",
+                "pages": [
+                  "features/members",
+                  "features/analytics",
+                  "features/activities",
+                  "features/live-view",
+                  "features/outlets",
+                  "features/team-access",
+                  "features/multiple-brands"
+                ],
+                "icon": "store"
+              },
+              {
+                "group": "Communication",
+                "pages": ["features/broadcasts"],
+                "icon": "envelope"
+              }
+            ]
+          },
+          {
+            "group": "Plans & capacity",
+            "pages": ["features/usage-limits"]
+          }
+        ]
+      },
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Start and learn",
+            "pages": [
+              "guides/quick-start",
+              "guides/owner",
+              "guides/manager",
+              "guides/staff"
+            ]
+          },
+          {
+            "group": "Set up and run",
+            "pages": [
+              "merchants/setup",
+              "guides/qr-signs",
+              "merchants/scanning",
+              "merchants/billing"
+            ]
+          },
+          {
+            "group": "Your account",
+            "pages": ["accounts/overview"]
+          }
+        ]
+      },
+      {
+        "tab": "Customers",
+        "groups": [
+          {
+            "group": "Customer flows",
+            "pages": ["customer-journey/overview"]
+          },
+          {
+            "group": "Discover & join",
+            "pages": [
+              "customer-journey/discovery",
+              "customer-journey/join",
+              "customer-journey/home-screen"
+            ]
+          },
+          {
+            "group": "Use your wallet",
+            "pages": [
+              "customer-journey/wallet",
+              "customer-journey/show-qr",
+              "customer-journey/save-wallet"
+            ]
+          },
+          {
+            "group": "Earn & redeem",
+            "pages": [
+              "customer-journey/earn-stamps",
+              "customer-journey/rewards"
+            ]
+          },
+          {
+            "group": "Bring a friend",
+            "pages": [
+              "customer-journey/referrals",
+              "customer-journey/join-referral",
+              "customer-journey/track-referrals"
+            ]
+          },
+          {
+            "group": "Account & safety",
+            "pages": [
+              "customer-journey/account",
+              "customer-journey/recover-account",
+              "customer-journey/replace-qr"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "MCP",
+        "groups": [
+          {
+            "group": "Merchant MCP",
+            "pages": ["features/merchant-mcp", "technical/merchant-mcp"]
+          },
+          {
+            "group": "Reference",
+            "pages": ["technical/mcp-reference"]
+          }
+        ]
+      },
+      {
+        "tab": "Technical",
+        "groups": [
+          {
+            "group": "How Kardy works",
+            "pages": ["technical/overview", "technical/qr-and-security"]
+          }
+        ]
+      }
+    ]
+  },
+  "redirects": [
+    {
+      "source": "/features/brown-network",
+      "destination": "/features/kardy-network"
+    },
+    {
+      "source": "/legal",
+      "destination": "https://getkardy.com/legal"
+    },
+    {
+      "source": "/privacy",
+      "destination": "https://getkardy.com/privacy"
+    },
+    {
+      "source": "/terms",
+      "destination": "https://getkardy.com/terms"
+    },
+    {
+      "source": "/consumers/overview",
+      "destination": "/customer-journey/overview"
+    },
+    {
+      "source": "/consumers/join",
+      "destination": "/customer-journey/join"
+    },
+    {
+      "source": "/consumers/wallet",
+      "destination": "/customer-journey/wallet"
+    },
+    {
+      "source": "/consumers/rewards",
+      "destination": "/customer-journey/rewards"
+    },
+    {
+      "source": "/consumers/account",
+      "destination": "/customer-journey/account"
+    },
+    {
+      "source": "/merchants/programme",
+      "destination": "/features/rewards"
+    },
+    {
+      "source": "/merchants/brands-and-outlets",
+      "destination": "/features/outlets"
+    },
+    {
+      "source": "/merchants/roles",
+      "destination": "/features/team-access"
+    },
+    {
+      "source": "/merchants/multiple-brands",
+      "destination": "/features/multiple-brands"
+    },
+    {
+      "source": "/merchants/broadcasts",
+      "destination": "/features/broadcasts"
+    },
+    {
+      "source": "/merchants/branding",
+      "destination": "/features/branded-cards"
+    },
+    {
+      "source": "/merchants/overview",
+      "destination": "/guides/owner"
+    },
+    {
+      "source": "/technical/wallet-and-integrations",
+      "destination": "/features/native-wallets"
+    }
+  ]
+}

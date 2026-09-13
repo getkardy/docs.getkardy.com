@@ -1,0 +1,125 @@
+---
+title: Stamps and rewards
+description: Make the next visit and the next reward easy to understand.
+---
+
+import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+
+**Where:** Merchant workspace → **Rewards → Customise rewards**.
+
+<Frame caption="Example reward: complete the stamp goal, then staff confirm the claim.">
+  <FeatureIllustration type="rewards" />
+</Frame>
+
+## Keep the promise simple
+
+Choose a reward your team can explain quickly: for example, “Collect 10 stamps for a
+coffee on us.” Tell members what qualifies for a stamp and what the reward includes.
+
+Open **Rewards** to see the performance list, then **Customise rewards** to edit the
+reward label and stamp goal. Use **Reward performance** to return to the list. Brand settings also
+include your name, logo, colour, and membership expiry configuration.
+
+## Understand performance
+
+The **Reward redemptions** graph is visible by default above the performance table. It shows daily recorded claims across the programme,
+including historical rewards. Choose 7, 30 or 90 complete UTC days, or a custom
+range of up to 366 days ending before today. Compare with the preceding equal-length
+period, hover to inspect a day, or choose **View data**. Click once to start a
+highlighted range and again to finish; Clear or Escape removes it.
+Today is excluded. Incomplete activity is shown as unavailable, not zero.
+
+- **Claimed:** all-time redemption events matching the reward's current name, including repeat claims.
+- **On track:** active assigned members with at least one stamp but below their saved goal.
+- **Ready:** active assigned members who have reached their saved goal.
+- **Not started:** active assigned members with zero stamps.
+
+Historical claims store reward names, so renaming a reward excludes claims under its old
+name. Duplicate names show Unavailable rather than merging unrelated rewards. Member progress
+is grouped by reward ID and uses each membership's saved goal. It is a current snapshot,
+not a forecast or conversion rate.
+
+Unavailable does not mean zero. Progress totals are unavailable when a reward has more than
+1,000 assigned active memberships, or when the full count cannot be loaded. Demo statistics
+are illustrative and are not calculated from the demo member list.
+
+## Track reward claims
+
+The **Reward claims** table covers all rewards and outlets. Use **Add filter** and
+the **Reward** and **Status** filter chips: **Waiting to be claimed** shows members whose current reward
+has reached its saved stamp goal; **Claimed** shows recorded redemptions with
+member, reward name, date and outlet. Totals follow the selected reward.
+Click a reward name in the performance table to filter its claims. Linked reward
+names in the claims table open that reward’s settings. Historical names without
+a matching current reward stay as plain text.
+
+Reward filtering uses recorded reward IDs, not names. Older claims without an ID
+remain visible under **All rewards**. The graph always covers the whole programme.
+Use **Refresh** for the latest activity; staff still redeem through **Scan**.
+
+Waiting counts one current reward per active, unexpired membership and excludes
+inactive or deleted rewards. Extra stamps carry forward after redemption; they are
+not counted as multiple future rewards. Programme access and outlet eligibility
+are checked at redemption. A waiting total is unavailable if the full report cannot
+be loaded within the 1,000-membership reporting limit. Unavailable is not zero.
+
+Claimed is all-time history, including repeat redemptions and historical reward
+names. Missing outlet or member details are labelled rather than guessed.
+
+## Before saving changes
+
+Setup starts at **10 stamps**. Set each reward's target between 1 and 100 stamps.
+The initial setup supports up to 10 rewards. The editor has a 100-level ceiling,
+but the [workspace reward allowance](/features/usage-limits) applies first,
+including archived history.
+Select **Preview** beside a reward to inspect its card
+using your saved branding.
+
+Each target is a stamp cost, not a cumulative milestone. Redemption deducts the
+current reward's cost and advances to the next level, or repeats the final level.
+Excess stamps carry forward. For example, a member with 12 stamps who claims a
+10-stamp reward keeps 2 towards the next reward. Bonus stamps follow the same rule.
+Each additional claim requires a separate confirmation.
+
+- Check that the reward wording matches what your outlets can honour.
+- Confirm the stamp goal with the people serving customers.
+- Review any expiry setting before promising that stamps never expire.
+- Changing a reward's label or goal updates memberships assigned to it without
+  discarding excess stamps. Review the effect before changing a published promise.
+
+## Choose redemption outlets
+
+In the reward editor, use **Redeem at** to select eligible outlets. Leave every
+outlet unchecked to permit all active outlets. A selected list restricts claims to
+those outlets, and staff must choose an eligible active outlet when redeeming.
+Kardy enforces this on the server. An outlet that becomes inactive cannot redeem
+the reward; if none of the selected outlets remains active, update the restrictions.
+
+Signup-outlet attribution records where the member joined. It does not change the
+reward's redemption restrictions or split the brand's stamp balance.
+
+## Delete a reward
+
+Owners and Managers can delete any reward, including the default or last reward.
+Read the confirmation before proceeding: deletion immediately removes the reward
+from the programme and makes it unclaimable, even for members who unlocked it.
+
+Unclaimed progress on that reward, including excess stamps, resets to zero. Affected
+members move to the first remaining active reward. Deleting the last reward pauses
+earning and redemption; adding a new reward resumes earning from zero. Other members'
+assigned rewards are unchanged. Past redemption events remain in history.
+
+Deletion cannot be undone. An old screenshot or already-open card does not preserve
+the right to claim a removed reward.
+
+## Optional referral rewards
+
+Open the separate **Referrals** page to enable referrals and set stamp bonuses for the
+referring member and their friend. A signup alone earns nothing: qualification needs
+the new friend's first actual staff-issued stamp and verified accounts. Read
+[invite and qualification rules](/features/referrals) before advertising a bonus.
+
+Branding changes how the card looks, not who the QR identifies.
+Use [Branding](/features/branded-cards) for the QR sign, wallet preview, and join-page
+preview. Check [feature availability](/availability) for dev and deployment status.
+For daily use, continue to [scan and redeem](/merchants/scanning).

@@ -1,0 +1,796 @@
+/* Same surface, line, ink and accent tokens as landing-merchant-features.module.css.
+   Art stays light in both documentation themes, like an embedded product preview. */
+.kardy-feature-art {
+  --bf-paper: #fff;
+  --bf-stage: #f7f7fa;
+  --bf-line: #e2e2e9;
+  --bf-ink: #171a18;
+  --bf-muted: #61616d;
+  --bf-purple: #6b43ff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: clamp(18px, 4vw, 30px);
+  border-radius: 14px;
+  background: var(--bf-stage);
+  color: var(--bf-ink);
+  text-align: left;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  container-type: inline-size;
+}
+.kardy-feature-art * {
+  box-sizing: border-box;
+}
+.kardy-feature-art b,
+.kardy-feature-art strong {
+  color: inherit;
+  font-weight: 600;
+}
+.kardy-feature-art small {
+  display: block;
+  color: var(--bf-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.kardy-feature-art .bf-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin: 0;
+}
+.bf-intro {
+  margin-bottom: 24px;
+}
+.bf-intro > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #7354a1;
+  font-size: 11px;
+}
+.bf-intro .bf-icon {
+  width: 15px;
+  height: 15px;
+}
+.bf-headline {
+  margin-top: 12px;
+  font-size: clamp(23px, 4cqw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.9px;
+  line-height: 1.12;
+}
+.bf-headline em {
+  color: var(--bf-purple);
+  font-style: normal;
+}
+.bf-scene {
+  max-width: 560px;
+  margin: 0 auto;
+}
+.bf-panel {
+  padding: 18px;
+  border: 1px solid #dedee7;
+  border-radius: 17px;
+  background: var(--bf-paper);
+  box-shadow:
+    0 3px 0 #e9e7ef,
+    0 12px 30px #30234405;
+  min-width: 0;
+}
+.bf-panel-title {
+  display: grid;
+  gap: 3px;
+  margin-bottom: 17px;
+}
+.bf-panel-title > b {
+  font-size: 16px;
+  letter-spacing: -0.3px;
+}
+.bf-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: center;
+}
+.bf-pair > * {
+  min-width: 0;
+}
+.bf-field {
+  margin: 0 0 14px;
+}
+.bf-field > small {
+  margin-bottom: 5px;
+}
+.bf-field > div {
+  background: white;
+  border: 1px solid var(--bf-line);
+  border-radius: 7px;
+  padding: 9px 10px;
+  font-size: 12px;
+}
+.bf-label {
+  display: block;
+  color: var(--bf-muted);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+.bf-card-wrap > .bf-label {
+  margin-bottom: 12px;
+}
+.kardy-feature-art .bf-brand {
+  display: block;
+  margin: 0;
+  width: 112px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+}
+.bf-pass {
+  overflow: hidden;
+  background: #e8deff;
+  border: 1px solid #dfd4f4;
+  border-radius: 18px;
+  box-shadow: 0 4px 0 #e3e2e9;
+}
+.bf-pass-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 12px;
+}
+.bf-pass-top > span {
+  text-align: right;
+}
+.bf-pass-top small {
+  font-size: 8px;
+}
+.bf-pass-top b {
+  font-size: 19px;
+}
+.bf-pass-top b small {
+  display: inline;
+  font-size: 10px;
+}
+.bf-pass-body {
+  padding: 16px 14px;
+  background: linear-gradient(135deg, #eee6ff, #d7d8db);
+  border-top: 1px solid #d8c9f2;
+  border-bottom: 1px solid #d8c9f2;
+}
+.bf-pass-body > b {
+  font-size: 20px;
+  letter-spacing: -0.6px;
+}
+.bf-stamps {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  margin: 20px 0 4px;
+}
+.bf-stamps i {
+  width: 11px;
+  height: 11px;
+  border: 1px solid #88818e;
+  border-radius: 100%;
+}
+.bf-stamps i.bf-stamped {
+  background: #293222;
+  border-color: #293222;
+}
+.bf-pass-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  font-size: 10px;
+}
+.bf-pass-foot small {
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  margin-bottom: 3px;
+}
+.bf-swatches {
+  display: flex;
+  gap: 9px;
+  margin: 8px 0 14px;
+}
+.bf-swatches > span {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  color: white;
+}
+.bf-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 0;
+  min-width: 0;
+}
+.bf-row + .bf-row {
+  border-top: 1px solid var(--bf-line);
+}
+.bf-row > .bf-icon {
+  color: #8d8599;
+}
+.bf-row > div {
+  flex: 1;
+  min-width: 0;
+}
+.bf-row b {
+  display: block;
+  font-size: 12px;
+}
+.bf-row-end {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--bf-muted);
+}
+.bf-pill {
+  display: inline-block;
+  color: #7354a1;
+  border: 1px solid #e0d7f3;
+  background: #f8f5ff;
+  padding: 4px 7px;
+  border-radius: 6px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+.bf-person {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.bf-person b {
+  display: block;
+  font-size: 12px;
+}
+.bf-person small {
+  font-size: 10px;
+}
+.bf-avatar {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #e5daf6;
+  color: #7354a1;
+  font-size: 12px;
+}
+.bf-avatar-green {
+  background: #e5ebdb;
+  color: #43553a;
+}
+.bf-chat {
+  max-width: 95%;
+  margin: 18px 0 12px auto;
+  border-radius: 13px 13px 3px 13px;
+  padding: 12px;
+  background: #6b43ff;
+  color: white;
+  font-size: 12px;
+}
+.bf-invite {
+  padding: 12px 12px 0;
+  border: 1px solid #ddd1f6;
+  border-radius: 11px;
+}
+.bf-invite .bf-row {
+  margin-top: 9px;
+  border-top: 1px solid #e5dcf3;
+  color: #6b43ff;
+}
+.bf-invite .bf-row b {
+  font-size: 10px;
+  font-weight: 400;
+}
+.kardy-feature-art .bf-receipt {
+  text-align: right;
+  font-size: 9px;
+  margin-top: 7px;
+}
+.bf-coffee {
+  display: grid;
+  place-items: center;
+  min-height: 104px;
+  border-radius: 12px;
+  background: #edf1e8;
+  color: #43553a;
+}
+.bf-coffee .bf-icon {
+  width: 66px;
+  height: 66px;
+  stroke-width: 1;
+}
+.bf-scene-referrals > .bf-pair {
+  align-items: stretch;
+}
+.bf-bonus {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid #d8e1cf;
+  border-top: 4px solid #dfe7d8;
+  border-radius: 15px;
+  background: #f5f8f1;
+  color: #34472e;
+}
+.bf-bonus > .bf-pair {
+  margin: 14px 0;
+}
+.bf-bonus strong {
+  display: block;
+  margin-top: 12px;
+  font-size: 36px;
+  letter-spacing: -1.5px;
+  line-height: 1;
+}
+.bf-bonus strong small {
+  display: inline-block;
+  color: #34472e;
+  font-size: 11px;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+.bf-bonus > small {
+  border-top: 1px solid #d8e1cf;
+  padding-top: 10px;
+}
+.bf-tool {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  margin-top: 7px;
+  border: 1px solid #eeedf2;
+  border-radius: 8px;
+  background: #f6f6f8;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+  color: #464352;
+}
+.bf-tool .bf-icon {
+  width: 14px;
+  height: 14px;
+  color: #9180ba;
+}
+.bf-split-note {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  font-size: 10px;
+  color: var(--bf-muted);
+}
+.bf-wires {
+  width: 100%;
+  height: 46px;
+  display: block;
+  margin: 0;
+  fill: none;
+  stroke: #cbbce8;
+  stroke-width: 1.5;
+}
+.bf-branches {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.bf-client {
+  text-align: center;
+}
+.bf-client-mark {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 15px;
+  border: 1px solid #e1dce9;
+  box-shadow: 0 3px 0 #e7e2ef;
+  margin: 0 auto 9px;
+  background: #fbf8ff;
+  color: #7957b4;
+}
+.bf-client-0 {
+  background: #fff8f3;
+}
+.bf-client-1 {
+  background: #232625;
+}
+.kardy-feature-art .bf-client-mark img {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  border-radius: 0;
+}
+.bf-client b {
+  font-size: 11px;
+  font-weight: 400;
+}
+.bf-email {
+  display: grid;
+  gap: 10px;
+  padding: 15px 0 20px;
+  border-bottom: 1px solid var(--bf-line);
+}
+.bf-email b {
+  font-size: 23px;
+  letter-spacing: -0.6px;
+}
+.bf-email span {
+  color: var(--bf-muted);
+  font-size: 12px;
+}
+.bf-search {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid var(--bf-line);
+  background: #f7f7fa;
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--bf-muted);
+  font-size: 12px;
+}
+.bf-search .bf-icon {
+  width: 15px;
+  height: 15px;
+}
+.bf-member-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--bf-line);
+}
+.bf-member-row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.bf-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+.bf-metrics > div {
+  padding: 12px;
+  border: 1px solid var(--bf-line);
+  border-radius: 10px;
+}
+.bf-metrics strong {
+  font-size: 29px;
+  letter-spacing: -1px;
+  display: block;
+  margin-top: 6px;
+}
+.bf-meter {
+  height: 6px;
+  border-radius: 4px;
+  background: #ede8f8;
+  overflow: hidden;
+  margin-bottom: 13px;
+}
+.bf-meter span {
+  display: block;
+  height: 100%;
+  background: #8b6ce1;
+  border-radius: inherit;
+}
+.bf-usage {
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--bf-line);
+}
+.bf-root {
+  max-width: 270px;
+  margin: 0 auto;
+}
+.bf-root .bf-brand {
+  margin: 0 auto;
+}
+.bf-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 8px;
+  background: white;
+  border: 1px solid var(--bf-line);
+  border-radius: 11px;
+  text-align: center;
+}
+.bf-node b {
+  font-size: 11px;
+}
+.bf-node small {
+  font-size: 10px;
+}
+.bf-node > .bf-icon {
+  color: #7354a1;
+}
+.bf-node .bf-brand {
+  width: 100%;
+  max-width: 112px;
+}
+.bf-under-note {
+  display: block;
+  margin-top: 17px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--bf-muted);
+}
+.bf-toggle-wrap {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.bf-toggle {
+  display: block;
+  width: 32px;
+  height: 19px;
+  padding: 3px;
+  background: #d8d8de;
+  border-radius: 20px;
+}
+.bf-toggle::after {
+  content: "";
+  display: block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 1px 2px #0002;
+}
+.bf-toggle-on {
+  background: #6b43ff;
+}
+.bf-toggle-on::after {
+  margin-left: auto;
+}
+.bf-categories {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 10px;
+  color: var(--bf-muted);
+  padding: 14px 0;
+}
+.bf-offer {
+  border-radius: 18px;
+  padding: 20px;
+  background: linear-gradient(130deg, #e1edc9, #aac784);
+  color: #294026;
+}
+.bf-offer > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 35px 0 12px;
+}
+.bf-offer b {
+  font-size: 25px;
+  letter-spacing: -0.7px;
+}
+.bf-offer .bf-icon {
+  width: 45px;
+  height: 45px;
+}
+.bf-offer small {
+  color: #43553a;
+}
+.bf-action {
+  background: #6b43ff;
+  color: white;
+  border-radius: 7px;
+  padding: 10px;
+  text-align: center;
+  font-size: 11px;
+  margin-top: 12px;
+}
+.bf-qr-placeholder {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 24px 8px;
+  margin-top: 18px;
+  border: 1px dashed #cbc3d7;
+  border-radius: 9px;
+  text-align: center;
+  color: #7354a1;
+  font-size: 12px;
+}
+.bf-qr-placeholder .bf-icon {
+  width: 38px;
+  height: 38px;
+}
+.bf-device-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+  gap: 25px;
+  align-items: center;
+}
+.bf-phone {
+  background: linear-gradient(155deg, #f8f7fc 20%, #ece5fb);
+  border: 5px solid #252626;
+  border-radius: 29px;
+  padding: 10px 7px 9px;
+  box-shadow:
+    0 0 0 2px #b8b6bd,
+    0 9px 18px #23143315;
+}
+.bf-phone-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 8px;
+  margin: 0 5px 15px;
+}
+.bf-phone-status i {
+  width: 58px;
+  height: 16px;
+  background: #161717;
+  border-radius: 20px;
+}
+.bf-phone-content {
+  padding: 0 3px;
+}
+.bf-phone-content > .bf-brand {
+  width: 90px;
+  height: 32px;
+}
+.bf-device-heading {
+  display: block;
+  font-size: 18px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin: 12px 0 20px;
+}
+.bf-phone .bf-field > div {
+  font-size: 10px;
+  padding: 7px;
+}
+.bf-phone .bf-field small {
+  font-size: 9px;
+}
+.bf-phone .bf-field {
+  margin-bottom: 10px;
+}
+.bf-phone .bf-pass-top {
+  padding: 10px 8px;
+}
+.bf-phone .bf-pass-top .bf-brand {
+  width: 90px;
+  height: 32px;
+}
+.bf-phone .bf-pass-foot {
+  font-size: 9px;
+  padding: 10px;
+}
+.bf-phone .bf-pass-foot small {
+  font-size: 7px;
+}
+.bf-home-bar {
+  margin: 19px auto 0;
+  width: 65px;
+  height: 3px;
+  border-radius: 3px;
+  background: #242326;
+}
+.bf-device-note {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+}
+.bf-device-note > b {
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+.bf-device-note > span:not(.bf-pill):not(.bf-app-mark) {
+  color: var(--bf-muted);
+  font-size: 12px;
+}
+.bf-app-mark {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 13px;
+  background: #171a18;
+  color: white;
+  font-weight: 650;
+  font-size: 36px;
+  letter-spacing: -3px;
+}
+.bf-example {
+  margin-top: 22px;
+  text-align: center;
+  color: #807987;
+  font-size: 9px;
+}
+@container (max-width: 420px) {
+  .bf-pair {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .bf-bonus .bf-pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .bf-panel {
+    padding: 14px;
+  }
+  .bf-card-wrap {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .bf-device-pair {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 26px;
+  }
+  .bf-phone {
+    width: 230px;
+    max-width: 100%;
+  }
+  .bf-device-note {
+    width: 100%;
+  }
+  .bf-metrics {
+    gap: 6px;
+  }
+  .bf-metrics > div {
+    padding: 10px 7px;
+  }
+  .bf-metrics small {
+    font-size: 10px;
+    min-height: 32px;
+  }
+  .bf-metrics strong {
+    font-size: 26px;
+  }
+  .bf-branches {
+    gap: 6px;
+  }
+  .bf-node {
+    padding: 11px 5px;
+  }
+  .bf-node b {
+    font-size: 10px;
+  }
+  .bf-node small {
+    font-size: 9px;
+  }
+  .bf-bonus strong {
+    font-size: 32px;
+  }
+  .bf-bonus strong small {
+    display: block;
+    margin-top: 5px;
+  }
+  .bf-bonus .bf-person {
+    gap: 6px;
+  }
+  .bf-bonus .bf-avatar {
+    width: 26px;
+    height: 26px;
+  }
+}

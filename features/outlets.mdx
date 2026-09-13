@@ -1,0 +1,86 @@
+---
+title: Outlet management
+description: Keep several physical shops under one brand and one programme.
+---
+
+import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+
+**Where:** Merchant workspace → **Locations**.
+
+<Frame caption="Concept illustration: physical outlets share one brand programme.">
+  <FeatureIllustration type="outlets" />
+</Frame>
+
+Create one brand for a chain, then add each shop as an outlet.
+
+## Add or update an outlet
+
+Open **Locations** in your merchant workspace. Select a store name, or use its
+three-dot menu and choose **View store**, to open its read-only overview.
+Choose **Edit location** to change the address, contact details, coordinates or status.
+**Location overview** returns without saving; a successful save returns to the overview.
+Select **Add store** to create a location. Enter its details and choose **Save store**;
+only that store is saved. **All locations** returns to the list.
+
+Outlets are peers; there is no main-store designation to manage. QR signs default
+to **All locations**. Choose a specific active outlet when you need an outlet-specific sign.
+
+Postal code is required during setup. Unit number and outlet phone are optional;
+you do not need to enter map coordinates.
+
+## Keep progress with the brand
+
+A member's loyalty membership belongs to the brand. Visits can be recorded at different
+outlets without creating a new membership at each one. Choose the correct outlet
+when scanning so visit reporting stays accurate.
+
+## Compare outlet activity
+
+**Locations** focuses on the store network and performance table, without repeating
+an all-locations statistics panel. Open a store to see **Performance this month**
+and its daily or monthly visit graph. Use **Refresh visits** for the latest totals.
+For date-filtered brand totals, use **Overview**.
+
+Visits count staff-issued stamp events attributed to a location, not foot traffic
+or read-only QR checks. Dates use UTC. The daily graph includes today's partial
+activity; the monthly graph includes the current month so far. Daily comparisons
+use the corresponding day 30 days earlier, which may be a complete day.
+
+When the activity history exceeds the reporting limit or cannot be fully loaded,
+the graph shows unavailable rather than an estimated trend. Exact totals can still
+be displayed separately. Demo values are illustrative.
+
+The compact store table includes an address preview, country flag where supported, and an active-status indicator.
+**Compare by** changes the ranking metric; the highest value is marked beside that
+metric, including ties. An inactive store does not show the active pulse.
+
+Each location overview shows this month's visits, rewards redeemed and unique
+members who received a stamp. Monthly statistics use UTC; incomplete totals show
+**Unavailable**, not zero.
+
+**Recent activity** shows recorded scans, stamps and reward redemptions, newest
+first, ten per page across all dates. Search by member name or code, filter by
+activity type and use Previous/Next for older entries. Each row shows the member, the recorded staff account, the reward name
+when available, and the timestamp in the outlet's time zone.
+
+Read-only membership checks and failed scans are not recorded in this activity
+log. A missing staff name does not erase attribution: the recorded account ID is
+shown when permissions prevent displaying the name. Activity is read-only and
+available to Owners and Managers in the same organisation.
+
+See [Dashboard and reporting](/features/analytics) for location leaders, reporting
+periods and the meaning of incomplete data.
+
+## Preserve history
+
+For an outlet that is no longer serving members, review its status before removing it.
+Scan and redemption records are audit history and must not be deleted to hide a mistake.
+
+Outlet-specific team restrictions are not yet documented as available. See
+[roles](/features/team-access) before planning access for your team.
+
+## Additional outlets
+
+Arrange billing and an outlet allowance before adding or reactivating stores beyond
+your capacity. See [usage limits](/features/usage-limits); additional outlets do not
+automatically multiply other allowances.
