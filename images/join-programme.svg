@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">From your counter to their Kardy wallet</title>
+  <desc id="desc">A countertop join sign leads to a phone showing Sunday Coffee's join page, then a new membership card with zero stamps. Customers sign in or create an account before joining. The QR graphic and screens are illustrative, not functional.</desc>
+  <defs>
+    <clipPath id="card"><rect width="270" height="212" rx="20"/></clipPath>
+    <g id="heart" fill="none" stroke="#9C91AC" stroke-width="1.6"><path d="M0 3C0-1 5-2 7 2c2-4 7-3 7 1 0 4-7 8-7 8S0 7 0 3Z"/></g>
+    <g id="finder" fill="none" stroke="#171A18" stroke-width="5"><rect width="24" height="24" rx="2"/><rect x="9" y="9" width="6" height="6" fill="#171A18" stroke="none"/></g>
+  </defs>
+  <rect width="1000" height="600" rx="24" fill="#F7F6FB"/>
+  <ellipse cx="514" cy="315" rx="209" ry="237" fill="#ffebf3"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#171A18">
+    <text x="36" y="45" font-size="23" font-weight="700" letter-spacing="-.7">Your counter. Their next favourite.</text>
+    <text x="36" y="70" font-size="14" fill="#706A7A">A join link turns a first visit into a membership.</text>
+    <!-- Physical sign: fixed Kardy branding, with an explicitly illustrative QR. -->
+    <ellipse cx="179" cy="439" rx="123" ry="13" fill="#E6E2EC"/>
+    <path d="m95 420 17-177h148l25 188H88Z" fill="#EEECF3" stroke="#D6D1E0"/>
+    <g transform="translate(64 154) rotate(-5 115 137)">
+      <rect x="-7" y="-7" width="244" height="291" rx="14" fill="white" fill-opacity=".5" stroke="#D9D4E4"/>
+      <rect width="230" height="277" rx="8" fill="white" stroke="#E6E1ED"/>
+      <rect x="20" y="19" width="28" height="28" rx="8" fill="#ca1c67"/>
+      <text x="34" y="39" text-anchor="middle" font-size="18" font-weight="700" fill="white">S</text>
+      <text x="57" y="38" font-size="14" font-weight="700">Sunday Coffee</text>
+      <text x="115" y="79" text-anchor="middle" font-size="21" font-weight="700" letter-spacing="-.6">Make your next</text>
+      <text x="115" y="104" text-anchor="middle" font-size="21" font-weight="700" letter-spacing="-.6">visit count.</text>
+      <g transform="translate(75 124)">
+        <use href="#finder"/><use href="#finder" x="56"/><use href="#finder" y="56"/>
+        <path d="M34 0h12v8H34zM34 16h8v16h-8zM0 34h16v8H0zM24 34h8v16h-8zM42 36h12v8H42zM62 34h18v8H62zM34 56h10v24H34zM54 52h8v12h-8zM68 50h12v8H68zM52 72h12v8H52zM70 66h10v14H70z" fill="#171A18"/>
+      </g>
+      <text x="115" y="222" text-anchor="middle" font-size="10" fill="#81798A">Illustrative QR</text>
+      <text x="115" y="244" text-anchor="middle" font-size="15" font-weight="700">Scan to join</text>
+      <text x="115" y="265" text-anchor="middle" font-size="10" fill="#706A7A">Powered by Kardy</text>
+    </g>
+    <rect x="67" y="467" width="224" height="32" rx="16" fill="white" stroke="#E1DCE9"/>
+    <path d="m86 484 7-7m-3 11-2 2a4 4 0 0 1-6-6l3-3m5-2 2-2a4 4 0 0 1 6 6l-3 3" fill="none" stroke="#ca1c67" stroke-width="1.5"/>
+    <text x="106" y="488" font-size="13" fill="#706A7A">Or share your join link</text>
+    <!-- A single phone is the focal point, rather than another three-tile diagram. -->
+    <path d="M304 292c24-27 37-32 66-22m-9-9 9 9-12 4" fill="none" stroke="#A99CC5" stroke-width="1.6" stroke-linecap="round"/>
+    <rect x="389" y="105" width="258" height="405" rx="39" fill="#DFD9E9"/>
+    <rect x="382" y="97" width="258" height="405" rx="39" fill="#29282D" stroke="#A6A1AD" stroke-width="2"/>
+    <rect x="389" y="104" width="244" height="391" rx="33" fill="white"/>
+    <rect x="475" y="112" width="75" height="18" rx="9" fill="#171A18"/>
+    <text x="409" y="127" font-size="10" font-weight="700">9:41</text>
+    <path d="M602 120h13v7h-13z" fill="none" stroke="#171A18"/><path d="M605 122h8v3" stroke="#171A18" stroke-width="2"/>
+    <rect x="404" y="146" width="214" height="25" rx="8" fill="#F7F6FB"/>
+    <text x="511" y="163" text-anchor="middle" font-size="11" fill="#706A7A">getkardy.com</text>
+    <rect x="487" y="189" width="48" height="48" rx="14" fill="#171A18"/>
+    <text x="511" y="224" text-anchor="middle" font-family="Georgia, serif" font-size="35" font-weight="700" fill="#ffebf3">s</text>
+    <text x="511" y="267" text-anchor="middle" font-size="23" font-weight="700" letter-spacing="-.8">Join Sunday Coffee</text>
+    <text x="511" y="291" text-anchor="middle" font-size="12" fill="#706A7A">Collect stamps. Enjoy your next cup.</text>
+    <rect x="406" y="310" width="210" height="56" rx="12" fill="#F4F0FC"/>
+    <text x="421" y="333" font-size="14" font-weight="700">A coffee, on us.</text>
+    <text x="421" y="352" font-size="11" fill="#706A7A">10 stamps · View programme terms</text>
+    <rect x="406" y="387" width="210" height="34" rx="9" fill="#171A18"/>
+    <text x="511" y="409" text-anchor="middle" font-size="12" font-weight="700" fill="white">Sign in to join →</text>
+    <text x="511" y="446" text-anchor="middle" font-size="12" fill="#706A7A">New to Kardy? Create an account</text>
+    <rect x="468" y="482" width="88" height="4" rx="2" fill="#171A18"/>
+    <!-- The earned outcome floats beside the phone, carrying the shop's visual identity. -->
+    <path d="M652 278c20-25 28-28 48-20m-8-9 8 9-11 4" fill="none" stroke="#A99CC5" stroke-width="1.6" stroke-linecap="round"/>
+    <g transform="translate(696 203) rotate(5 135 106)">
+      <g clip-path="url(#card)">
+        <rect width="270" height="212" fill="#ffebf3"/>
+        <path d="M-15 48C74-18 162 136 290 39v59C167 194 81 52-15 124Z" fill="#FFD85C"/>
+        <path d="M-15 122c104-72 194 80 305-15v57C172 249 84 92-15 172Z" fill="#ca1c67"/>
+        <path d="M-15 183c115-68 196 70 305-15v22c-112 86-200-55-305 17Z" fill="#FFD85C"/>
+      </g>
+      <text x="20" y="34" font-family="Georgia, serif" font-size="28" font-weight="700" letter-spacing="-1">sunday</text>
+      <text x="21" y="49" font-size="8" letter-spacing="2">COFFEE HOUSE</text>
+      <rect x="14" y="72" width="242" height="104" rx="14" fill="white"/>
+      <use href="#heart" x="34" y="93"/><use href="#heart" x="81" y="93"/><use href="#heart" x="128" y="93"/><use href="#heart" x="175" y="93"/><use href="#heart" x="222" y="93"/>
+      <use href="#heart" x="34" y="124"/><use href="#heart" x="81" y="124"/><use href="#heart" x="128" y="124"/><use href="#heart" x="175" y="124"/><use href="#heart" x="222" y="124"/>
+      <text x="29" y="160" font-size="11" fill="#706A7A">0 / 10 stamps</text>
+      <text x="241" y="160" text-anchor="end" font-size="11" fill="#706A7A">A coffee, on us.</text>
+    </g>
+    <rect x="737" y="158" width="183" height="34" rx="17" fill="white" stroke="#DDD5EC"/>
+    <circle cx="757" cy="175" r="10" fill="#ffebf3"/>
+    <path d="m753 175 3 3 5-6" fill="none" stroke="#ca1c67" stroke-width="1.7" stroke-linecap="round"/>
+    <text x="775" y="180" font-size="13" font-weight="700">Membership joined</text>
+    <text x="830" y="460" text-anchor="middle" font-size="14" fill="#706A7A">Their card. Ready for a first stamp.</text>
+    <g font-size="17" font-weight="700"><text x="179" y="543" text-anchor="middle">Share your programme</text><text x="511" y="543" text-anchor="middle">Sign in and join</text><text x="830" y="543" text-anchor="middle">Make the next visit count</text></g>
+    <text x="500" y="577" text-anchor="middle" font-size="12" fill="#81798A">Illustrative example · Joining creates a membership, not a stamp.</text>
+  </g>
+</svg>

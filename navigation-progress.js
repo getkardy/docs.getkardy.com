@@ -121,8 +121,8 @@
   from { left: -80%; width: 80%; }
   to { left: 110%; width: 10%; }
 }
-`;var x=document.documentElement;if(!document.getElementById("kardy-navigation-progress")){let t=document.createElement("style");t.id="kardy-navigation-progress",t.textContent=`${S({color:"#6B42FF",height:"2px"})}
-    html.dark { --bprogress-color: #A48BFF; }
+`;var x=document.documentElement;if(!document.getElementById("kardy-navigation-progress")){let t=document.createElement("style");t.id="kardy-navigation-progress",t.textContent=`${S({color:"#ca1c67",height:"2px"})}
+    html.dark { --bprogress-color: #ff8fbe; }
     @media (prefers-reduced-motion: reduce) {
       .bprogress, .bprogress * { transition: none !important; animation: none !important; }
     }`,document.head.appendChild(t);let e=matchMedia("(prefers-reduced-motion: reduce)"),s,i,r=location.pathname,n=()=>{clearTimeout(s),i=void 0,r=location.pathname,g.done()},o=a=>{clearTimeout(s),i=a,g.configure({showSpinner:!1,trickle:!e.matches,speed:e.matches?0:200}),g.start(),s=setTimeout(n,15e3)};document.addEventListener("click",a=>{if(a.button!==0||a.metaKey||a.ctrlKey||a.shiftKey||a.altKey)return;let d=a.target instanceof Element?a.target.closest("a[href]"):null;if(!(d instanceof HTMLAnchorElement)||d.hasAttribute("download")||d.target&&d.target!=="_self")return;let u=new URL(d.href,location.href);u.origin!==location.origin||u.pathname===location.pathname||o(u.pathname)},!0),new MutationObserver(()=>{i&&x.dataset.currentPath===i&&n()}).observe(x,{attributes:!0,attributeFilter:["data-current-path"]}),window.addEventListener("popstate",()=>{location.pathname!==r&&o(location.pathname)}),window.addEventListener("pagehide",n),window.addEventListener("pageshow",n)}})();

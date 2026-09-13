@@ -5,8 +5,8 @@ const root = document.documentElement;
 if (!document.getElementById("kardy-navigation-progress")) {
   const style = document.createElement("style");
   style.id = "kardy-navigation-progress";
-  style.textContent = `${css({ color: "#6B42FF", height: "2px" })}
-    html.dark { --bprogress-color: #A48BFF; }
+  style.textContent = `${css({ color: "#ca1c67", height: "2px" })}
+    html.dark { --bprogress-color: #ff8fbe; }
     @media (prefers-reduced-motion: reduce) {
       .bprogress, .bprogress * { transition: none !important; animation: none !important; }
     }`;

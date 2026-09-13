@@ -241,7 +241,7 @@ export const FeatureIllustration = ({ type }) => {
               <>
                 <small className="bf-label">Brand colour</small>
                 <div className="bf-swatches">
-                  {["#6b43ff", "#e5b8c9", "#dbe5ce", "#171a18"].map(
+                  {["#ca1c67", "#e5b8c9", "#dbe5ce", "#171a18"].map(
                     (color, i) => (
                       <span key={color} style={{ background: color }}>
                         {i === 0 && <FeatureIcon name="check" />}

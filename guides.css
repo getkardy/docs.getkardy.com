@@ -82,16 +82,16 @@
   border-radius: 8px;
   overflow: hidden;
   background: var(--guide-tint);
-  accent-color: #6b42ff;
+  accent-color: #ca1c67;
 }
 .kardy-guide progress::-webkit-progress-bar {
   background: var(--guide-tint);
 }
 .kardy-guide progress::-webkit-progress-value {
-  background: #6b42ff;
+  background: #ca1c67;
 }
 .kardy-guide progress::-moz-progress-bar {
-  background: #6b42ff;
+  background: #ca1c67;
 }
 .kardy-guide-task {
   display: flex;
@@ -128,8 +128,8 @@
   stroke-width: 1.5;
 }
 .kardy-guide-task[aria-checked="true"] .kardy-guide-box {
-  background: #6b42ff;
-  border-color: #6b42ff;
+  background: #ca1c67;
+  border-color: #ca1c67;
 }
 .kardy-guide-footer {
   display: flex;
@@ -156,7 +156,7 @@
   border-radius: 9px;
 }
 .kardy-guide-next {
-  background: #6b42ff;
+  background: #ca1c67;
   color: white;
 }
 .kardy-guide button:disabled {

@@ -49,7 +49,7 @@ to snippets, so preserve their explicit global declarations.
    root** (empty path or `/`), not `/docs`: `docs.json` is already at the root.
 3. Configure `docs.getkardy.com` and follow Mintlify's DNS instructions.
 4. Verify the published navigation, search, images, redirects and links to
-   `getkardy.com` and `merchant.getkardy.com`.
+   `getkardy.com` and `merchants.getkardy.com`.
 
 This migration does not configure the Mintlify account, GitHub App, DNS or billing,
 and does not publish a site. `mint dev` is a local preview, not a production
@@ -68,7 +68,7 @@ References: [GitHub setup](https://www.mintlify.com/docs/deploy/github),
 - `customer-journey/` and `accounts/`: focused customer and account tasks.
 - `technical/`: public MCP and QR/security reference, not private implementation notes.
 - `snippets/`, `images/` and CSS: local components and illustration assets.
-- `availability.mdx`: deployment gates; `updates.mdx`: dated repository snapshots.
+- `availability.mdx`: deployment gates.
 
 Use fictional examples. Never include credentials, real customer QR codes or
 private records. A preview is not proof of a saved transaction or enabled service.

@@ -2,11 +2,11 @@
    Art stays light in both documentation themes, like an embedded product preview. */
 .kardy-feature-art {
   --bf-paper: #fff;
-  --bf-stage: #f7f7fa;
+  --bf-stage: #fff0ee;
   --bf-line: #e2e2e9;
-  --bf-ink: #171a18;
+  --bf-ink: #42001c;
   --bf-muted: #61616d;
-  --bf-purple: #6b43ff;
+  --bf-accent: #42001c;
   width: 100%;
   box-sizing: border-box;
   padding: clamp(18px, 4vw, 30px);
@@ -67,7 +67,7 @@
   line-height: 1.12;
 }
 .bf-headline em {
-  color: var(--bf-purple);
+  color: var(--bf-accent);
   font-style: normal;
 }
 .bf-scene {
@@ -241,7 +241,7 @@
   display: inline-block;
   color: #7354a1;
   border: 1px solid #e0d7f3;
-  background: #f8f5ff;
+  background: #fff5f9;
   padding: 4px 7px;
   border-radius: 6px;
   font-size: 10px;
@@ -279,7 +279,7 @@
   margin: 18px 0 12px auto;
   border-radius: 13px 13px 3px 13px;
   padding: 12px;
-  background: #6b43ff;
+  background: #42001c;
   color: white;
   font-size: 12px;
 }
@@ -291,7 +291,7 @@
 .bf-invite .bf-row {
   margin-top: 9px;
   border-top: 1px solid #e5dcf3;
-  color: #6b43ff;
+  color: #42001c;
 }
 .bf-invite .bf-row b {
   font-size: 10px;
@@ -439,7 +439,7 @@
   gap: 8px;
   align-items: center;
   border: 1px solid var(--bf-line);
-  background: #f7f7fa;
+  background: #fff0ee;
   border-radius: 8px;
   padding: 10px;
   color: var(--bf-muted);
@@ -557,7 +557,7 @@
   box-shadow: 0 1px 2px #0002;
 }
 .bf-toggle-on {
-  background: #6b43ff;
+  background: #42001c;
 }
 .bf-toggle-on::after {
   margin-left: auto;
@@ -595,7 +595,7 @@
   color: #43553a;
 }
 .bf-action {
-  background: #6b43ff;
+  background: #42001c;
   color: white;
   border-radius: 7px;
   padding: 10px;
@@ -713,7 +713,7 @@
   width: 52px;
   height: 52px;
   border-radius: 13px;
-  background: #171a18;
+  background: #42001c;
   color: white;
   font-weight: 650;
   font-size: 36px;

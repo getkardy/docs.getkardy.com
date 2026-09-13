@@ -11,9 +11,9 @@
   },
   "description": "Set up and run Kardy loyalty for your organization. Guides to card design, rewards, outlets, customer journeys, security, and wallet integrations.",
   "colors": {
-    "primary": "#6B42FF",
-    "light": "#A48BFF",
-    "dark": "#5932D2"
+    "primary": "#42001C",
+    "light": "#FF90C1",
+    "dark": "#42001C"
   },
   "logo": {
     "light": "/images/logo-light.svg",
@@ -24,6 +24,7 @@
   "seo": {
     "indexing": "navigable",
     "metatags": {
+      "canonical": "https://docs.getkardy.com",
       "robots": "index, follow, max-image-preview:large",
       "og:site_name": "Kardy Docs",
       "og:type": "website",
@@ -133,14 +134,7 @@
         "groups": [
           {
             "group": "Kardy",
-            "pages": [
-              "intro",
-              "updates",
-              "concepts",
-              "availability",
-              "portals",
-              "help"
-            ]
+            "pages": ["intro", "concepts", "availability", "portals", "help"]
           }
         ]
       },

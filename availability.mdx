@@ -3,10 +3,6 @@ title: Feature availability
 description: Check deployment gates without confusing an illustration with a live service.
 ---
 
-Reviewed against the repository on **13 September 2026**. Your deployed version may
-differ. This page records rollout gates; [Features](/features/overview) explains
-controls and behaviour. A landing-page animation is not proof of activation.
-
 ## Implemented in the development environment
 
 The configured dev backend supports consumer sign-in and joining, browser memberships
@@ -29,7 +25,7 @@ does not mean a push message was sent.
 | [Email broadcasts](/features/broadcasts)   | Drafts, consent and the queue are implemented. Sending starts disabled; paid provider setup, server/backend gates and recipient allowance are required. No live scheduler or delivery-confirmation webhooks are enabled. |
 | [Merchant MCP](/features/merchant-mcp)     | Read-only OAuth and manual-key access is implemented in dev. Owner approval and an active subscription are required; there is no consumer MCP.                                                                           |
 | [Team access](/features/team-access)       | Share invitation links manually; automatic invitation emails are not connected. Ownership verification needs working auth email delivery.                                                                                |
-| [Native wallets](/features/native-wallets) | Signing is implemented but issuance starts disabled until issuer credentials and scanner readiness are verified. Automatic pass updates are not implemented.                                                             |
+| [Native wallets](/features/native-wallets) | The production Apple update service is running. Saving passes remains disabled pending device testing. Google updates are implemented but still need production configuration and publishing approval.                   |
 | PWA claim notifications                    | The iPhone-style coffee-claim notification is a labelled concept preview. Production push delivery is not implemented. Confirm redemption through staff and current Kardy data.                                          |
 | [Card design](/features/branded-cards)     | Saved browser designs are supported in dev. Reward-specific icons and preview stamp counts remain illustrative.                                                                                                          |
 | [Reporting](/features/analytics)           | Date-filtered totals and complete-day graphs are connected in app code. Incomplete reads show unavailable; authenticated deployment verification is separate. Demo charts use sample data.                               |
@@ -45,10 +41,12 @@ assume a successful preview is a saved transaction.
 ## Branding and hosting
 
 The product is **Kardy**, using **getkardy.com** as its chosen public domain.
-The merchant workspace uses `merchant.getkardy.com`; documentation is intended for
+The merchant workspace uses `merchants.getkardy.com`; documentation is intended for
 `docs.getkardy.com`. These configured destinations do not establish that DNS,
 hosting, auth redirects or email delivery have been activated.
 
-The production backend's display name is now Kardy. The persistent development
-branch remains separate. Renaming the product did not rotate QR identifiers,
-credentials or issued passes.
+Kardy's logo pairs the outlined wordmark with a slightly enlarged card mascot on
+its right. Merchant, Network and Documentation labels retain their divider and
+small, spaced lettering. The main site background stays white, with pink and
+violet accents. Merchant-owned logos and card colours stay separate from Kardy's
+branding.

@@ -1,7 +1,7 @@
 ---
 title: Apple Wallet and Google Wallet
 sidebarTitle: Apple & Google Wallet
-description: Save native QR passes and understand their signing and update boundaries.
+description: Save Apple Wallet and Google Wallet passes and learn how stamp progress stays up to date.
 ---
 
 import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
@@ -14,18 +14,33 @@ For device steps, follow [Save a native wallet pass](/customer-journey/save-wall
   <FeatureIllustration type="native-wallets" />
 </Frame>
 
-Server-side signing is implemented, but external wallet issuance is disabled by default.
-It requires issuer credentials, the wallet migration, and integration with the merchant
-scanner. The iPhone shown during setup remains a preview. Generated test signatures
-do not verify a live Apple or Google issuer or prove a pass was installed.
+Native wallet signing and stamp-update services are built. Public availability is
+still pending device testing and, for Google, production configuration and approval. Until save controls are enabled,
+use your Kardy browser wallet.
 
 The Apple endpoint produces a signed `.pkpass`. Google produces a signed save link for
 an existing Generic class; Kardy does not create issuer classes or contact Google when
 generating the link. Members choose whether to open and save it.
 
-Passes carry the same opaque account QR across Kardy and merchant branding. They do
-not display a stamp balance because automatic pass updates are not implemented.
-Current reward progress remains in the browser wallet. Replacing the account QR
+## Stamp progress and updates
+
+When enabled, merchant passes show the stamp count, goal and reward. The universal
+pass keeps progress for up to ten programmes separate; your browser wallet shows
+the complete membership list.
+
+After a stamp or redemption, Kardy queues the new progress. A background service
+updates the Google Wallet pass, or asks Apple Wallet to download the latest pass.
+Failed attempts are retried. Updates can take time and do not guarantee a visible
+notification. Open Kardy if you need to check progress while a saved pass catches up.
+
+The Apple update service is running in production and checks for queued changes
+every minute. Saving passes remains disabled until device testing is complete.
+Google updates still need production configuration and publishing approval.
+
+## Your membership QR
+
+Passes carry the same opaque account QR across Kardy and merchant branding.
+Replacing the account QR
 invalidates the old Kardy account QR and native passes using it; members must save
 fresh passes and remove old ones. Historical membership QR tokens and manual member
 codes remain unchanged and continue to be accepted by the scanner.
@@ -36,8 +51,8 @@ screen. Its iPhone-style notification is a concept and does not represent native
 pass updates or enabled push delivery. Follow [claiming a reward](/customer-journey/rewards)
 for the actual confirmation workflow.
 
-See the app repository's internal `docs/engineering/technical/wallet-implementation.md` for configuration,
-API contracts, migration ordering, offline tests and integration requirements.
+See [Feature availability](/availability) for rollout status, or
+[contact Kardy](https://getkardy.com/support) if you need help with a saved pass.
 
 ## Browser cards and other integrations
 
