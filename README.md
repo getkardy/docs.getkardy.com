@@ -78,7 +78,7 @@ are not implemented. Preserve the availability notes when editing illustrations.
 Keep unique titles/descriptions, existing redirects and meaningful image alt text.
 Check desktop/mobile rendering after structural changes. Private backend notes,
 cost guardrails and wallet/loyalty implementation contracts remain in the app
-repository's `engineering/` folder; changes to contracts should update both repositories.
+repository's `docs/engineering/` folder; changes to contracts should update both repositories.
 
 The four role checklists save only checked indexes in local browser storage; they
 never write accounts or award stamps. Keep per-guide keys distinct and version
