@@ -176,9 +176,9 @@ export const FeatureIllustration = ({ type }) => {
       "Another way",
       "to keep your card close.",
     ],
-    "kardy-network": [
+    "kardy-rewards": [
       "search",
-      "The Kardy network",
+      "The Kardy Rewards",
       "Get discovered.",
       "Become their usual.",
     ],
@@ -558,7 +558,7 @@ export const FeatureIllustration = ({ type }) => {
           />
         </FeaturePanel>
       );
-    if (type === "kardy-network")
+    if (type === "kardy-rewards")
       return (
         <FeaturePanel>
           <div className="bf-search">

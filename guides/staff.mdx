@@ -1,87 +1,25 @@
 ---
 title: Staff guide
-description: A practical shift guide to joining your team, scanning members, and redeeming rewards.
+description: Your starting point for shift preparation and serving customers.
 ---
 
-import { GuideChecklist } from "/snippets/guide-checklist.jsx";
-import { GuidePractice } from "/snippets/guide-practice.jsx";
+Use your own invited account to help customers collect stamps and claim rewards.
+Start with the shift checklist, then follow the counter guide.
 
-Staff help customers collect stamps and claim rewards. Use your own invited
-account; you do not need the Owner's credentials to work at the counter.
+## Choose your next step
 
-## Before your shift
+<CardGroup cols={2}>
+  <Card title="Get ready for your shift" href="/guides/staff/shift">
+    Check your access, organisation and outlet before serving customers.
+  </Card>
+  <Card title="Serve customers at the counter" href="/guides/staff/counter">
+    Check memberships, issue qualifying stamps and get help with unexpected
+    results.
+  </Card>
+</CardGroup>
 
-<GuideChecklist
-  guide="staff"
-  title="Your shift, ready to go"
-  items={[
-    "I accepted my invitation with my own verified email.",
-    "I checked the selected organisation.",
-    "I selected the outlet where I am serving customers.",
-    "My Manager confirmed which purchases qualify and what rewards include.",
-  ]}
-/>
+## Working with your team
 
-## Work the counter
-
-Follow [Scan, stamp, and redeem](/merchants/scanning) for the complete workflow.
-Choose **Check membership** first, then **Add stamp** for a qualifying purchase. Checking lets you inspect
-a reward without adding progress. Wait for confirmation before serving the next
-customer; a lost response does not prove the operation failed.
-
-## Practise the counter flow
-
-Choose an answer to see why it matters. These examples use fictional situations.
-
-<GuidePractice
-  questions={[
-    {
-      prompt:
-        "A customer only wants to know whether their reward is ready. What do you choose?",
-      options: ["Add stamp", "Check membership", "Redeem without checking"],
-      correct: 1,
-      explanation:
-        "Check membership reads the balance without adding a stamp. Only issue stamps for qualifying purchases.",
-    },
-    {
-      prompt:
-        "You submitted a stamp, but the connection dropped before the result appeared. What next?",
-      options: [
-        "Submit three more times",
-        "Assume it failed",
-        "Check the current balance and activity before retrying",
-      ],
-      correct: 2,
-      explanation:
-        "A network error does not prove the write failed. Check the result first to avoid recording the visit again.",
-    },
-    {
-      prompt:
-        "A friend joins through a referral link but has not purchased anything. Are the referral bonuses awarded?",
-      options: [
-        "Yes, signing up is enough",
-        "Not until the first qualifying purchase and first staff-issued stamp",
-        "Only after a reward is redeemed",
-      ],
-      correct: 1,
-      explanation:
-        "Joining alone awards no bonus. The first qualifying purchase, recorded by a staff-issued stamp, triggers the configured bonuses; redeeming a reward is not required.",
-    },
-  ]}
-/>
-
-## When to ask for help
-
-Use the [scanning troubleshooting checks](/merchants/scanning#when-something-goes-wrong).
-Ask your Manager about reward eligibility and the Owner about access or activation.
-Do not promise an undo or remove event history to hide a mistake.
-
-## Your access
-
-Staff can perform authorised member and loyalty operations. Staff cannot change
-programme configuration, manage teammates, transfer ownership, access broadcasts,
-or manage billing. Ask your Manager about programme changes and your Owner about
-access changes. See [the role comparison](/accounts/overview#who-can-do-what).
-
-Never request a customer's password, verification code, or reset link. Keep their
-QR private and sign out when you finish using a shared device.
+Ask your Manager about qualifying purchases and reward eligibility, and the Owner
+about invitations or account access. See [Accounts & access](/accounts/overview)
+for the role boundaries.

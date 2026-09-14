@@ -1,0 +1,100 @@
+/* Keep Mintlify's real previous/next links; only refine their presentation. */
+#pagination {
+  gap: 12px;
+  align-items: stretch;
+  padding: 0;
+}
+#pagination > a {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 108px;
+  padding: 20px 24px;
+  border: 1px solid #e5e7e7;
+  border-radius: 16px;
+  background: #fff;
+  color: #202523;
+  text-decoration: none;
+}
+#pagination > a:hover {
+  border-color: #d7a7bf;
+  background: #fff6f9;
+}
+#pagination > a:focus-visible {
+  outline: 2px solid #a43b6d;
+  outline-offset: 3px;
+}
+#pagination [data-component-part="pagination-title"] {
+  white-space: normal;
+  overflow: visible;
+  line-height: 1.45;
+  color: inherit;
+  font-size: 18px;
+  font-weight: 500;
+}
+#pagination [data-component-part="pagination-chevron"] {
+  display: none;
+}
+#pagination [data-component-part="pagination-title"]::after {
+  display: block;
+  margin-top: 8px;
+  color: #6d7371;
+  font-size: 15px;
+  font-weight: 400;
+}
+#pagination [rel="prev"] [data-component-part="pagination-title"]::after {
+  content: "‹  Previous";
+}
+#pagination [rel="next"] {
+  justify-content: flex-end;
+  text-align: right;
+}
+#pagination [rel="next"] [data-component-part="pagination-title"]::after {
+  content: "Next  ›";
+}
+.kardy-guide-index {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: #6e3e55;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none !important;
+}
+.kardy-guide-index:hover {
+  color: #42001c;
+  text-decoration: underline !important;
+}
+.kardy-guide-index:focus-visible {
+  outline: 2px solid #a43b6d;
+  outline-offset: 4px;
+}
+.dark #pagination > a {
+  background: #201b20;
+  border-color: #473640;
+  color: #f9edf3;
+}
+.dark #pagination > a:hover {
+  background: #30222c;
+  border-color: #a36d89;
+}
+.dark #pagination [data-component-part="pagination-title"]::after,
+.dark .kardy-guide-index {
+  color: #ceadbe;
+}
+@media (max-width: 480px) {
+  #pagination {
+    gap: 8px;
+  }
+  #pagination > a {
+    padding: 14px 12px;
+    gap: 8px;
+    font-size: 12px;
+  }
+  #pagination [data-component-part="pagination-title"] {
+    font-size: 15px;
+  }
+  #pagination [data-component-part="pagination-title"]::after {
+    font-size: 13px;
+  }
+}

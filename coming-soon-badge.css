@@ -1,0 +1,33 @@
+/* Same geometry and amber palette as Canopy and the Kardy app badge. */
+.kardy-coming-soon,
+.nav-tag-pill-text[data-nav-tag="Coming soon"],
+.nav-tag-pill-text[data-nav-tag="Coming\a0soon"] {
+  display: inline-flex;
+  height: 18px;
+  width: fit-content;
+  flex-shrink: 0;
+  white-space: nowrap;
+  min-width: max-content;
+  user-select: none;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, #f59e0b 40%, transparent);
+  background: color-mix(in srgb, #f59e0b 14%, transparent);
+  padding: 0 8px;
+  vertical-align: middle;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  color: #b45309;
+}
+.dark .kardy-coming-soon,
+.dark .nav-tag-pill-text[data-nav-tag="Coming soon"],
+.dark .nav-tag-pill-text[data-nav-tag="Coming\a0soon"] {
+  color: #fbbf24;
+}
+
+.nav-tag-pill:has([data-nav-tag="Coming soon"]),
+.nav-tag-pill:has([data-nav-tag="Coming\a0soon"]) {
+  flex-shrink: 0;
+  min-width: max-content;
+}

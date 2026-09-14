@@ -1,0 +1,108 @@
+---
+title: Read your dashboard
+description: Choose filters, understand the numbers and compare trends fairly.
+---
+
+import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+import { GuidePractice } from "/snippets/guide-practice.jsx";
+
+## Read your dashboard
+
+<Frame caption="Illustrative reporting, not live business results. Use your workspace filters to inspect your own activity.">
+  <FeatureIllustration type="analytics" />
+</Frame>
+
+## Start with a clear question
+
+For example: “How many stamp visits did our first outlet record this month?”
+Keep the location, dates and metric consistent before comparing numbers.
+
+<Steps>
+  <Step title="Choose the location">
+    Open **Overview**. Use **Add filter** or the **Store** chip to select the
+    location you want to review. Keep the all-store view when checking the whole
+    programme.
+  </Step>
+  <Step title="Set the dates">
+    The default is **This month · UTC**. Open **Dates**, choose a preset or edit
+    the bounds, then select **Apply**. **Cancel** keeps the previous selection.
+    The Overview filter row controls its totals, activity chart and location
+    performance together.
+  </Step>
+  <Step title="Read the activity">
+    Use **Show** to switch between **Member visits** and **Rewards redeemed**.
+    Inspect individual days rather than relying only on the total. Overview
+    supports up to 366 days, including today's incomplete day.
+  </Step>
+  <Step title="Follow up on the result">
+    Review **Location performance**, open the relevant member or outlet, or use
+    **View live** for recent recorded events. Investigate the underlying
+    activity before changing the programme.
+  </Step>
+</Steps>
+
+## Know what the numbers mean
+
+| Measure                  | What it tells you                                                                      | What it does not tell you                                               |
+| ------------------------ | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Visits                   | Recorded stamp-issued events                                                           | Unique visitors, all foot traffic or purchases without a recorded stamp |
+| Rewards redeemed         | Recorded reward claims, including repeat claims                                        | Sales value, payment volume or profit                                   |
+| Active stores            | The current number of active stores within the store selection                         | How many stores were active throughout a historical period              |
+| Working towards a reward | Progress among loaded active members, grouped as Goal reached, On track or Not started | A forecast or a conversion rate                                         |
+
+<Note>
+  **Unavailable is not zero.** Check loading errors and retry before drawing a
+  conclusion. Reporting has bounded reads; narrow a date range if the report
+  cannot load completely. Demo figures are fictional, not saved transactions.
+</Note>
+
+## Compare trends fairly
+
+The **Reward redemptions** graph in Rewards and **Successful referrals** graph in
+Referrals have their own **Dates** and **Compare** controls. They use complete UTC
+days and exclude today, unlike Overview. Choose 7, 30 or 90 days, or a custom
+range of up to 366 complete days. Compare against the immediately preceding
+equal-length period.
+
+Hover over a day to inspect it. Click once to start a highlighted range and again
+to finish; **Clear** or **Escape** removes the highlight. Highlighting does not
+change the report's date filter. Choose **View data** to inspect the underlying
+report. See the full [reporting guide](/features/analytics) for controls and limits.
+
+Avoid comparing a partial day with a full day. Also consider opening hours,
+holidays, closures and changes in staff recording habits before treating a rise
+or fall as a change in customer behaviour.
+
+## Check your understanding
+
+<GuidePractice
+  questions={[
+    {
+      prompt:
+        "Overview shows 40 visits. Does that mean 40 different customers visited?",
+      options: [
+        "Yes, visits are unique customers",
+        "No, visits count recorded stamp-issued events",
+        "Yes, including everyone who entered the shop",
+      ],
+      correct: 1,
+      explanation:
+        "A member can have more than one recorded stamp visit. The dashboard does not measure total foot traffic or unique visitors through this metric.",
+    },
+    {
+      prompt: "A report says Unavailable. What should you do first?",
+      options: [
+        "Treat it as zero activity",
+        "Delete old events",
+        "Check loading, retry or narrow the range",
+      ],
+      correct: 2,
+      explanation:
+        "Unavailable means the report could not provide a complete result. It is not evidence that no activity happened.",
+    },
+  ]}
+/>
+
+<a className="kardy-guide-index" href="/guides/owner">
+  All owner guides <span aria-hidden="true">↗</span>
+</a>

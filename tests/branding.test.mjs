@@ -16,7 +16,7 @@ test("Kardy branding and legacy network redirect stay configured", () => {
     docs.redirects.some(
       (item) =>
         item.source === "/features/brown-network" &&
-        item.destination === "/features/kardy-network",
+        item.destination === "/features/kardy-rewards",
     ),
   );
 });

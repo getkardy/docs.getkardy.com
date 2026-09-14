@@ -162,7 +162,7 @@
                   "features/join-pages",
                   "features/browser-wallet",
                   "features/native-wallets",
-                  "features/kardy-network",
+                  "features/kardy-rewards",
                   "features/email-preferences"
                 ],
                 "icon": "wallet"
@@ -182,6 +182,7 @@
               },
               {
                 "group": "Communication",
+                "tag": "Coming\u00a0soon",
                 "pages": ["features/broadcasts"],
                 "icon": "envelope"
               }
@@ -197,16 +198,45 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Start and learn",
+            "group": "Start here",
+            "pages": ["guides/quick-start"]
+          },
+          {
+            "group": "For owners",
             "pages": [
-              "guides/quick-start",
               "guides/owner",
-              "guides/manager",
-              "guides/staff"
+              {
+                "group": "Launch & team",
+                "pages": ["guides/owner/launch", "guides/owner/team"]
+              },
+              {
+                "group": "Dashboard & insights",
+                "pages": ["guides/owner/dashboard", "guides/owner/improve"]
+              },
+              {
+                "group": "Day-to-day operations",
+                "pages": ["guides/owner/activity", "guides/owner/routine"]
+              }
             ]
           },
           {
-            "group": "Set up and run",
+            "group": "For managers",
+            "pages": [
+              "guides/manager",
+              "guides/manager/daily",
+              "guides/manager/programme"
+            ]
+          },
+          {
+            "group": "For staff",
+            "pages": [
+              "guides/staff",
+              "guides/staff/shift",
+              "guides/staff/counter"
+            ]
+          },
+          {
+            "group": "Shared references",
             "pages": [
               "merchants/setup",
               "guides/qr-signs",
@@ -294,8 +324,12 @@
   },
   "redirects": [
     {
+      "source": "/features/kardy-network",
+      "destination": "/features/kardy-rewards"
+    },
+    {
       "source": "/features/brown-network",
-      "destination": "/features/kardy-network"
+      "destination": "/features/kardy-rewards"
     },
     {
       "source": "/legal",

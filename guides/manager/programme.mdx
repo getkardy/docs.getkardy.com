@@ -1,0 +1,81 @@
+---
+title: Maintain your programme
+description: Keep rewards, locations and customer touchpoints accurate.
+---
+
+import { GuidePractice } from "/snippets/guide-practice.jsx";
+import { ComingSoonBadge } from "/snippets/coming-soon-badge.jsx";
+
+## Keep rewards accurate
+
+Open **Rewards → Customise rewards** to review permitted reward changes. Check
+the name, stamp goal, and **Redeem at** outlet selection before saving.
+
+Before saving a change, check [reward behaviour and performance](/features/rewards),
+especially the effect of deleting a reward. Coordinate any changed promise with
+the Owner and the people serving customers.
+
+## Maintain outlets and customer touchpoints
+
+Use **Locations** to review permitted outlet changes. Confirm that redemption
+restrictions still point to active outlets. Use **Branding** for permitted card-design
+changes and to preview the customer experience.
+
+- [Manage outlets](/features/outlets)
+- [Print and display a QR sign](/guides/qr-signs)
+- [Understand joining and signup attribution](/customer-journey/join)
+
+Some configuration forms remain Owner-only. If a setting is unavailable, ask the
+Owner to make the change; do not switch to their login.
+
+## Prepare member updates
+
+<ComingSoonBadge />
+
+Managers can open **Broadcasts** to compose, save, and review organisation drafts.
+Email sending and pricing are coming soon. Saving a draft does not send it.
+Read the [broadcast preview guide](/features/broadcasts) for the planned workflow.
+
+## Practise a programme decision
+
+<GuidePractice
+  questions={[
+    {
+      prompt: "You remove the last reward. What happens to customers?",
+      options: [
+        "Unlocked claims are kept",
+        "Earning and redemption stop",
+        "A default reward is created automatically",
+      ],
+      correct: 1,
+      explanation:
+        "No rewards remain: earning and redemption stop, deleted rewards cannot be claimed, and past redemption history is preserved.",
+    },
+    {
+      prompt: "A reward should be claimable at Orchard only. What do you save?",
+      options: [
+        "Leave every outlet unchecked",
+        "Select Orchard in Redeem at",
+        "Tell Staff without changing the reward",
+      ],
+      correct: 1,
+      explanation:
+        "Select Orchard in Redeem at. Leaving all outlets unchecked allows every active outlet, so it does not restrict claims to Orchard.",
+    },
+    {
+      prompt: "A Staff member needs Manager access. Can you change their role?",
+      options: [
+        "Yes, any Manager can promote Staff",
+        "Ask the Owner to change the role",
+        "Share your own login",
+      ],
+      correct: 1,
+      explanation:
+        "Team role changes are Owner-only. Everyone should use their own account; never share credentials.",
+    },
+  ]}
+/>
+
+<a className="kardy-guide-index" href="/guides/manager">
+  All manager guides <span aria-hidden="true">↗</span>
+</a>

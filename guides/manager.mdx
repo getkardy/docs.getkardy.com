@@ -1,114 +1,23 @@
 ---
 title: Manager guide
-description: Run daily loyalty operations, maintain rewards and outlets, and support the team within your permissions.
+description: Your starting point for daily operations and programme maintenance.
 ---
 
-import { GuideChecklist } from "/snippets/guide-checklist.jsx";
-import { GuidePractice } from "/snippets/guide-practice.jsx";
+Managers run daily loyalty operations and maintain permitted programme settings.
+Your role applies to the selected organisation, not every brand on your account.
 
-Managers can run the counter flow and manage permitted rewards, outlets, and
-card designs. Your role applies to the selected organisation, not every brand
-on your account.
+## Choose your next step
 
-## Start the day
+<CardGroup cols={2}>
+  <Card title="Daily operations" href="/guides/manager/daily">
+    Start the day, review recorded activity and know when to involve the Owner.
+  </Card>
+  <Card title="Maintain your programme" href="/guides/manager/programme">
+    Keep rewards, locations and customer touchpoints accurate.
+  </Card>
+</CardGroup>
 
-<GuideChecklist
-  guide="manager"
-  title="Your daily programme review"
-  items={[
-    "I selected the correct organisation with my own account.",
-    "I reviewed Overview, Members and Rewards.",
-    "I checked active outlets, reward wording, stamp costs and claim restrictions.",
-    "The team knows the counter flow and qualifying purchase rules.",
-  ]}
-/>
+## Working with your team
 
-## Review activity
-
-Use Overview's **Filter** for store/date totals and the graph's **Date range**
-for complete-day trends. In Members, review rewards ready and power customers
-within the loaded list. **View all activities** in a member's history opens
-their filtered audit history.
-
-Open [Activities](/features/activities) to search scans, stamps and claims, or
-[Live view](/features/live-view) for the latest ten recorded events beside the
-store globe. Checks happen every 15 seconds while visible, not continuously;
-pins represent stores, not customers.
-
-## Keep rewards accurate
-
-Open **Rewards → Customise rewards** to review permitted reward changes. Check
-the name, stamp goal, and **Redeem at** outlet selection before saving.
-
-Before saving a change, check [reward behaviour and performance](/features/rewards),
-especially the effect of deleting a reward. Coordinate any changed promise with
-the Owner and the people serving customers.
-
-## Maintain outlets and customer touchpoints
-
-Use **Locations** to review permitted outlet changes. Confirm that redemption
-restrictions still point to active outlets. Use **Branding** for permitted card-design
-changes and to preview the customer experience.
-
-- [Manage outlets](/features/outlets)
-- [Print and display a QR sign](/guides/qr-signs)
-- [Understand joining and signup attribution](/customer-journey/join)
-
-Some configuration forms remain Owner-only. If a setting is unavailable, ask the
-Owner to make the change; do not switch to their login.
-
-## Prepare member updates
-
-Managers can open **Broadcasts** to compose, save, and review organisation drafts.
-Saving a draft does not send it. Delivery requires completed setup and remains
-disabled until enabled; only eligible, opted-in members can receive marketing.
-Follow the [broadcast guide](/features/broadcasts) before queueing anything.
-
-## Practise a programme decision
-
-<GuidePractice
-  questions={[
-    {
-      prompt: "You remove the last reward. What happens to customers?",
-      options: [
-        "Unlocked claims are kept",
-        "Earning and redemption stop",
-        "A default reward is created automatically",
-      ],
-      correct: 1,
-      explanation:
-        "No rewards remain: earning and redemption stop, deleted rewards cannot be claimed, and past redemption history is preserved.",
-    },
-    {
-      prompt: "A reward should be claimable at Orchard only. What do you save?",
-      options: [
-        "Leave every outlet unchecked",
-        "Select Orchard in Redeem at",
-        "Tell Staff without changing the reward",
-      ],
-      correct: 1,
-      explanation:
-        "Select Orchard in Redeem at. Leaving all outlets unchecked allows every active outlet, so it does not restrict claims to Orchard.",
-    },
-    {
-      prompt: "A Staff member needs Manager access. Can you change their role?",
-      options: [
-        "Yes, any Manager can promote Staff",
-        "Ask the Owner to change the role",
-        "Share your own login",
-      ],
-      correct: 1,
-      explanation:
-        "Team role changes are Owner-only. Everyone should use their own account; never share credentials.",
-    },
-  ]}
-/>
-
-## What needs the Owner?
-
-Only the Owner manages invitations, teammate removal, Manager/Staff role changes,
-ownership transfer, and billing. Report access problems to the Owner and operational
-errors to [Support](/help), sharing the outlet, time, and error without customer secrets.
-
-See [Accounts & access](/accounts/overview) for the full role comparison and
-[feature availability](/availability) for dev and rollout limits.
+Share the [Staff guide](/guides/staff) with your counter team. Invitations, role
+changes and billing stay with the Owner; see the [Owner guide](/guides/owner).
