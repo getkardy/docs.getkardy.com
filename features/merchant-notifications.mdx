@@ -78,7 +78,13 @@ opening one checks access to the business.
 
 ## Why didn't I receive an alert?
 
-Delivery may take a minute or longer, even with Kardy closed. Check:
+Notifications are sent in batches. Reaching 50 ready queued device notifications
+across Kardy starts delivery early; otherwise, a recovery check runs every
+15 minutes. Larger queues continue in additional runs without waiting for the
+next check. Early delivery does not restart the schedule. Retries and device
+connectivity can add delays; delivery is not guaranteed within 15 minutes.
+
+If an alert has not arrived, check:
 
 - The business, device and alert type are enabled, with allowance remaining.
 - Browser permissions and Focus/Do Not Disturb allow notifications.
