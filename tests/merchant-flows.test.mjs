@@ -50,9 +50,14 @@ test("flows preserve payment, redemption and rollout distinctions", () => {
     "does not spend stamps",
     "excess stamps carry forward",
     "production rollout is separate",
-    "Pending rollout",
+    "Push is enabled",
+    "50 ready notifications",
+    "fixed 15-minute recovery check",
   ])
     assert.ok(text.includes(phrase), phrase);
+  assert.ok(
+    !JSON.stringify(merchantFlows.notifications).includes("Pending rollout"),
+  );
 });
 test("billing explains subscription outcomes and reversing cancellation", () => {
   const billing = merchantFlows.billing;

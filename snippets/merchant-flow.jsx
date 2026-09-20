@@ -350,7 +350,7 @@ export const MerchantFlow = ({ type }) => {
       scenarios: [
         {
           label: "Receive an alert",
-          note: "Pending rollout. Push can take a minute or longer; device settings and connectivity affect delivery.",
+          note: "Push is enabled. Delivery starts at 50 ready notifications or a fixed 15-minute recovery check, then continues while ready work remains. Device settings and connectivity can delay delivery.",
           steps: [
             [
               0,
