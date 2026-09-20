@@ -34,8 +34,8 @@ Only payment-confirmed outlets add capacity; creating a location does not.
 Changing outlet quantity does not reset usage. If a reduction puts usage over the
 new limit, new alerts pause until capacity is available again.
 
-One event queued for two devices uses two notifications, even if delivery fails.
-Retries do not count again. Unused capacity does not carry forward.
+One event allocated to two devices uses two notifications, even if delivery fails.
+Failed alerts are not automatically retried. Unused capacity does not carry forward.
 
 At the cap, new alerts pause until **00:00 UTC on the first of the next month**.
 Loyalty operations continue, with no overage charges or replay of missed alerts.
@@ -45,12 +45,12 @@ Owners can open **Settings → Usage & limits → Notifications**:
 | Counter        | Meaning                                                                  |
 | -------------- | ------------------------------------------------------------------------ |
 | Sent           | Accepted by the push service this month—not confirmed displayed or read. |
-| Allowance used | Device copies queued this month, including failed deliveries.            |
+| Allowance used | Device copies allocated this month, including failed deliveries.         |
 | Remaining      | Unused monthly allowance.                                                |
 | Monthly limit  | The business's configured allowance.                                     |
 
 Select **Refresh usage** for current totals. Sent counts by send month; allowance
-counts by queue month. Adding outlets, removing devices or clearing logs does not
+counts by allocation month. Adding outlets, removing devices or clearing logs does not
 reset or multiply capacity. Sent history starts when tracking is enabled.
 
 ## Enable on your device
@@ -78,11 +78,11 @@ opening one checks access to the business.
 
 ## Why didn't I receive an alert?
 
-Notifications are sent in batches. Reaching 50 ready queued device notifications
-across Kardy starts delivery early; otherwise, a recovery check runs every
-15 minutes. Larger queues continue in additional runs without waiting for the
-next check. Early delivery does not restart the schedule. Retries and device
-connectivity can add delays; delivery is not guaranteed within 15 minutes.
+Kardy attempts delivery immediately after the successful action, without waiting
+for a batch or scheduled check. Alerts are best-effort: failed or interrupted sends
+are not automatically retried or replayed. Device connectivity, browser settings
+and the push service can delay or prevent an alert. Notification failure does not
+change the membership, stamp or redemption result.
 
 If an alert has not arrived, check:
 

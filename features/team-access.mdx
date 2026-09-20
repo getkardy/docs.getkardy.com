@@ -14,10 +14,10 @@ import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
 
 <Note>
   Invitation delivery starts automatically after the invitation is created,
-  without waiting for a scheduled batch. Failed or interrupted sends are retried
-  through a 15-minute recovery check; inbox arrival is not guaranteed to be
-  instant. You can also share the invitation link directly. Sign-in and
-  verification emails use a separate delivery path.
+  during the request, without waiting for a scheduled batch. Failed or
+  interrupted sends are not automatically retried; inbox arrival is not
+  guaranteed to be instant. You can still share the saved invitation link
+  directly. Sign-in and verification emails use a separate delivery path.
 </Note>
 
 ## Employee accounts and roles
@@ -62,7 +62,7 @@ by hiding buttons. Some configuration forms remain owner-only.
 
 Open **Settings → Team & access** under Organisation settings. Enter the person's
 email and choose **Manager** or **Staff**, then select **Create invitation**.
-An invitation email is queued. You can also copy the generated link and share it
+Kardy attempts to send the invitation email immediately. You can also copy the generated link and share it
 directly with that person.
 
 The recipient signs in with the invited email, verifies that email, returns to the

@@ -32,11 +32,11 @@ it. See [billing terms](/features/plans#first-outlet-offer-per-business).
 
 Alerts cover **new members and reward redemptions**, not stamps or customer
 marketing. The allowance is shared across outlets and recipients: one event
-queued for two devices uses two notifications. Retries do not count again.
+allocated to two devices uses two notifications. Failed sends are not automatically retried.
 
 Owners can check **Usage & limits → Notifications** for Sent, Allowance used,
 Remaining and Monthly limit. **Sent** means accepted by the push service, not
-displayed or read. Sent counts by send month; allowance counts by queue month.
+displayed or read. Sent counts by send month; allowance counts by allocation month.
 See [notification setup and limits](/features/merchant-notifications).
 
 ## Employee accounts explained
@@ -92,14 +92,14 @@ reconnections and membership-status changes do not reset usage.
 
 ## What counts
 
-| Resource          | What counts or frees capacity                                        | At the limit                                                                                                                                                                                                                  |
-| ----------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| MCP calls         | Authorised tool requests and results pages; monthly reset.           | Counted calls stop until reset or an agreed increase.                                                                                                                                                                         |
-| Notifications     | Each queued device copy, including failed deliveries; monthly reset. | Growth: 1,000 × payment-confirmed outlets, pooled per business. New alerts pause at the cap; loyalty operations continue. No rollover or replay. Creating locations or changing devices does not add capacity or reset usage. |
-| Employee accounts | Managers and Staff; removal frees a slot, changing roles does not.   | Additional invitations cannot be accepted; existing accounts remain.                                                                                                                                                          |
-| Stored rewards    | Saved definitions, including archived rewards; no monthly reset.     | Additional definitions cannot be saved. Review deletion effects before removing rewards.                                                                                                                                      |
-| Stored members    | Active, paused and expired memberships; no monthly reset.            | New joins stop at the configured cap; existing memberships and rewards remain.                                                                                                                                                |
-| Active outlets    | Enabled locations; no monthly reset.                                 | Extra locations require confirmed paid capacity.                                                                                                                                                                              |
+| Resource          | What counts or frees capacity                                           | At the limit                                                                                                                                                                                                                  |
+| ----------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MCP calls         | Authorised tool requests and results pages; monthly reset.              | Counted calls stop until reset or an agreed increase.                                                                                                                                                                         |
+| Notifications     | Each allocated device copy, including failed deliveries; monthly reset. | Growth: 1,000 × payment-confirmed outlets, pooled per business. New alerts pause at the cap; loyalty operations continue. No rollover or replay. Creating locations or changing devices does not add capacity or reset usage. |
+| Employee accounts | Managers and Staff; removal frees a slot, changing roles does not.      | Additional invitations cannot be accepted; existing accounts remain.                                                                                                                                                          |
+| Stored rewards    | Saved definitions, including archived rewards; no monthly reset.        | Additional definitions cannot be saved. Review deletion effects before removing rewards.                                                                                                                                      |
+| Stored members    | Active, paused and expired memberships; no monthly reset.               | New joins stop at the configured cap; existing memberships and rewards remain.                                                                                                                                                |
+| Active outlets    | Enabled locations; no monthly reset.                                    | Extra locations require confirmed paid capacity.                                                                                                                                                                              |
 
 ### Examples
 
