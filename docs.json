@@ -43,6 +43,10 @@
       {
         "label": "Support",
         "href": "https://getkardy.com/support"
+      },
+      {
+        "label": "System status",
+        "href": "https://status.getkardy.com/"
       }
     ]
   },
