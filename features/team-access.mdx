@@ -13,11 +13,11 @@ import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
 </Frame>
 
 <Note>
-  Invitation emails are enabled. They are queued, not sent instantly: the
-  current sender checks every five minutes and sends one email per run, so a
-  backlog can increase the wait. You can share the invitation link directly
-  without waiting for the email. Sign-in and verification emails use a separate
-  delivery path.
+  Invitation delivery starts automatically after the invitation is created,
+  without waiting for a scheduled batch. Failed or interrupted sends are retried
+  through a 15-minute recovery check; inbox arrival is not guaranteed to be
+  instant. You can also share the invitation link directly. Sign-in and
+  verification emails use a separate delivery path.
 </Note>
 
 ## Employee accounts and roles
