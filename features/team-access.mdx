@@ -13,10 +13,11 @@ import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
 </Frame>
 
 <Note>
-  These controls are implemented on the development backend. Production rollout
-  is separate. Email-code verification requires working auth email delivery;
-  invitations currently produce a link to share, rather than sending an
-  invitation email.
+  Invitation emails are enabled. They are queued, not sent instantly: the
+  current sender checks every five minutes and sends one email per run, so a
+  backlog can increase the wait. You can share the invitation link directly
+  without waiting for the email. Sign-in and verification emails use a separate
+  delivery path.
 </Note>
 
 ## Employee accounts and roles
@@ -61,7 +62,8 @@ by hiding buttons. Some configuration forms remain owner-only.
 
 Open **Settings → Team & access** under Organisation settings. Enter the person's
 email and choose **Manager** or **Staff**, then select **Create invitation**.
-Copy the generated link and share it directly with that person.
+An invitation email is queued. You can also copy the generated link and share it
+directly with that person.
 
 The recipient signs in with the invited email, verifies that email, returns to the
 invitation link, and accepts. Links expire after seven days and cannot be accepted
