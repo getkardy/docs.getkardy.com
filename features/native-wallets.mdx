@@ -14,9 +14,9 @@ For device steps, follow [Save a native wallet pass](/customer-journey/save-wall
   <FeatureIllustration type="native-wallets" />
 </Frame>
 
-Native wallet signing and stamp-update services are built. Public availability is
-still pending device testing and, for Google, publishing approval beyond testers. Until save controls are enabled,
-use your Kardy browser wallet.
+Apple Wallet saving and stamp updates are enabled. Google Wallet remains restricted
+to approved testers until Google publishing access is confirmed. Use your Kardy
+browser wallet if your native wallet option is unavailable.
 
 The Apple endpoint produces a signed `.pkpass`. Google produces a signed save link for
 an existing Generic class; Kardy does not create issuer classes or contact Google when
@@ -35,8 +35,9 @@ notification. Open Kardy if you need to check progress while a saved pass catche
 
 Both update services use a 15-minute recovery check. Larger backlogs can trigger
 earlier processing, with follow-up runs while ready work remains. This is not a
-promise that a device refreshes within 15 minutes. Apple saving remains disabled
-pending device testing; Google remains restricted to approved testers.
+promise that a device refreshes within 15 minutes. Apple saving is enabled;
+Google remains restricted to approved testers. Delivery and display still depend
+on the device and provider; keep the browser wallet available as a fallback.
 
 ## Sync and remove a saved pass
 
