@@ -1,0 +1,103 @@
+.qr-format-example {
+  --qr-format-paper: #fff;
+  --qr-format-line: #e4dce0;
+  --qr-format-ink: #42001c;
+  --qr-format-muted: #6d646a;
+  --qr-format-tint: #fff0f5;
+  margin: 24px 0;
+  font-size: 12px;
+  color: var(--qr-format-ink);
+}
+.dark .qr-format-example {
+  --qr-format-paper: #19191f;
+  --qr-format-line: #38323a;
+  --qr-format-ink: #fff0ee;
+  --qr-format-muted: #bdb5bd;
+  --qr-format-tint: #30212a;
+}
+.qr-format-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.qr-format-options > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 156px;
+  padding: 20px 8px 14px;
+  border: 1px solid var(--qr-format-line);
+  border-radius: 10px;
+  background: var(--qr-format-paper);
+}
+.qr-format-options > .qr-format-selected {
+  border-color: #e879a9;
+  background: var(--qr-format-tint);
+}
+.qr-format-options strong {
+  font-size: 13px;
+  margin-top: 16px;
+  color: var(--qr-format-ink);
+}
+.qr-format-options small {
+  font-size: 10px;
+  margin-top: 4px;
+  color: var(--qr-format-muted);
+  text-align: center;
+}
+.qr-format-paper {
+  display: block;
+  flex-shrink: 0;
+  background: var(--qr-format-paper);
+  border: 1px solid #b6aab2;
+  border-radius: 2px;
+  box-shadow: 2px 3px 0 #8c718012;
+}
+.qr-format-square {
+  width: 44px;
+  height: 44px;
+}
+.qr-format-a4 {
+  width: 42px;
+  height: 60px;
+}
+.qr-format-a6 {
+  width: 32px;
+  height: 45px;
+  border-color: #bd3d77;
+}
+.qr-format-check {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  display: grid;
+  place-items: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #ff90c1;
+  color: #42001c;
+  font-size: 11px;
+}
+.qr-format-example figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 12px;
+  align-items: baseline;
+  margin: 14px 0 0;
+  font-size: 12px;
+  text-align: left;
+}
+.qr-format-example figcaption strong {
+  color: var(--qr-format-ink);
+}
+.qr-format-example figcaption span {
+  color: var(--qr-format-muted);
+}
+.qr-format-example > p {
+  margin: 8px 0 0;
+  color: var(--qr-format-muted);
+  font-size: 10px;
+}

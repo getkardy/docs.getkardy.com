@@ -1,0 +1,93 @@
+---
+title: Merchant notifications
+description: Choose alerts for your device and track notification usage.
+---
+
+import { MerchantFlow } from "/snippets/merchant-flow.jsx";
+
+<Note>
+  Enabled in development; production rollout is pending. Permission is requested
+  only when you select **Enable notifications**.
+</Note>
+
+**Where:** Settings → This device → Push notifications.
+For verified **Owners and Managers** of active businesses—not Staff.
+Each person opts in separately.
+
+## Choose your alerts
+
+<MerchantFlow type="notifications" />
+
+| Option             | Trigger                           |
+| ------------------ | --------------------------------- |
+| New members        | A customer joins your membership. |
+| Reward redemptions | A redemption is confirmed.        |
+
+Choose either or both. Notifications start off. Stamp alerts, raw QR scans and
+past activity are not included.
+
+## Included usage
+
+**Growth: 1,000 PWA push notifications per paid outlet per UTC month. Scale: contact us.**
+Pooled across the business: three paid outlets share 3,000 notifications.
+Only payment-confirmed outlets add capacity; creating a location does not.
+Changing outlet quantity does not reset usage. If a reduction puts usage over the
+new limit, new alerts pause until capacity is available again.
+
+One event queued for two devices uses two notifications, even if delivery fails.
+Retries do not count again. Unused capacity does not carry forward.
+
+At the cap, new alerts pause until **00:00 UTC on the first of the next month**.
+Loyalty operations continue, with no overage charges or replay of missed alerts.
+
+Owners can open **Settings → Usage & limits → Notifications**:
+
+| Counter        | Meaning                                                                  |
+| -------------- | ------------------------------------------------------------------------ |
+| Sent           | Accepted by the push service this month—not confirmed displayed or read. |
+| Allowance used | Device copies queued this month, including failed deliveries.            |
+| Remaining      | Unused monthly allowance.                                                |
+| Monthly limit  | The business's configured allowance.                                     |
+
+Select **Refresh usage** for current totals. Sent counts by send month; allowance
+counts by queue month. Adding outlets, removing devices or clearing logs does not
+reset or multiply capacity. Sent history starts when tracking is enabled.
+
+## Enable on your device
+
+1. Select your business and open **Settings → This device**.
+2. Choose alert types, then **Enable notifications**.
+3. Allow the browser prompt. Use **Save notification settings** for later changes.
+
+On iPhone/iPad, install Kardy on your Home Screen and open it there; iOS/iPadOS
+16.4+ is required. Supported Android and desktop browsers need permission and HTTPS.
+
+## Businesses, devices and privacy
+
+Settings apply to **one business on one device**. Repeat setup elsewhere.
+Each person can register five devices per business; save again within 90 days
+to keep a registration active.
+
+**Turn off for this business** affects only that business/device. Merchant-site
+sign-out disables all your merchant push registrations; sign in and enable again.
+Consumer-site sign-out does not affect them.
+
+Removed access or inactive billing stops new deliveries. Already-sent alerts
+cannot be recalled. Alerts contain no customer names or contact details;
+opening one checks access to the business.
+
+## Why didn't I receive an alert?
+
+Delivery may take a minute or longer, even with Kardy closed. Check:
+
+- The business, device and alert type are enabled, with allowance remaining.
+- Browser permissions and Focus/Do Not Disturb allow notifications.
+- On iPhone/iPad, you are using the installed Home Screen app.
+- After sign-out, a device change or expiry, notifications are enabled again.
+- If permission was blocked, allow it in device/browser settings and reload.
+
+Check [Members](/features/members) or [Activity](/features/activities) before
+repeating an operation. A missing alert does not mean a stamp or redemption failed.
+
+These alerts are separate from [broadcasts](/features/broadcasts), marketing
+emails and [customer wallet updates](/features/browser-wallet).

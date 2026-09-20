@@ -27,11 +27,14 @@
   }
 }
 .kardy-guide {
-  --guide-ink: #252333;
-  --guide-muted: #656171;
-  --guide-line: #ded9e9;
+  --guide-ink: #42001c;
+  --guide-muted: #74636b;
+  --guide-line: #eadce2;
   --guide-paper: #fff;
-  --guide-tint: #f5f2fc;
+  --guide-tint: #fff0f5;
+  --guide-accent: #42001c;
+  --guide-on-accent: #fff0ee;
+  --guide-control-line: #ad8e9c;
   margin: 28px 0;
   padding: 24px;
   border: 1px solid var(--guide-line);
@@ -40,11 +43,14 @@
   color: var(--guide-ink);
 }
 .dark .kardy-guide {
-  --guide-ink: #f1ecfb;
-  --guide-muted: #c0b9cd;
-  --guide-line: #484151;
-  --guide-paper: #201d27;
-  --guide-tint: #30283f;
+  --guide-ink: #fff0ee;
+  --guide-muted: #c6b8be;
+  --guide-line: #3b3035;
+  --guide-paper: #151314;
+  --guide-tint: #2c1e24;
+  --guide-accent: #ff90c1;
+  --guide-on-accent: #42001c;
+  --guide-control-line: #a28593;
 }
 .kardy-guide-heading {
   display: flex;
@@ -53,7 +59,7 @@
   gap: 16px;
 }
 .kardy-guide-kicker {
-  color: #8664cb;
+  color: var(--guide-accent);
   font-size: 10px;
   letter-spacing: 0.12em;
   font-weight: 650;
@@ -82,16 +88,16 @@
   border-radius: 8px;
   overflow: hidden;
   background: var(--guide-tint);
-  accent-color: #ca1c67;
+  accent-color: var(--guide-accent);
 }
 .kardy-guide progress::-webkit-progress-bar {
   background: var(--guide-tint);
 }
 .kardy-guide progress::-webkit-progress-value {
-  background: #ca1c67;
+  background: var(--guide-accent);
 }
 .kardy-guide progress::-moz-progress-bar {
-  background: #ca1c67;
+  background: var(--guide-accent);
 }
 .kardy-guide-task {
   display: flex;
@@ -117,19 +123,19 @@
   flex-shrink: 0;
   width: 21px;
   height: 21px;
-  border: 1px solid #9990a9;
+  border: 1px solid var(--guide-control-line);
   border-radius: 6px;
 }
 .kardy-guide-box svg {
   width: 12px;
   height: 12px;
   fill: none;
-  stroke: #fff;
+  stroke: var(--guide-on-accent);
   stroke-width: 1.5;
 }
 .kardy-guide-task[aria-checked="true"] .kardy-guide-box {
-  background: #ca1c67;
-  border-color: #ca1c67;
+  background: var(--guide-accent);
+  border-color: var(--guide-accent);
 }
 .kardy-guide-footer {
   display: flex;
@@ -156,15 +162,15 @@
   border-radius: 9px;
 }
 .kardy-guide-next {
-  background: #ca1c67;
-  color: white;
+  background: var(--guide-accent);
+  color: var(--guide-on-accent);
 }
 .kardy-guide button:disabled {
   opacity: 0.45;
   cursor: not-allowed;
 }
 .kardy-guide button:focus-visible {
-  outline: 2px solid #8f6bff;
+  outline: 2px solid var(--guide-accent);
   outline-offset: 3px;
 }
 .kardy-guide button:not(:disabled) {
@@ -197,7 +203,7 @@
   color: var(--guide-muted);
 }
 .kardy-guide-answers button[aria-pressed="true"] {
-  border-color: #8f6bff;
+  border-color: var(--guide-accent);
   background: var(--guide-tint);
 }
 .kardy-guide-feedback {

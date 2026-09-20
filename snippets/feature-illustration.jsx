@@ -6,6 +6,9 @@ export const FeatureIllustration = ({ type }) => {
       coffee:
         "M4 8h12v7a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5Z M16 9h2a3 3 0 0 1 0 6h-2 M7 3v2m4-3v3m4-2v2",
       check: "m5 12 4 4L19 6",
+      heart:
+        "M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z",
+      activity: "M3 12h4l3-9 4 18 3-9h4",
       arrow: "M4 12h16m-6-6 6 6-6 6",
       people:
         "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m20 0v-2a4 4 0 0 0-3-3.9 M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8m8 0a4 4 0 0 1 0 8",
@@ -17,6 +20,8 @@ export const FeatureIllustration = ({ type }) => {
       search: "M16 10a6 6 0 1 1-12 0 6 6 0 0 1 12 0Zm-1 5 6 6",
       lock: "M5 10h14v11H5V10Zm3 0V6a4 4 0 0 1 8 0v4m-4 5v2",
       sliders: "M4 6h16M4 12h16M4 18h16M8 3v6m8 0v6m-6 0v6",
+      wrench:
+        "M14.7 6.3a5.5 5.5 0 0 0-7 7L3 18a2.1 2.1 0 0 0 3 3l4.7-4.7a5.5 5.5 0 0 0 7-7l-4 4-3-3 4-4Z",
     };
     return (
       <svg
@@ -39,9 +44,12 @@ export const FeatureIllustration = ({ type }) => {
       alt=""
     />
   );
-  const FeatureAvatar = ({ name, green = false }) => (
-    <span className={green ? "bf-avatar bf-avatar-green" : "bf-avatar"}>
-      {name.slice(0, 1)}
+  const FeatureAvatar = ({ name }) => (
+    <span className="bf-avatar">
+      <img
+        src={`/images/avatar-${name.toLowerCase().replaceAll(" ", "-")}.png`}
+        alt=""
+      />
     </span>
   );
   const FeatureRow = ({ title, detail, end, icon }) => (
@@ -75,32 +83,29 @@ export const FeatureIllustration = ({ type }) => {
     </div>
   );
   const FeatureCard = ({ full = false }) => (
-    <div className="bf-pass">
-      <div className="bf-pass-top">
+    <div className="bf-landing-card">
+      <div className="bf-landing-card-brand">
         <FeatureBrand />
-        <span>
-          <small>STAMPS</small>
-          <b>
-            {full ? "8" : "5"}
-            <small> / 8</small>
-          </b>
-        </span>
       </div>
-      <div className="bf-pass-body">
-        <b>Coffee</b>
-        <div className="bf-stamps">
-          {Array.from({ length: 8 }, (_, i) => (
-            <i key={i} className={i < (full ? 8 : 5) ? "bf-stamped" : ""} />
+      <div className="bf-landing-stamp-panel">
+        <div className="bf-landing-stamps">
+          {Array.from({ length: 10 }, (_, i) => (
+            <span
+              key={i}
+              data-filled={i < (full ? 10 : 7)}
+              data-reward={i === 9}
+            >
+              <FeatureIcon name={i === 9 ? "coffee" : "heart"} />
+            </span>
           ))}
         </div>
+        <span className="bf-landing-stamp-count">
+          {full ? 10 : 7} / 10 stamps
+        </span>
       </div>
-      <div className="bf-pass-foot">
-        <span>
-          <small>MEMBER</small>Amelia
-        </span>
-        <span>
-          <small>REWARD</small>A coffee, on us
-        </span>
+      <div className="bf-landing-card-qr">
+        <img src="/images/sample-wallet-qr.svg" alt="" />
+        <span>Preview only</span>
       </div>
     </div>
   );
@@ -121,15 +126,47 @@ export const FeatureIllustration = ({ type }) => {
       </div>
     </div>
   );
+  // Shared portrait shell, proportioned like the consumer login preview.
   const FeaturePhone = ({ children }) => (
     <div className="bf-phone">
-      <div className="bf-phone-status">
-        <span>9:41</span>
-        <i />
-        <span>•••</span>
+      <div className="bf-phone-screen">
+        <div className="bf-phone-status" aria-hidden="true">
+          <span>9:41</span>
+          <i />
+          <svg className="bf-phone-connection" viewBox="0 0 42 14" fill="none">
+            <path
+              d="M2 11V9m3 2V7m3 4V5m3 6V3"
+              stroke="currentColor"
+              strokeWidth="2"
+            />
+            <path
+              d="M16 5q5-5 10 0m-8 2q3-3 6 0m-4 2q1-1 2 0"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+            <rect
+              x="30"
+              y="3"
+              width="9"
+              height="8"
+              rx="2"
+              stroke="currentColor"
+            />
+            <path d="M41 6v2" stroke="currentColor" />
+            <rect
+              x="32"
+              y="5"
+              width="5"
+              height="4"
+              rx=".5"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+        <div className="bf-phone-content">{children}</div>
+        <div className="bf-home-bar" />
       </div>
-      <div className="bf-phone-content">{children}</div>
-      <div className="bf-home-bar" />
     </div>
   );
   const featureSceneCopy = {
@@ -230,7 +267,7 @@ export const FeatureIllustration = ({ type }) => {
             />
             {type === "rewards" ? (
               <>
-                <FeatureField label="Stamps to unlock" value="8 stamps" />
+                <FeatureField label="Stamps to unlock" value="10 stamps" />
                 <FeatureRow
                   title="Redeem at"
                   detail="Orchard outlet"
@@ -251,7 +288,7 @@ export const FeatureIllustration = ({ type }) => {
                 </div>
                 <FeatureRow
                   title="Saved design"
-                  detail="Gradient · round stamps"
+                  detail="Drift artwork · heart stamps"
                   icon="sliders"
                 />
               </>
@@ -322,20 +359,38 @@ export const FeatureIllustration = ({ type }) => {
       return (
         <>
           <FeaturePanel>
-            <FeatureRow
-              title="kardy-mcp"
-              detail="Your merchant workspace"
-              end={<FeaturePill>3 tools</FeaturePill>}
-              icon="plug"
-            />
-            {["get_programme", "list_rewards", "list_outlets"].map((name) => (
+            <div className="bf-mcp-header">
+              <span className="bf-mcp-mark">
+                <img src="/images/landing/mcp-mascot.svg" alt="" />
+              </span>
+              <div className="bf-mcp-identity">
+                <div className="bf-mcp-lockup">
+                  <img src="/images/landing/mcp-logo.svg" alt="" />
+                  <span>MCP</span>
+                </div>
+                <small>Your merchant workspace</small>
+              </div>
+              <FeaturePill>3 tools</FeaturePill>
+            </div>
+            {[
+              ["get_programme", "Your brand, at a glance"],
+              ["list_rewards", "Rewards & stamp goals"],
+              ["list_outlets", "Where rewards can be claimed"],
+            ].map(([name, description]) => (
               <div className="bf-tool" key={name}>
-                <span>{name}</span>
+                <FeatureIcon name="wrench" />
+                <div>
+                  <span>{name}</span>
+                  <small>{description}</small>
+                </div>
                 <FeatureIcon name="check" />
               </div>
             ))}
             <div className="bf-split-note">
-              <span>Read-only access</span>
+              <span className="bf-mcp-access">
+                <FeatureIcon name="lock" />
+                Read-only access
+              </span>
               <span>Owner-approved OAuth</span>
             </div>
           </FeaturePanel>
@@ -345,7 +400,7 @@ export const FeatureIllustration = ({ type }) => {
                 <span className={`bf-client-mark bf-client-${i}`}>
                   {i < 2 ? (
                     <img
-                      src={`/images/landing/${name.toLowerCase()}.svg`}
+                      src={`/images/landing/${i === 1 ? "mcp-codex" : "claude"}.svg`}
                       alt=""
                     />
                   ) : (
@@ -356,6 +411,12 @@ export const FeatureIllustration = ({ type }) => {
               </div>
             ))}
           </FeatureBranches>
+          <div className="bf-under-note bf-mcp-boundary">
+            One merchant. Your permissions. Your choice of agent.
+          </div>
+          <div className="bf-example">
+            Example connection · Owner approval required
+          </div>
         </>
       );
     if (type === "broadcasts")
@@ -590,7 +651,7 @@ export const FeatureIllustration = ({ type }) => {
           <FeaturePanel title="Membership found" subtitle="Sunday Coffee">
             <FeaturePerson name="Amelia" detail="Active membership" />
             <FeatureRow
-              title="5 / 8 stamps"
+              title="7 / 10 stamps"
               detail="A coffee, on us"
               icon="gift"
             />
@@ -654,12 +715,40 @@ export const FeatureIllustration = ({ type }) => {
       return (
         <div className="bf-device-pair">
           <FeaturePhone>
-            <b className="bf-device-heading">Wallet</b>
+            <small className="bf-wallet-greeting">Good morning, Amelia</small>
+            <div className="bf-wallet-heading">
+              <b>Your wallet</b>
+              <span>
+                <img src="/images/landing/mcp-mascot.svg" alt="" />
+              </span>
+            </div>
             <FeatureCard />
-            <div className="bf-action">Show my QR</div>
+            <p className="bf-wallet-instruction">
+              Show this QR code to the staff to scan.
+            </p>
+            <div className="bf-wallet-nav">
+              <span>
+                <FeatureIcon name="wallet" />
+                Wallet
+              </span>
+              <span>
+                <FeatureIcon name="pin" />
+                Places
+              </span>
+              <span>
+                <FeatureIcon name="gift" />
+                Rewards
+              </span>
+              <span>
+                <FeatureIcon name="activity" />
+                Activity
+              </span>
+            </div>
           </FeaturePhone>
           <div className="bf-device-note">
-            <span className="bf-app-mark">k.</span>
+            <span className="bf-app-mark">
+              <img src="/images/landing/mcp-mascot.svg" alt="" />
+            </span>
             <b>Kardy on your home screen</b>
             <span>Choose Add to Home Screen in a supported browser.</span>
             <FeaturePill>Progressive web app</FeaturePill>
@@ -670,27 +759,55 @@ export const FeatureIllustration = ({ type }) => {
     if (type === "native-wallets")
       return (
         <>
-          <div className="bf-pair">
-            <div className="bf-card-wrap">
-              <FeatureCard />
-            </div>
-            <FeaturePanel title="Keep your pass close">
-              <FeatureRow
-                title="Apple Wallet"
-                detail="Signed pass, when configured"
-                icon="wallet"
-              />
-              <FeatureRow
-                title="Google Wallet"
-                detail="Save link, when configured"
-                icon="wallet"
-              />
-              <FeaturePill>Availability depends on setup</FeaturePill>
-            </FeaturePanel>
+          <div className="bf-native-wallets">
+            {["apple", "google"].map((platform) => (
+              <div className="bf-native-example" key={platform}>
+                <div className="bf-wallet-brand">
+                  <img
+                    src={`/images/${platform}-wallet-icon.${platform === "apple" ? "jpg" : "png"}`}
+                    alt=""
+                  />
+                  <b>
+                    {platform === "apple" ? "Apple Wallet" : "Google Wallet"}
+                  </b>
+                </div>
+                <div className={`bf-native-pass bf-native-pass-${platform}`}>
+                  <div className="bf-native-top">
+                    <span>Sunday Coffee</span>
+                    {platform === "apple" && (
+                      <span className="bf-native-progress">
+                        <small>STAMPS</small>
+                        <b>5 / 8</b>
+                      </span>
+                    )}
+                  </div>
+                  <div className="bf-native-details">
+                    <small>
+                      {platform === "apple"
+                        ? "MEMBERSHIP"
+                        : "Your loyalty, up to date"}
+                    </small>
+                    <b>
+                      {platform === "apple" ? "Sunday Coffee" : "5 / 8 stamps"}
+                    </b>
+                    {platform === "apple" && (
+                      <div className="bf-native-reward">
+                        <small>YOUR NEXT REWARD</small>
+                        <span>A coffee, on us</span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="bf-native-qr">
+                    <img src="/images/sample-wallet-qr.svg" alt="" />
+                    <small>Sample QR · Not a live pass</small>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
           <div className="bf-under-note">
-            Use the browser wallet for current stamp progress. Saving a native
-            pass is optional.
+            Your membership, in your preferred wallet. Saving is optional and
+            depends on setup.
           </div>
         </>
       );
@@ -717,11 +834,34 @@ export const FeatureIllustration = ({ type }) => {
           </div>
         </div>
         <div className={`bf-scene bf-scene-${type}`}>
-          <FeatureScene type={type} />
+          {["members", "analytics", "usage-limits", "broadcasts"].includes(
+            type,
+          ) ? (
+            <div className="bf-safari">
+              <div className="bf-safari-toolbar">
+                <span className="bf-safari-dots">
+                  <i />
+                  <i />
+                  <i />
+                </span>
+                <span className="bf-safari-address">
+                  <FeatureIcon name="lock" />
+                  merchants.getkardy.com
+                </span>
+              </div>
+              <div className="bf-safari-content">
+                <FeatureScene type={type} />
+              </div>
+            </div>
+          ) : (
+            <FeatureScene type={type} />
+          )}
         </div>
-        <div className="bf-example">
-          Illustrative example · not a live account
-        </div>
+        {type !== "merchant-mcp" && (
+          <div className="bf-example">
+            Illustrative example · not a live account
+          </div>
+        )}
       </div>
     </div>
   );

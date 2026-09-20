@@ -9,6 +9,11 @@ Run `pnpm install`, `pnpm dev` (port 3002), and `pnpm check`. Before committing,
 Husky runs staged formatting/lint fixes, TypeScript checks, branding tests and
 Mintlify build/link validation. Commit generated `navigation-progress.js` whenever
 its TypeScript source changes. Do not edit the generated bundle directly.
+Flow canvases use a separately bundled React Flow runtime: edit
+`runtime/merchant-flow.jsx`, then run `pnpm build:flows` and commit both generated
+`merchant-flow-runtime.js` and `merchant-flow-runtime.css`. The runtime source is
+excluded from Mintlify snippet evaluation via `.mintignore`; the root bundles
+load automatically. Keep lifecycle content in `snippets/merchant-flow.jsx`.
 
 Mintlify supplies React hooks to JSX snippets; keep their global declarations.
 Do not add Next.js, app auth, backend credentials, migrations or app runtime code.

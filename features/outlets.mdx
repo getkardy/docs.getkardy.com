@@ -4,6 +4,7 @@ description: Keep several physical shops under one brand and one programme.
 ---
 
 import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+import { MerchantFlow } from "/snippets/merchant-flow.jsx";
 
 **Where:** Merchant workspace → **Locations**.
 
@@ -12,6 +13,10 @@ import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
 </Frame>
 
 Create one brand for a chain, then add each shop as an outlet.
+
+Each outlet belongs to exactly one business. A business has its own subscription,
+invoices and payment settings, separate from other businesses under the same login.
+New businesses start with one outlet; additional locations are arranged after setup.
 
 ## Add or update an outlet
 
@@ -81,6 +86,19 @@ Outlet-specific team restrictions are not yet documented as available. See
 
 ## Additional outlets
 
+<MerchantFlow type="outlets" />
+
 Arrange billing and an outlet allowance before adding or reactivating stores beyond
 your capacity. See [usage limits](/features/usage-limits); additional outlets do not
 automatically multiply other allowances.
+
+Each business has one subscription with a paid outlet quantity. Three Growth
+outlets cost S&#36;150/month. Where enabled, use **Settings → Billing** to buy more
+capacity; payment must be confirmed before extra outlets can be activated.
+Creating a location does not itself purchase capacity or change the charge.
+
+Pause unwanted locations before scheduling a lower paid quantity for the next
+renewal. Pausing or deleting a location alone does not reduce your bill. If the
+billing control is unavailable, contact Kardy before activating additional outlets.
+The introductory offer applies only to each business's first outlet, not every
+new location. See [plans and activation](/features/plans).

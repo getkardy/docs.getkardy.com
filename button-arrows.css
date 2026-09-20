@@ -1,3 +1,24 @@
+/* Portal links keep a distinct surface and readable label in both themes. */
+a.kardy-portal-button {
+  background-color: #42001c;
+  color: #ffffff;
+  text-decoration: none;
+}
+a.kardy-portal-button:hover {
+  background-color: #65032f;
+}
+.dark a.kardy-portal-button {
+  background-color: #ff90c1;
+  color: #42001c;
+}
+.dark a.kardy-portal-button:hover {
+  background-color: #ffafd2;
+}
+a.kardy-portal-button:focus-visible {
+  outline: 2px solid #af79f3;
+  outline-offset: 4px;
+}
+
 /* Stripe motion: only the tip moves 3px; the shaft fades. No SVG movement,
    rotation animation, dash drawing, or brightness filtering. Shared with docs. */
 :is(button, a):has(

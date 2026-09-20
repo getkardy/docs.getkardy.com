@@ -1,0 +1,136 @@
+.platform-overview {
+  --platform-paper: #fff;
+  --platform-line: #dedee3;
+  --platform-ink: #42001c;
+  --platform-muted: #61616d;
+  --platform-tint: #fff0f5;
+  margin: 24px 0;
+}
+.dark .platform-overview {
+  --platform-paper: #19191f;
+  --platform-line: #36363f;
+  --platform-ink: #fff0ee;
+  --platform-muted: #c1bbc5;
+  --platform-tint: #35202b;
+}
+.platform-overview-sites {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.platform-overview-card,
+.platform-overview-shared {
+  background: var(--platform-paper);
+  border: 1px solid var(--platform-line);
+  border-radius: 12px;
+  padding: 20px;
+  color: var(--platform-ink);
+  box-shadow: 0 4px 16px #00000006;
+}
+.platform-overview-card svg {
+  width: 32px;
+  height: 32px;
+  margin: 0 0 16px;
+  padding: 6px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  color: #42001c;
+  background: #ffe0ed;
+  border-radius: 8px;
+}
+.platform-overview-card small {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--platform-muted);
+}
+.platform-overview-card strong {
+  display: block;
+  font-size: 16px;
+  margin: 4px 0 10px;
+}
+.platform-overview-card span {
+  display: block;
+  color: var(--platform-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.platform-overview-connectors {
+  height: 46px;
+  margin: 0 25%;
+  position: relative;
+  display: flex;
+}
+.platform-overview-connectors i {
+  width: 50%;
+  height: 24px;
+  border-bottom: 1px solid #96939c;
+}
+.platform-overview-connectors i:first-child {
+  border-left: 1px solid #96939c;
+  border-bottom-left-radius: 8px;
+}
+.platform-overview-connectors i:last-child {
+  border-right: 1px solid #96939c;
+  border-bottom-right-radius: 8px;
+}
+.platform-overview-connectors::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px solid #96939c;
+}
+.platform-overview-shared {
+  text-align: center;
+  max-width: 430px;
+  margin: auto;
+}
+.platform-overview-shared strong {
+  font-size: 16px;
+}
+.platform-overview-shared p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--platform-muted);
+  margin: 6px 0 16px;
+}
+.platform-overview-shared > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.platform-overview-shared span {
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: var(--platform-tint);
+  font-size: 11px;
+}
+.platform-overview figcaption {
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: center;
+  margin: 18px 0 0;
+  color: #51424a;
+}
+.dark .platform-overview figcaption {
+  color: #e4dce7;
+}
+@container (max-width: 390px) {
+  .platform-overview-sites {
+    gap: 10px;
+  }
+  .platform-overview-card {
+    padding: 12px;
+  }
+  .platform-overview-card strong {
+    font-size: 14px;
+  }
+  .platform-overview-card span {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,335 @@
+.shared-account {
+  margin: 24px 0;
+  --account-connector: #8f526d;
+}
+.shared-account-sites {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.shared-account-sites > div {
+  padding: 18px 12px;
+  border: 1px solid #e6d5dd;
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+}
+.shared-account-sites strong {
+  display: block;
+  font-size: 17px;
+}
+.shared-account-sites small {
+  overflow-wrap: anywhere;
+  margin-top: 5px;
+}
+.shared-account-sites span {
+  display: block;
+  font-size: 11px;
+  margin-top: 12px;
+}
+.shared-account-connectors {
+  position: relative;
+  height: 52px;
+  margin: 0 calc(25% - 5px);
+  display: flex;
+}
+.shared-account-connectors::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 26px;
+  border-left: 1px solid var(--account-connector);
+}
+.shared-account-connectors i {
+  width: 50%;
+  height: 26px;
+  margin-top: 26px;
+  border-top: 1px solid var(--account-connector);
+}
+.shared-account-connectors i:first-child {
+  border-left: 1px solid var(--account-connector);
+}
+.shared-account-connectors i:nth-child(2) {
+  border-right: 1px solid var(--account-connector);
+}
+.shared-account-connectors span {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  color: var(--account-connector);
+  font-size: 27px;
+  line-height: 32px;
+}
+.shared-account-identity {
+  margin: auto;
+  max-width: 300px;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #e6d5dd;
+  background: #fff;
+  text-align: center;
+}
+.shared-account .shared-account-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 14px auto 0;
+}
+.shared-account .shared-account-logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 26px;
+  object-fit: contain;
+  margin: 0 auto 10px;
+}
+.shared-account-identity > small {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+.shared-account-identity b {
+  display: block;
+  margin-top: 10px;
+  font-size: 17px;
+}
+.shared-account-identity > span {
+  display: block;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  margin-top: 4px;
+}
+.shared-account-identity p {
+  margin: 12px 0 0;
+  padding: 8px;
+  border-radius: 6px;
+  background: #fff0f5;
+  font-size: 12px;
+}
+.shared-account figcaption {
+  margin-top: 18px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.dark .shared-account {
+  --account-connector: #ffadd2;
+}
+.dark .shared-account figcaption {
+  color: #fff0ee;
+}
+.account-hierarchy {
+  margin: 24px 0;
+  --hierarchy-line: #9b5f7b;
+}
+.account-hierarchy-person {
+  max-width: 320px;
+  margin: auto;
+  border: 1px solid #dedee3;
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+}
+.account-hierarchy-person > small {
+  padding: 9px 14px;
+  background: #f0e9fa;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+.account-hierarchy-person > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+}
+.account-hierarchy-person img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0;
+}
+.account-hierarchy-label {
+  position: relative;
+  width: fit-content;
+  margin: 22px auto;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 10px;
+}
+.account-hierarchy-label::before,
+.account-hierarchy-label::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 23px;
+  width: 1px;
+  background: var(--hierarchy-line);
+}
+.account-hierarchy-label::before {
+  bottom: 100%;
+}
+.account-hierarchy-label::after {
+  top: 100%;
+}
+.account-hierarchy-brands {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.account-hierarchy-branch {
+  position: relative;
+  padding-top: 16px;
+}
+.account-hierarchy-branch::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: -12px;
+  height: 16px;
+  border-top: 1px solid var(--hierarchy-line);
+  border-left: 1px solid var(--hierarchy-line);
+}
+.account-hierarchy-branch + .account-hierarchy-branch::before {
+  left: -12px;
+  right: 50%;
+  border-left: 0;
+  border-right: 1px solid var(--hierarchy-line);
+}
+.account-hierarchy-brand {
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #dedee3;
+}
+.account-hierarchy-brand > small {
+  background: #e6f0eb;
+  padding: 7px 12px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+.account-hierarchy-brand img {
+  display: block;
+  width: 110px;
+  max-width: 85%;
+  height: 42px;
+  object-fit: contain;
+  object-position: left center;
+  margin: 12px;
+}
+.account-hierarchy-brand > span {
+  display: block;
+  padding: 0 12px 12px;
+  font-size: 12px;
+}
+.account-hierarchy-outlets {
+  margin-left: 14px;
+  padding: 12px 0 0 12px;
+  border-left: 1px solid var(--hierarchy-line);
+}
+.account-hierarchy-outlets ul {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+}
+.account-hierarchy-outlets li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 8px;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 11px;
+}
+.account-hierarchy-outlets li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: auto;
+  right: 100%;
+  width: 13px;
+  height: 0;
+  border-radius: 0;
+  background: transparent;
+  border-top: 1px solid var(--hierarchy-line);
+}
+.account-hierarchy-outlets svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+.account-hierarchy figcaption {
+  margin-top: 24px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.account-hierarchy-team {
+  position: relative;
+  margin: 12px 0 0 14px;
+  padding: 12px;
+  border: 1px solid #dedee3;
+  border-radius: 10px;
+  background: #fff;
+}
+.account-hierarchy-team::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 12px;
+  height: 13px;
+  border-left: 1px solid var(--hierarchy-line);
+}
+.account-hierarchy-team > small {
+  font-size: 9px;
+  letter-spacing: 0.06em;
+}
+.account-hierarchy-teammate {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+.account-hierarchy-teammate img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0;
+}
+.account-hierarchy-teammate b {
+  font-size: 11px;
+}
+.account-hierarchy-team p {
+  margin: 10px 0 0;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #74636b;
+}
+.dark .account-hierarchy {
+  --hierarchy-line: #efb5cd;
+}
+.dark .account-hierarchy figcaption,
+.dark .account-hierarchy-outlets > small {
+  color: #fff0ee;
+}
+@container (max-width: 360px) {
+  .account-hierarchy-brands {
+    gap: 16px;
+  }
+  .account-hierarchy-outlets {
+    margin-left: 4px;
+    padding-left: 8px;
+  }
+  .account-hierarchy-outlets li {
+    padding: 6px;
+    font-size: 10px;
+  }
+  .account-hierarchy-outlets li::before {
+    width: 9px;
+  }
+}

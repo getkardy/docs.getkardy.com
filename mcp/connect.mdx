@@ -3,6 +3,8 @@ title: Connect your agent
 description: Connect Claude, Codex or another AI agent to your Kardy merchant workspace.
 ---
 
+import { MerchantFlow } from "/snippets/merchant-flow.jsx";
+
 <Note>
   Agent connections share the workspace's [MCP
   allowance](/features/usage-limits). Check **Settings → Usage & limits** for
@@ -17,26 +19,11 @@ Kardy shares your programme, rewards and outlets. Your agent can read them, but 
   the Owner of a merchant with an active subscription.
 </Info>
 
-## Connect in three steps
+## Follow the connection flow
 
 **OAuth means signing in to Kardy and approving access—no API key to copy.**
 
-![Add Kardy in your agent, sign in and choose permissions, then return to your agent.](/images/mcp-oauth-flow.svg)
-
-<Steps>
-  <Step title="Copy your connection address">
-    Open the merchant portal → **Settings → Agent connections**. Copy the **MCP
-    endpoint**.
-  </Step>
-  <Step title="Add Kardy to your agent">
-    Choose your client below and follow its instructions. Your agent will open
-    Kardy in your browser.
-  </Step>
-  <Step title="Review and approve">
-    Sign in to Kardy, choose your merchant and review the permissions. Select
-    **Allow read-only access**, then return to your agent.
-  </Step>
-</Steps>
+<MerchantFlow type="mcp-connect" />
 
 ## Choose your agent
 
@@ -127,5 +114,5 @@ information already shared with your agent cannot be recalled.
   </Accordion>
 </AccordionGroup>
 
-Building an integration? See the [MCP technical reference](/technical/mcp-reference)
+Building an integration? See the [MCP technical reference](/mcp/reference)
 for tool schemas, security rules and deployment details.

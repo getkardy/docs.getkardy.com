@@ -1,49 +1,81 @@
 ---
 title: Claim a reward
-description: Check the current reward, visit an eligible outlet and wait for staff confirmation.
+description: Prepare a timed reward QR, let staff approve the claim, and check your receipt.
 ---
 
+<Note>
+  This walkthrough covers slide approval and timed reward QRs, implemented in
+  development. Check [feature availability](/availability) if your live screen
+  differs.
+</Note>
+
 <Steps>
-  <Step title="Check your progress">
-    [Open the merchant card](/customer-journey/wallet) and check whether you
-    have reached the saved stamp goal.
+  <Step title="Check the earned reward">
+    [Open your merchant card](/customer-journey/wallet), then the reward page.
+    Check the stamp goal, eligible outlets and any reward expiry date.
   </Step>
-  <Step title="Check where to claim">
-    Read the reward's eligible outlets. Joining at one outlet does not
-    automatically restrict all claims to that store.
+  <Step title="Prepare the QR at the counter">
+    Use **Slide to prepare reward QR** at the bottom of the page. Drag the
+    handle left to right through four checkpoints and release at the end.
+    Releasing early cancels the slide without submitting.
   </Step>
-  <Step title="Ask staff to check the reward">
-    [Show your QR](/customer-journey/show-qr). Staff choose **Check
-    membership**, without adding a stamp merely to inspect the balance.
+  <Step title="Show the temporary reward QR">
+    Wait for **Reward QR ready**, then show staff the code. It lasts up to **10
+    minutes**, or until the reward's deadline if sooner. Keep the countdown
+    visible. Your usual membership QR is for collecting stamps, not claiming a
+    reward.
   </Step>
-  <Step title="Confirm the claim">
-    Agree on the reward and wait for the staff redemption result before taking
-    it.
+  <Step title="Let staff approve">
+    Staff scan the reward QR, review the details and use **Slide to redeem
+    reward**. Preparing your QR has not redeemed anything or spent stamps. Wait
+    for the confirmed result before taking the reward.
   </Step>
-  <Step title="Review remaining progress">
-    Refresh your card. The reward's stamp cost is deducted; excess stamps carry
-    forward. Another claim needs its own confirmation.
+  <Step title="Check the receipt">
+    Once redemption is confirmed, the QR is replaced by a receipt and the wallet
+    refreshes its progress. The reward's stamp cost is deducted; extra stamps
+    carry forward between reward levels. The final claim clears the balance and
+    follows the programme's reset setting. Another claim needs a new reward QR
+    and approval.
   </Step>
 </Steps>
 
-**Done when:** staff confirm the redemption and the current card reflects the claim.
+## After your final reward
 
-Check this in the **Kardy browser wallet or installed PWA**, not an Apple Wallet
-or Google Wallet balance. Native pass updates are not implemented. The coffee
-notification shown in the public walkthrough is a concept preview; do not wait
-for a push notification as proof of redemption.
+The merchant chooses whether the card restarts at the first reward with zero
+stamps, or becomes **complete**, with no more stamps or reward claims on that
+card. This happens after staff confirm the final claim—not when you reach the
+stamp goal—so you can still collect the reward you earned.
+See [final reward behaviour](/features/rewards#after-the-final-reward-is-claimed).
 
-## If a claim is interrupted
+## Prefer not to drag?
 
-Ask staff to use **Retry redemption** to check the same request. Do not start another
-claim until the result is confirmed. A disconnected screen is not proof of failure.
+Choose **Confirm without sliding**, or focus the slider handle, press **Right
+arrow four times**, then **Enter**. The same checks apply. Sound is optional:
+use the sound control on the reward page. Checkpoint clicks do not mean a reward
+has been redeemed; use the on-screen confirmation.
 
-## If a reward is unavailable
+## Understand the two expiry times
 
-Refresh the card and check the current reward and eligible outlet with staff. A full
-card screenshot does not preserve an old claim: deleted rewards cannot be redeemed.
-See [reward changes and deletion](/features/rewards#delete-a-reward) for the rules.
+- **QR countdown:** the short window for staff to scan and approve this code.
+  If it expires without redemption, prepare another while the reward is still valid.
+- **Reward expiry:** the merchant's deadline for claiming the earned reward.
+  It may have no expiry, or expire one week or one calendar month after it is earned.
+  Check the date on your reward page.
 
-If details fail to load, do not treat the error as confirmation of availability.
-Keep the account, brand, outlet and visit time for [Support](/help), without sharing
-private QR codes. Staff use the [counter guide](/merchants/scanning).
+Replacing a QR invalidates the old one. It never extends the reward deadline.
+If the reward itself has expired, ask the merchant for help; creating another QR
+will not make it valid. Expiry does not automatically erase your stamps.
+
+## If the result is unclear
+
+Keep the reward page open with an internet connection. If the countdown ends while
+Kardy is checking whether staff redeemed it, wait for that check; the timer alone
+does not prove the claim failed. Ask staff to check their result and activity
+before starting another claim. A screenshot, sound or native wallet balance is
+not proof of redemption.
+
+Deleted or changed rewards can invalidate a prepared code. Reopen the current
+reward and check with staff. See [reward changes](/features/rewards#delete-a-reward).
+
+For help, share the brand, outlet and visit time with [Support](/help), not your
+private QR code. Staff can follow the [counter tutorial](/guides/scanning).

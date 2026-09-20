@@ -3,9 +3,43 @@ title: Accounts and access
 description: Understand your Kardy account, who can access your organisation, and where to manage each one.
 ---
 
+import { AccountHierarchy } from "/snippets/account-hierarchy.jsx";
+import { SharedAccount } from "/snippets/shared-account.jsx";
+
 **One email, one Kardy account.** You can use the same email and password for your
 personal wallet and your business workspace. You may need to sign in separately
 on each site; that does not mean you need two accounts.
+
+<AccountHierarchy />
+
+## One password across both sites
+
+Your consumer wallet at **getkardy.com** and merchant portal at
+**merchants.getkardy.com** use the same Kardy login—not separate passwords.
+
+<SharedAccount />
+
+- Resetting your password on either site changes the password for **both sites**.
+  Use the new password the next time you sign in to either one.
+- A password reset does not change your email, memberships, stamps, rewards,
+  businesses, subscriptions or Owner, Manager and Staff permissions.
+- Being a customer of a business does not give you access to manage it. Each
+  business still controls its own team permissions.
+- Separate sign-in sessions on the two sites do not mean separate accounts.
+  Do not assume a password reset signs out every existing session. If you suspect
+  unauthorised access, reset your password and contact Kardy Support.
+
+For example, a café Owner who resets their password while using their personal
+wallet must also use that new password when signing in to the merchant portal.
+Their café and personal memberships stay in place.
+
+Development and production are separate environments. A reset in a development
+or test environment does not change the account on the live sites, even when the
+email address is the same.
+
+See [password recovery](/customer-journey/recover-account#one-reset-for-both-sites)
+for the steps. Never share your login with employees; invite each person using
+their own account.
 
 An **account** is your personal login. A **customer membership** connects you to a
 shop's loyalty programme. A **workspace** is a business you own or have been

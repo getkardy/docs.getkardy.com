@@ -1,79 +1,117 @@
 ---
 title: Usage and capacity limits
 sidebarTitle: Usage & limits
-description: See what is included and plan before your workspace reaches capacity.
+description: Included allowances, what counts and what happens at the limit.
 ---
 
-import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+## Included limits
 
-**Where:** Merchant **Settings → Usage & limits**, visible to the Owner.
+<Note>
+  Check **Settings → Usage & limits** for your enforced allowances.
+  Outlet-quantity billing requires activation; per-outlet employee allowances
+  remain pending rollout. Existing subscriptions are unchanged.
+</Note>
 
-<Frame caption="Illustrative capacity meter. Your actual allowances and usage appear in Settings.">
-  <FeatureIllustration type="usage-limits" />
-</Frame>
+| Resource                                                                               | Growth                                                                                                                    | Scale      |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| Monthly price per outlet (SGD)                                                         | <s>S&#36;50</s> **S&#36;25**<br /><small>Each eligible business's first outlet, first month. Then S&#36;50/month.</small> | Contact us |
+| Outlet activation                                                                      | Paid subscription required                                                                                                | Contact us |
+| MCP calls per UTC month                                                                | 1,000                                                                                                                     | Contact us |
+| [Employee accounts](/features/team-access#employee-accounts-and-roles) per outlet      | 5                                                                                                                         | Contact us |
+| Stored rewards                                                                         | 25                                                                                                                        | Contact us |
+| [PWA push notifications](/features/merchant-notifications) per paid outlet / UTC month | 1,000 · Pooled per business · Pending rollout                                                                             | Contact us |
 
-## Read your usage overview
+Scale allowances are agreed before activation—not unlimited. Public plans do not
+advertise a member cap, but existing configured caps still apply.
 
-Open **Settings → Usage & limits** as the organisation Owner. The overview lists
-**MCP tool calls**, **Broadcast recipients**, stored members, active outlets,
-team members and stored rewards. Each row shows **used / limit**, a capacity bar,
-and a warning when nearing or reaching the limit.
+Each new business starts with one outlet and can qualify separately for the
+introductory offer, even under the same account. Additional outlets do not restart
+it. See [billing terms](/features/plans#first-outlet-offer-per-business).
 
-Below the table, **MCP usage** and **Broadcast usage** each show **Used**,
-**Remaining**, **Monthly limit**, and the next reset date. Remaining capacity never
-displays below zero. **No allowance** means the workspace has no configured capacity
-for that resource; it does not mean unlimited usage.
+## Basic merchant push
 
-Use **Refresh usage** to request the latest totals. Monthly usage covers the current
-UTC calendar month, not a rolling 30-day window. Daily usage history and historical
-date filters are not available yet. These usage totals are separate from visit,
-reward-redemption and referral performance charts.
+Alerts cover **new members and reward redemptions**, not stamps or customer
+marketing. The allowance is shared across outlets and recipients: one event
+queued for two devices uses two notifications. Retries do not count again.
 
-The demo shows clearly labelled illustrative September 2026 usage. Its sample
-allowances are not included-plan promises. Use your live workspace for actual limits.
+Owners can check **Usage & limits → Notifications** for Sent, Allowance used,
+Remaining and Monthly limit. **Sent** means accepted by the push service, not
+displayed or read. Sent counts by send month; allowance counts by queue month.
+See [notification setup and limits](/features/merchant-notifications).
 
-## Growth defaults
+## Employee accounts explained
 
-| Resource           | Allowance per workspace                             |
-| ------------------ | --------------------------------------------------- |
-| Stored members     | 1,000, including paused and expired memberships     |
-| MCP tool calls     | 1,000 per UTC calendar month                        |
-| Active outlets     | 1                                                   |
-| Staff and managers | 10, excluding the Owner unless also listed as staff |
-| Stored rewards     | 25, including archived history                      |
-| Email recipients   | 0 until separately agreed and configured            |
+**Managers and Staff share one allowance; Owners and customer Members are excluded.**
+Two Managers plus three Staff use five accounts.
 
-Scale uses agreed finite allowances, not unlimited capacity. Adding an outlet or
-another agent does not automatically multiply allowances.
+Where pooled billing is enabled, Growth allows **5 × paid outlets**. Employees
+can work across outlets and count once per business; no outlet assignment is
+required. Creating a location or requesting more capacity does not add slots.
+
+After a capacity reduction, existing employees remain, but new employees cannot
+join until the team fits the limit. Inactive subscriptions block paid operations.
+See [roles and permissions](/features/team-access).
+
+## Business and outlet explained
+
+One account can own several businesses. Each business has its own subscription,
+programme and member list; each outlet belongs to exactly one business.
+“Workspace” and “organisation” also mean business.
+
+Growth bills **S&#36;50 × paid outlets/month**: three outlets cost S&#36;150.
+Use **Settings → Billing** where enabled, or contact Kardy. Added capacity requires
+payment confirmation; member, MCP and reward allowances do not automatically multiply.
+See [billing](/features/plans).
+
+## Check your usage
+
+The Owner can open **Settings → Usage & limits** and select **Refresh usage**
+for current totals. MCP usage includes remaining calls and the next reset date;
+notifications show the separate counters above.
+
+Monthly counters follow the **UTC calendar**, not your billing cycle.
+Daily history and date filters are unavailable. **No allowance** means zero
+capacity; demo figures are examples, not entitlements.
 
 ## At the limit
 
-The usage page warns at 80%. New capacity-consuming operations stop at the cap;
-existing memberships and earned rewards are not automatically deleted. There are
-no automatic overage charges. Contact Kardy to arrange additional capacity.
+Warnings appear at 80%. New capacity-consuming operations stop at the cap, but
+existing memberships and earned rewards remain. There are **no automatic overage
+charges**. Contact Kardy for more capacity.
 
-Monthly MCP and email counters reset on the first day of the month at **00:00 UTC**,
-not on the subscription renewal date. Stored-member capacity does not reset monthly.
-Switching keys, reconnecting OAuth or changing member status does not reset usage.
+Monthly counters reset on the first at **00:00 UTC**. New keys, OAuth
+reconnections and membership-status changes do not reset usage.
 
 <Card
   title="Plans, activation and billing"
   icon="credit-card"
-  href="/merchants/billing"
+  href="/features/plans"
 >
-  Subscription boundaries and additional capacity.
+  Manage paid capacity.
 </Card>
 
 ## What counts
 
-- **MCP:** each authorised tool request and results page counts once. Manual keys
-  and OAuth clients share the counter. Connection setup and discovery do not consume
-  monthly calls; separate burst limits still apply.
-- **Email:** each recipient reserves allowance when queued, including recipients
-  later suppressed or failed. Retries do not reserve it again. An over-budget batch
-  is rejected rather than partially queued.
-- **Stored capacity:** paused or expired memberships and archived rewards still count.
-  Existing over-limit records remain, but further capacity-consuming additions stop.
+| Resource          | What counts or frees capacity                                        | At the limit                                                                                                                                                                                                                  |
+| ----------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MCP calls         | Authorised tool requests and results pages; monthly reset.           | Counted calls stop until reset or an agreed increase.                                                                                                                                                                         |
+| Notifications     | Each queued device copy, including failed deliveries; monthly reset. | Growth: 1,000 × payment-confirmed outlets, pooled per business. New alerts pause at the cap; loyalty operations continue. No rollover or replay. Creating locations or changing devices does not add capacity or reset usage. |
+| Employee accounts | Managers and Staff; removal frees a slot, changing roles does not.   | Additional invitations cannot be accepted; existing accounts remain.                                                                                                                                                          |
+| Stored rewards    | Saved definitions, including archived rewards; no monthly reset.     | Additional definitions cannot be saved. Review deletion effects before removing rewards.                                                                                                                                      |
+| Stored members    | Active, paused and expired memberships; no monthly reset.            | New joins stop at the configured cap; existing memberships and rewards remain.                                                                                                                                                |
+| Active outlets    | Enabled locations; no monthly reset.                                 | Extra locations require confirmed paid capacity.                                                                                                                                                                              |
 
-An active subscription is still required for paid operations. An allowance alone
-does not enable email delivery or activate an unpaid programme.
+### Examples
+
+- **Employees:** two Managers and three Staff use five accounts; the Owner is separate.
+- **MCP:** agents using 600 and 400 calls share the 1,000-call allowance. Setup
+  and discovery do not count; separate request-rate limits still apply.
+- **Rewards:** one “Free coffee” definition counts once, regardless of redemptions.
+
+### Broadcasts and email recipients
+
+<span className="kardy-coming-soon">Coming soon</span>
+
+Broadcast sending and recipient pricing are not available. Previews and counters
+do not enable delivery or create an included sending allowance. Paid operations
+still require an active subscription.

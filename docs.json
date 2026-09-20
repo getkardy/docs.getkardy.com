@@ -21,6 +21,9 @@
     "href": "/intro"
   },
   "favicon": "/images/favicon.svg",
+  "thumbnails": {
+    "background": "/images/og-background.png"
+  },
   "seo": {
     "indexing": "navigable",
     "metatags": {
@@ -44,6 +47,10 @@
     ]
   },
   "footer": {
+    "socials": {
+      "website": "https://getkardy.com",
+      "github": "https://github.com/8starlabs"
+    },
     "links": [
       {
         "header": "Legal",
@@ -96,7 +103,7 @@
           },
           {
             "label": "Accounts & access",
-            "href": "/accounts/overview"
+            "href": "/guides/accounts"
           },
           {
             "label": "Customer journey",
@@ -104,7 +111,7 @@
           },
           {
             "label": "MCP",
-            "href": "/features/merchant-mcp"
+            "href": "/mcp/overview"
           },
           {
             "label": "Technical",
@@ -151,7 +158,8 @@
                   "features/branded-cards",
                   "features/rewards",
                   "features/scanning",
-                  "features/referrals"
+                  "features/referrals",
+                  "features/birthday-rewards"
                 ],
                 "icon": "gift"
               },
@@ -172,7 +180,9 @@
                 "pages": [
                   "features/members",
                   "features/analytics",
+                  "features/weekly-reports",
                   "features/activities",
+                  "features/merchant-notifications",
                   "features/live-view",
                   "features/outlets",
                   "features/team-access",
@@ -181,8 +191,8 @@
                 "icon": "store"
               },
               {
-                "group": "Communication",
-                "tag": "Coming\u00a0soon",
+                "group": "Broadcasts",
+                "tag": "Coming soon",
                 "pages": ["features/broadcasts"],
                 "icon": "envelope"
               }
@@ -190,7 +200,7 @@
           },
           {
             "group": "Plans & capacity",
-            "pages": ["features/usage-limits"]
+            "pages": ["features/plans", "features/usage-limits"]
           }
         ]
       },
@@ -238,15 +248,15 @@
           {
             "group": "Shared references",
             "pages": [
-              "merchants/setup",
+              "guides/setup",
               "guides/qr-signs",
-              "merchants/scanning",
-              "merchants/billing"
+              "guides/scanning",
+              "guides/billing"
             ]
           },
           {
             "group": "Your account",
-            "pages": ["accounts/overview"]
+            "pages": ["guides/accounts"]
           }
         ]
       },
@@ -303,11 +313,11 @@
         "groups": [
           {
             "group": "Merchant MCP",
-            "pages": ["features/merchant-mcp", "technical/merchant-mcp"]
+            "pages": ["mcp/overview", "mcp/connect"]
           },
           {
             "group": "Reference",
-            "pages": ["technical/mcp-reference"]
+            "pages": ["mcp/reference", "mcp/errors"]
           }
         ]
       },
@@ -394,6 +404,38 @@
     {
       "source": "/technical/wallet-and-integrations",
       "destination": "/features/native-wallets"
+    },
+    {
+      "source": "/merchants/setup",
+      "destination": "/guides/setup"
+    },
+    {
+      "source": "/merchants/scanning",
+      "destination": "/guides/scanning"
+    },
+    {
+      "source": "/merchants/billing",
+      "destination": "/features/plans"
+    },
+    {
+      "source": "/accounts/overview",
+      "destination": "/guides/accounts"
+    },
+    {
+      "source": "/features/merchant-mcp",
+      "destination": "/mcp/overview"
+    },
+    {
+      "source": "/technical/merchant-mcp",
+      "destination": "/mcp/connect"
+    },
+    {
+      "source": "/technical/mcp-reference",
+      "destination": "/mcp/reference"
+    },
+    {
+      "source": "/technical/mcp-errors",
+      "destination": "/mcp/errors"
     }
   ]
 }

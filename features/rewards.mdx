@@ -20,6 +20,36 @@ Open **Rewards** to see the performance list, then **Customise rewards** to edit
 reward label and stamp goal. Use **Reward performance** to return to the list. Brand settings also
 include your name, logo, colour, and membership expiry configuration.
 
+## Pause collection when stock runs out
+
+In **Rewards → Customise rewards**, Owners and Managers can set a reward's
+**Reward collection** to **Paused — out of stock**, then save. Choose
+**Available to collect** and save when stock returns.
+
+This pauses claims, not stamp earning. Members retain their progress, and even
+a reward QR prepared before the pause cannot complete a new claim while paused.
+Do not delete the reward to handle a temporary stock shortage.
+
+Existing earned-reward expiry dates do not change. This is a manual availability
+switch, not an inventory counter or a one-time-per-member claim limit.
+Stock pause does not complete the member's stamp card.
+
+## Set a reward claim deadline
+
+In the reward editor, choose **no expiry**, **one week**, or **one calendar month**
+after the reward is earned, then save. Customers can see the earned reward's
+deadline on their reward page. Changing only this policy does not shorten the
+saved deadline of an already-earned reward.
+
+The claim deadline is separate from the reward QR's **up to 10-minute** lifetime.
+Replacing a QR never extends the reward deadline. Expired rewards cannot be
+redeemed, but expiry does not silently remove stamps; resolve the benefit with
+the customer. These controls belong to the development timed-redemption flow;
+check [availability](/availability) before promising them in production.
+
+See the [staff approval tutorial](/guides/scanning) and
+[customer redemption tutorial](/customer-journey/rewards).
+
 ## Understand performance
 
 The **Reward redemptions** graph is visible by default above the performance table. It shows daily recorded claims across the programme,
@@ -32,7 +62,8 @@ Today is excluded. Incomplete activity is shown as unavailable, not zero.
 - **Claimed:** all-time redemption events matching the reward's current name, including repeat claims.
 - **On track:** active assigned members with at least one stamp but below their saved goal.
 - **Ready:** active assigned members who have reached their saved goal.
-- **Not started:** active assigned members with zero stamps.
+- **Not started:** active assigned members with zero stamps. Completed cards are
+  excluded from current progress counts.
 
 Historical claims store reward names, so renaming a reward excludes claims under its old
 name. Duplicate names show Unavailable rather than merging unrelated rewards. Member progress
@@ -76,8 +107,9 @@ Select **Preview** beside a reward to inspect its card
 using your saved branding.
 
 Each target is a stamp cost, not a cumulative milestone. Redemption deducts the
-current reward's cost and advances to the next level, or repeats the final level.
-Excess stamps carry forward. For example, a member with 12 stamps who claims a
+current reward's cost and advances to the next level. The final claim follows
+your Reset / No reset setting. Excess stamps carry forward between levels, but
+the final claim clears the remaining stamp balance. For example, a member with 12 stamps who claims a
 10-stamp reward keeps 2 towards the next reward. Bonus stamps follow the same rule.
 Each additional claim requires a separate confirmation.
 
@@ -86,6 +118,28 @@ Each additional claim requires a separate confirmation.
 - Review any expiry setting before promising that stamps never expire.
 - Changing a reward's label or goal updates memberships assigned to it without
   discarding excess stamps. Review the effect before changing a published promise.
+
+## After the final reward is claimed
+
+In **Rewards → Customise rewards**, Owners and Managers can save
+**After the final reward is claimed** with two options:
+
+- **Reset:** restart at the first active reward with zero stamps. This is the default.
+- **No reset:** mark that member's card complete and stop further stamps or claims
+  on that programme. Other members' cards are unaffected.
+
+Completion happens **after staff confirm the final reward claim**, not when the
+member reaches the stamp goal. Reaching the goal must still let them collect
+their earned reward.
+
+Already completed cards stay complete if you change this setting or edit rewards
+later. Changing the setting does not retroactively complete existing cards.
+
+For a one-off event, choose **No reset**. This is
+a card-completion rule, not a one-stamp-per-booth restriction or a separate
+per-reward claim-limit setting. It does not change stamp costs into cumulative
+milestones. A temporary [stock pause](#pause-collection-when-stock-runs-out) is
+different: it holds claims until collection resumes without completing the card.
 
 ## Choose redemption outlets
 
@@ -122,4 +176,4 @@ the new friend's first actual staff-issued stamp and verified accounts. Read
 Branding changes how the card looks, not who the QR identifies.
 Use [Branding](/features/branded-cards) for the QR sign, wallet preview, and join-page
 preview. Check [feature availability](/availability) for dev and deployment status.
-For daily use, continue to [scan and redeem](/merchants/scanning).
+For daily use, continue to [scan and redeem](/guides/scanning).

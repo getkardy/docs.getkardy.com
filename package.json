@@ -5,7 +5,8 @@
   "packageManager": "pnpm@11.0.9",
   "scripts": {
     "dev": "pnpm build:progress && mint dev --port 3002 --no-open",
-    "build:progress": "esbuild navigation-progress.ts --bundle --format=iife --target=es2020 --minify --outfile=navigation-progress.js",
+    "build:progress": "esbuild navigation-progress.ts --bundle --format=iife --target=es2020 --minify --outfile=navigation-progress.js && pnpm build:flows",
+    "build:flows": "esbuild runtime/merchant-flow.jsx --bundle --format=iife --target=es2020 --minify --define:process.env.NODE_ENV='\"production\"' --outfile=merchant-flow-runtime.js",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm check:docs",
     "check:docs": "pnpm build:progress && mint validate && mint broken-links",
     "lint": "eslint .",
@@ -18,21 +19,28 @@
   },
   "devDependencies": {
     "@bprogress/core": "1.3.4",
-    "esbuild": "0.28.2",
-    "mint": "4.2.875",
-    "eslint": "9.39.4",
     "@eslint/js": "9.39.4",
-    "typescript-eslint": "8.57.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "esbuild": "0.28.2",
+    "eslint": "9.39.4",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "7.0.1",
     "globals": "16.5.0",
-    "typescript": "5.9.3",
     "husky": "9.1.7",
     "lint-staged": "16.4.0",
-    "prettier": "3.8.3"
+    "mint": "4.2.875",
+    "prettier": "3.8.3",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.57.0"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,mjs,json,md,mdx,css,yaml,yml}": "prettier --write --ignore-unknown",
     "*.{ts,tsx,js,jsx,mjs}": "eslint --fix"
+  },
+  "dependencies": {
+    "@xyflow/react": "^12.11.6",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   }
 }

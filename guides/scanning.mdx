@@ -1,0 +1,118 @@
+---
+title: Scan, stamp, and redeem
+description: Review each scan, slide to approve a stamp or reward, and wait for the confirmed result.
+---
+
+import { MerchantFlow } from "/snippets/merchant-flow.jsx";
+
+<Note>
+  Slide approval and timed reward QRs are implemented in development. Production
+  rollout must include both apps. If your screen differs, check [feature
+  availability](/availability) before using this walkthrough.
+</Note>
+
+## Choose the right QR
+
+| Customer wants to…         | QR to show                        | Staff approval             |
+| -------------------------- | --------------------------------- | -------------------------- |
+| Collect a qualifying stamp | Membership QR from their wallet   | **Slide to add stamp**     |
+| Claim an earned reward     | Temporary QR from the reward page | **Slide to redeem reward** |
+
+A membership QR cannot authorise a reward claim. Scanning either code only checks
+the details; it does not award a stamp or redeem anything.
+
+## Follow the counter flow
+
+<MerchantFlow type="counter" />
+
+## Add a stamp
+
+<Steps>
+  <Step title="Choose the outlet">
+    Open **Scan** in the correct merchant workspace and select the active outlet
+    serving the customer.
+  </Step>
+  <Step title="Check the membership">
+    Ask the customer to show their membership QR. Choose **Start camera** and
+    allow access, or enter the supported code and choose **Check membership**.
+    Keep the whole QR inside the camera corners.
+  </Step>
+  <Step title="Review before approving">
+    Check the returned member, reward and outlet. Confirm the purchase
+    qualifies. Checking a balance alone is not a reason to add a stamp.
+  </Step>
+  <Step title="Slide to add stamp">
+    Use the approval bar near the bottom of the screen. Drag the handle from
+    left to right through all four checkpoints and release at the end.
+  </Step>
+  <Step title="Wait for Stamp added">
+    The control locks while the request is processing. Check the confirmed
+    result before selecting **Scan next member**.
+  </Step>
+</Steps>
+
+## Redeem a reward
+
+<Steps>
+  <Step title="Ask for a reward QR">
+    The customer opens their earned reward and uses **Slide to prepare reward
+    QR**. Preparing the QR does not spend stamps. See the [customer
+    walkthrough](/customer-journey/rewards).
+  </Step>
+  <Step title="Scan and review">
+    Scan the temporary reward QR at the selected outlet. Confirm the customer,
+    reward and outlet eligibility. The code must still be valid.
+  </Step>
+  <Step title="Slide to redeem reward">
+    Move the approval handle all the way across. Do not add a stamp just to
+    access redemption, and do not use a membership QR as approval.
+  </Step>
+  <Step title="Wait for Reward redeemed">
+    Hand over the reward only after Kardy confirms it. The customer's reward
+    screen updates with a receipt, and the wallet refreshes its progress. The
+    stamp cost is deducted once; extra stamps carry forward.
+  </Step>
+</Steps>
+
+## How the approval slider works
+
+- Drag from left to right through **four checkpoints**, then release at the end.
+- Release early to return to the start without submitting.
+- Checkpoint sounds are movement feedback, **not** proof of success.
+- While processing, wait: do not repeat the operation or change scanner inputs.
+- For keyboard access, focus the handle, press **Right arrow four times**, then
+  **Enter**. **Confirm without sliding** is available if dragging is difficult.
+- Sound effects are optional. Use the sound control on **Scan** or the merchant
+  sound setting. Muting does not change approval or the visible result.
+- Reduced-motion preferences are respected; the same confirmation is still required.
+
+## QR timer and reward expiry
+
+A reward QR lasts **up to 10 minutes**, or until the reward's own deadline if
+earlier. The customer sees the countdown. Expired codes cannot be approved.
+Ask for a new code only if the underlying reward is still valid. A replacement
+invalidates the previous QR and does not extend the reward deadline.
+
+An already-redeemed result is not a second claim. Do not hand over another reward.
+Read [reward expiry settings](/features/rewards#set-a-reward-claim-deadline)
+for the separate one-week and one-month policies.
+
+## When something goes wrong
+
+- **Camera unavailable:** check permissions, lighting and screen brightness.
+  Use supported manual entry if offered.
+- **Code not recognised:** ask for a current Kardy code. Join-page QR codes,
+  ordinary website links and malformed codes are not scan approvals.
+- **Wrong member or outlet:** stop and check the correct code and outlet again.
+- **QR expired or replaced:** ask the customer to prepare a fresh reward QR.
+  If the reward itself expired, involve the Manager.
+- **Request interrupted:** keep the current result open and check current activity
+  before trying again. A network error does not prove failure. If the same
+  approval can be retried, retry it rather than starting a new claim.
+- **Reward unavailable at this outlet:** ask the Manager to check permitted active
+  outlets. Do not bypass the restriction.
+- **Access or subscription error:** ask the Owner to check access and activation.
+- **Unexpected recorded operation:** retain the outlet and time for
+  [Support](/help). Do not delete audit history or promise an undo.
+
+Never share customer QR screenshots, passwords or verification codes.

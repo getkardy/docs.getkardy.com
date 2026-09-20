@@ -3,12 +3,41 @@ title: Referral rewards
 description: Reward the inviter and their friend after a qualifying first purchase.
 ---
 
-import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
-
 **Where:** Merchant workspace → **Referrals**; consumer membership card → **Bring a friend**.
 
 <Frame caption="Example bonuses: +2 for the inviter and +1 for the friend, after the first qualifying purchase and staff-issued stamp.">
-  <FeatureIllustration type="referrals" />
+  <picture className="referral-bento-light">
+    <source
+      media="(max-width: 450px)"
+      srcSet="/images/features/referrals-bento-mobile-light.png"
+    />
+    <img
+      src="/images/features/referrals-bento-desktop-light.png"
+      alt="Illustrative referral journey: Amelia invites Jamie to Sunday Coffee; Jamie makes a qualifying first purchase and receives a staff-issued stamp; Amelia earns two bonus stamps and Jamie earns one. The phone notifications are illustrations, not live push alerts."
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "block",
+        borderRadius: 10,
+      }}
+    />
+  </picture>
+  <picture className="referral-bento-dark">
+    <source
+      media="(max-width: 450px)"
+      srcSet="/images/features/referrals-bento-mobile-dark.png"
+    />
+    <img
+      src="/images/features/referrals-bento-desktop-dark.png"
+      alt="Illustrative referral journey: Amelia invites Jamie; after Jamie’s qualifying first purchase and staff-issued stamp, Amelia earns two bonus stamps and Jamie earns one. Notifications are illustrative, not live push alerts."
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "block",
+        borderRadius: 10,
+      }}
+    />
+  </picture>
 </Frame>
 
 Owners and Managers can enable referrals and set separate bonuses: **1–100 stamps**

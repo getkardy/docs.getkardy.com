@@ -26,7 +26,10 @@ export const InstallWalkthrough = ({ platform = "iphone" }) => {
             <stop offset="1" stopColor="#dfc9fa" />
           </linearGradient>
           <clipPath id={`${id}-screen`}>
-            <rect x="23" y="18" width="194" height="414" rx="30" />
+            <rect x="23" y="18" width="194" height="414" rx="26" />
+          </clipPath>
+          <clipPath id={`${id}-card`}>
+            <rect x="36" y="127" width="168" height="216" rx="12" />
           </clipPath>
         </defs>
         <ellipse
@@ -48,7 +51,7 @@ export const InstallWalkthrough = ({ platform = "iphone" }) => {
           y="10"
           width="208"
           height="430"
-          rx="38"
+          rx="30"
           fill={`url(#${id}-metal)`}
           stroke="#a7a4a9"
         />
@@ -57,7 +60,7 @@ export const InstallWalkthrough = ({ platform = "iphone" }) => {
           y="13"
           width="202"
           height="424"
-          rx="35"
+          rx="28"
           fill="#101013"
           stroke="#262528"
         />
@@ -175,40 +178,77 @@ export const InstallWalkthrough = ({ platform = "iphone" }) => {
               >
                 Your wallet
               </text>
-              <rect
-                x="36"
-                y="127"
-                width="168"
-                height="112"
-                rx="16"
-                fill="#ff90c1"
-              />
-              <text
-                x="49"
-                y="152"
-                fontSize="12"
-                fontWeight="700"
-                fill="#42001c"
-              >
-                Your memberships
-              </text>
-              <rect
-                x="48"
-                y="169"
-                width="144"
-                height="50"
-                rx="10"
-                fill="#fff"
-              />
-              {[0, 1, 2, 3, 4].map((n) => (
-                <circle
-                  key={n}
-                  cx={64 + n * 27}
-                  cy="190"
-                  r="6"
-                  fill={n < 3 ? "#42001c" : "#f3e4eb"}
+              <g clipPath={`url(#${id}-card)`}>
+                <rect x="36" y="127" width="168" height="216" fill="#eee5ff" />
+                <image
+                  href="/images/landing/wallet-drift.svg"
+                  x="36"
+                  y="127"
+                  width="168"
+                  height="216"
+                  preserveAspectRatio="xMidYMid slice"
                 />
-              ))}
+                <rect x="36" y="127" width="168" height="44" fill="#ffffffcc" />
+                <image
+                  href="/images/landing/sunday-coffee-wordmark.svg"
+                  x="46"
+                  y="135"
+                  width="90"
+                  height="32"
+                />
+                <rect
+                  x="46"
+                  y="177"
+                  width="148"
+                  height="76"
+                  rx="9"
+                  fill="#fff"
+                />
+                {Array.from({ length: 10 }, (_, n) => (
+                  <g
+                    key={n}
+                    transform={`translate(${56 + (n % 5) * 27} ${187 + Math.floor(n / 5) * 23}) scale(.55)`}
+                  >
+                    <path
+                      d={
+                        n === 9
+                          ? "M4 8h12v7a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5Z M16 9h2a3 3 0 0 1 0 6h-2 M7 3v2m4-3v3m4-2v2"
+                          : "M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+                      }
+                      fill={n < 7 ? "#42001c" : "none"}
+                      stroke={n < 7 ? "#42001c" : "#71717a"}
+                      strokeWidth="1.4"
+                    />
+                  </g>
+                ))}
+                <text x="55" y="244" fontSize="7" fill="#3f3f46">
+                  7 / 10 stamps
+                </text>
+                <rect
+                  x="94"
+                  y="267"
+                  width="52"
+                  height="52"
+                  rx="4"
+                  fill="#fff"
+                />
+                <image
+                  href="/images/sample-wallet-qr.svg"
+                  x="98"
+                  y="271"
+                  width="44"
+                  height="44"
+                />
+                <text
+                  x="120"
+                  y="331"
+                  textAnchor="middle"
+                  fontSize="6"
+                  fill="#42001c"
+                >
+                  Preview only
+                </text>
+              </g>
               {step === 0 ? (
                 <>
                   <rect
@@ -430,7 +470,8 @@ export const InstallWalkthrough = ({ platform = "iphone" }) => {
             strokeWidth=".8"
           />
           <rect x="199" y="37" width="7" height="3" rx=".6" fill="#18181b" />
-          <rect x="82" y="26" width="76" height="21" rx="11" fill="#08080a" />
+          <rect x="93" y="23" width="54" height="16" rx="8" fill="#08080a" />
+          <circle cx="138" cy="31" r="2.5" fill="#252636" />
           <circle cx="147" cy="36.5" r="3" fill="#172035" />
           <circle cx="146" cy="35.5" r="1" fill="#334361" />
           <path
@@ -443,6 +484,323 @@ export const InstallWalkthrough = ({ platform = "iphone" }) => {
       </svg>
     );
   };
+
+  const AndroidInstallScreen = ({ step }) => (
+    <svg
+      viewBox="0 0 240 450"
+      fontFamily="Inter, Arial, sans-serif"
+      aria-hidden="true"
+      style={{
+        display: "block",
+        width: "100%",
+        maxWidth: 260,
+        margin: "0 auto",
+      }}
+    >
+      <defs>
+        <clipPath id={`android-screen-${step}`}>
+          <rect x="23" y="15" width="194" height="418" rx="22" />
+        </clipPath>
+        <linearGradient id={`android-wallpaper-${step}`} x2="1" y2="1">
+          <stop stopColor="#E3EBDD" />
+          <stop offset=".6" stopColor="#D8DFEA" />
+          <stop offset="1" stopColor="#C2CEBC" />
+        </linearGradient>
+      </defs>
+      <ellipse cx="120" cy="441" rx="80" ry="5" fill="#202124" opacity=".07" />
+      <path
+        d="M222 89v31m0 18v47"
+        stroke="#75777A"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <rect
+        x="18"
+        y="10"
+        width="204"
+        height="428"
+        rx="27"
+        fill="#343639"
+        stroke="#9C9EA2"
+        strokeWidth="1.2"
+      />
+      <rect x="21" y="13" width="198" height="422" rx="24" fill="#111214" />
+      <g clipPath={`url(#android-screen-${step})`}>
+        <rect
+          x="23"
+          y="15"
+          width="194"
+          height="418"
+          fill={step === 2 ? `url(#android-wallpaper-${step})` : "#FAFAFA"}
+        />
+        <text x="35" y="33" fontSize="8" fontWeight="600" fill="#303438">
+          9:41
+        </text>
+        <path d="M179 30h2m2-2v2m2-4v4" stroke="#51565B" strokeWidth="1.5" />
+        <rect
+          x="192"
+          y="24"
+          width="10"
+          height="6"
+          rx="1"
+          stroke="#51565B"
+          fill="none"
+          strokeWidth=".8"
+        />
+        <rect x="194" y="26" width="6" height="2" fill="#51565B" />
+        {step < 2 ? (
+          <>
+            <rect
+              x="31"
+              y="47"
+              width="157"
+              height="27"
+              rx="13.5"
+              fill="#EBEDF0"
+            />
+            <text x="44" y="64" fontSize="9" fill="#45494E">
+              getkardy.com
+            </text>
+            <g fill="#45494E">
+              <circle cx="202" cy="56" r="1.2" />
+              <circle cx="202" cy="60.5" r="1.2" />
+              <circle cx="202" cy="65" r="1.2" />
+            </g>
+            <text x="35" y="100" fontSize="7" fill="#7B8078">
+              Good morning, Amelia
+            </text>
+            <text x="35" y="123" fontSize="19" fontWeight="600" fill="#273025">
+              Your wallet
+            </text>
+            <rect
+              x="34"
+              y="140"
+              width="172"
+              height="225"
+              rx="13"
+              fill="#EEE7F8"
+            />
+            <image
+              href="/images/landing/wallet-drift.svg"
+              x="34"
+              y="140"
+              width="172"
+              height="225"
+              preserveAspectRatio="xMidYMid slice"
+            />
+            <image
+              href="/images/landing/sunday-coffee-wordmark.svg"
+              x="45"
+              y="154"
+              width="74"
+              height="27"
+            />
+            <rect x="43" y="210" width="154" height="72" rx="10" fill="white" />
+            <text x="56" y="234" fontSize="13" fill="#42001C">
+              ♥ ♥ ♥ ♥ ♥
+            </text>
+            <text x="56" y="254" fontSize="13" fill="#42001C">
+              ♥ ♥ ♡ ♡ ♡
+            </text>
+            <text x="54" y="272" fontSize="7" fill="#74747D">
+              7 / 10 stamps
+            </text>
+            <rect x="96" y="299" width="48" height="48" rx="5" fill="white" />
+            <image
+              href="/images/sample-wallet-qr.svg"
+              x="100"
+              y="303"
+              width="40"
+              height="40"
+            />
+            {step === 0 ? (
+              <>
+                <rect
+                  x="65"
+                  y="77"
+                  width="144"
+                  height="215"
+                  rx="12"
+                  fill="#202124"
+                  opacity=".08"
+                />
+                <rect
+                  x="62"
+                  y="74"
+                  width="144"
+                  height="215"
+                  rx="12"
+                  fill="#F1F3F7"
+                  stroke="#E0E3E8"
+                />
+                <g fontSize="9" fill="#44474C">
+                  <text x="77" y="98">
+                    New tab
+                  </text>
+                  <text x="77" y="123">
+                    New incognito tab
+                  </text>
+                  <text x="77" y="155">
+                    History
+                  </text>
+                  <text x="77" y="180">
+                    Downloads
+                  </text>
+                  <text x="77" y="205">
+                    Bookmarks
+                  </text>
+                </g>
+                <path d="M72 136h124" stroke="#DDE0E5" />
+                <rect
+                  x="69"
+                  y="221"
+                  width="130"
+                  height="29"
+                  rx="7"
+                  fill="#DFE9FA"
+                />
+                <text
+                  x="77"
+                  y="240"
+                  fontSize="9"
+                  fontWeight="600"
+                  fill="#244D88"
+                >
+                  Add to Home screen
+                </text>
+                <text x="77" y="274" fontSize="9" fill="#44474C">
+                  Settings
+                </text>
+              </>
+            ) : (
+              <>
+                <rect
+                  x="23"
+                  y="42"
+                  width="194"
+                  height="391"
+                  fill="#202124"
+                  opacity=".22"
+                />
+                <rect
+                  x="35"
+                  y="165"
+                  width="170"
+                  height="151"
+                  rx="20"
+                  fill="#F4F6FA"
+                />
+                <rect
+                  x="51"
+                  y="183"
+                  width="29"
+                  height="29"
+                  rx="8"
+                  fill="#FF90C1"
+                />
+                <image
+                  href="/images/landing/mcp-mascot.svg"
+                  x="56"
+                  y="190"
+                  width="19"
+                  height="15"
+                />
+                <text
+                  x="90"
+                  y="195"
+                  fontSize="11"
+                  fontWeight="600"
+                  fill="#30343B"
+                >
+                  Install Kardy?
+                </text>
+                <text x="90" y="209" fontSize="8" fill="#757A82">
+                  getkardy.com
+                </text>
+                <text x="51" y="237" fontSize="9" fill="#5E636D">
+                  Add the app to your device.
+                </text>
+                <text x="90" y="289" fontSize="9" fill="#2556A2">
+                  Cancel
+                </text>
+                <rect
+                  x="132"
+                  y="270"
+                  width="57"
+                  height="29"
+                  rx="14.5"
+                  fill="#D8E6FF"
+                />
+                <text
+                  x="160"
+                  y="289"
+                  fontSize="9"
+                  fontWeight="600"
+                  fill="#2556A2"
+                  textAnchor="middle"
+                >
+                  Install
+                </text>
+              </>
+            )}
+          </>
+        ) : (
+          <>
+            <circle cx="207" cy="202" r="147" fill="#EDF1E6" opacity=".7" />
+            <circle cx="33" cy="394" r="144" fill="#BBCABE" opacity=".55" />
+            <text x="40" y="86" fontSize="12" fill="#3D493D">
+              Tuesday, 15 September
+            </text>
+            <text x="39" y="136" fontSize="42" fontWeight="300" fill="#3D493D">
+              09:41
+            </text>
+            <rect
+              x="43"
+              y="208"
+              width="43"
+              height="43"
+              rx="13"
+              fill="#FF90C1"
+            />
+            <image
+              href="/images/landing/mcp-mascot.svg"
+              x="52"
+              y="221"
+              width="25"
+              height="18"
+            />
+            <text
+              x="64"
+              y="267"
+              textAnchor="middle"
+              fontSize="9"
+              fill="#354034"
+            >
+              Kardy
+            </text>
+            <rect
+              x="39"
+              y="367"
+              width="162"
+              height="33"
+              rx="16.5"
+              fill="#F8FAF7"
+              opacity=".9"
+            />
+            <text x="53" y="388" fontSize="12" fontWeight="600" fill="#4285F4">
+              G
+            </text>
+            <text x="77" y="387" fontSize="9" fill="#7A8078">
+              Search
+            </text>
+          </>
+        )}
+        <rect x="89" y="423" width="62" height="3" rx="1.5" fill="#25282B" />
+      </g>
+      <circle cx="120" cy="27" r="3.6" fill="#111214" />
+      <circle cx="120" cy="27" r="1.6" fill="#202A37" />
+    </svg>
+  );
 
   const iphone = platform === "iphone";
   const steps = [
@@ -489,181 +847,7 @@ export const InstallWalkthrough = ({ platform = "iphone" }) => {
             {iphone ? (
               <IPhoneInstallScreen step={index} />
             ) : (
-              <svg
-                viewBox="0 0 220 245"
-                fontFamily="Inter, Arial, sans-serif"
-                aria-hidden="true"
-                style={{
-                  display: "block",
-                  width: "100%",
-                  maxWidth: 240,
-                  margin: "0 auto",
-                }}
-              >
-                <rect
-                  x="23"
-                  y="5"
-                  width="174"
-                  height="232"
-                  rx="25"
-                  fill="#fff"
-                  stroke="#42001c"
-                  strokeWidth="3"
-                />
-                <rect
-                  x="87"
-                  y="14"
-                  width="46"
-                  height="7"
-                  rx="4"
-                  fill="#42001c"
-                />
-                {index < 2 ? (
-                  <>
-                    <rect
-                      x="34"
-                      y="32"
-                      width="152"
-                      height="27"
-                      rx="8"
-                      fill="#FFF0EE"
-                    />
-                    <text x="43" y="50" fontSize="12" fill="#42001c">
-                      getkardy.com
-                    </text>
-                    <text
-                      x="42"
-                      y="92"
-                      fontSize="18"
-                      fontWeight="700"
-                      fill="#42001c"
-                    >
-                      {index === 0 ? "Your wallet" : "Add Kardy"}
-                    </text>
-                    <rect
-                      x="34"
-                      y="110"
-                      width="152"
-                      height="44"
-                      rx="9"
-                      fill={iphone ? "#FF90C1" : "#dec6ff"}
-                    />
-                    <text
-                      x="110"
-                      y="137"
-                      textAnchor="middle"
-                      fontSize="12"
-                      fill="#42001c"
-                    >
-                      {step.action}
-                    </text>
-                    {index === 1 && (
-                      <>
-                        <text
-                          x="110"
-                          y="176"
-                          textAnchor="middle"
-                          fontSize="10"
-                          fill="#42001c"
-                        >
-                          {iphone
-                            ? "Open as Web App: ON"
-                            : "Install to your device"}
-                        </text>
-                        <rect
-                          x="58"
-                          y="190"
-                          width="104"
-                          height="29"
-                          rx="8"
-                          fill="#42001c"
-                        />
-                        <text
-                          x="110"
-                          y="209"
-                          textAnchor="middle"
-                          fontSize="12"
-                          fill="#fff"
-                        >
-                          {iphone ? "Add" : "Install"}
-                        </text>
-                      </>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    <rect
-                      x="34"
-                      y="33"
-                      width="152"
-                      height="189"
-                      rx="14"
-                      fill="#FFF0EE"
-                    />
-                    <rect
-                      x="82"
-                      y="66"
-                      width="56"
-                      height="56"
-                      rx="15"
-                      fill="#FF90C1"
-                    />
-                    <g transform="translate(94 82) rotate(8 16 12)">
-                      <rect width="32" height="24" rx="7" fill="#42001c" />
-                      <rect
-                        x="8"
-                        y="8"
-                        width="5"
-                        height="7"
-                        rx="2"
-                        fill="#fff"
-                      />
-                      <rect
-                        x="20"
-                        y="8"
-                        width="5"
-                        height="7"
-                        rx="2"
-                        fill="#fff"
-                      />
-                    </g>
-                    <text
-                      x="110"
-                      y="144"
-                      textAnchor="middle"
-                      fontSize="14"
-                      fontWeight="700"
-                      fill="#42001c"
-                    >
-                      Kardy
-                    </text>
-                    <text
-                      x="110"
-                      y="181"
-                      textAnchor="middle"
-                      fontSize="12"
-                      fill="#42001c"
-                    >
-                      One tap to open.
-                    </text>
-                    <text
-                      x="110"
-                      y="198"
-                      textAnchor="middle"
-                      fontSize="12"
-                      fill="#42001c"
-                    >
-                      No browser tabs.
-                    </text>
-                  </>
-                )}
-                <path
-                  d="M88 229h44"
-                  stroke="#42001c"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-              </svg>
+              <AndroidInstallScreen step={index} />
             )}
             <p style={{ margin: "12px 0 4px", fontWeight: 700, fontSize: 15 }}>
               {step.title}

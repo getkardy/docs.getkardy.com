@@ -1,0 +1,238 @@
+---
+title: MCP errors
+description: Understand HTTP, protocol and tool failures, with response examples, causes and recovery steps.
+---
+
+This reference covers requests to `https://merchants.getkardy.com/api/mcp` with a manual key or OAuth access token. Start with [Connect your agent](/mcp/connect) for setup, or the [technical reference](/mcp/reference) for permissions and transport details.
+
+<Warning>
+  An HTTP `200` does not guarantee a successful tool call. Also check the
+  JSON-RPC `error` and the tool result's `isError` flag. Never treat error text
+  as merchant data.
+</Warning>
+
+## Identify the response shape
+
+Kardy currently exposes three error shapes, not a single REST error envelope. It does **not** currently provide a stable string `error.code`, `doc_url`, `param`, or structured error-details object for its own HTTP and tool failures.
+
+<Tabs>
+  <Tab title="HTTP rejection">
+    The request failed a Kardy check before tool execution. For example, a missing credential returns HTTP `401`:
+
+    ```json
+    { "error": "A merchant MCP key is required." }
+    ```
+
+    `error` is a human-readable string. Most Kardy rejections use this shape, but `405` and rejected CORS preflights have an empty body. Infrastructure failures may return non-JSON content.
+
+  </Tab>
+  <Tab title="Protocol error">
+    The MCP transport or protocol rejected the request. For example, missing required Accept types returns HTTP `406`:
+
+    ```json
+    {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32000,
+        "message": "Not Acceptable: Client must accept both application/json and text/event-stream"
+      },
+      "id": null
+    }
+    ```
+
+    Here `error` is an object and `code` is a numeric JSON-RPC code, not an application-specific string identifier. Check both HTTP status and code; `-32000` covers more than one transport condition.
+
+  </Tab>
+  <Tab title="Tool failure">
+    The MCP request completed, but the tool did not produce usable data. A JSON response can have HTTP `200` and this body:
+
+    ```json
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": {
+        "isError": true,
+        "content": [
+          {
+            "type": "text",
+            "text": "Access denied or rate limited. Check your key and retry later."
+          }
+        ]
+      }
+    }
+    ```
+
+    MCP SDK clients expose the inner result. Check `result.isError` before reading success data. The current tool-error response does not expose the underlying database error code.
+
+  </Tab>
+</Tabs>
+
+## Quick reference
+
+| Failure                            | Where to look                               | What to do                                      | Automatic retry?                     |
+| ---------------------------------- | ------------------------------------------- | ----------------------------------------------- | ------------------------------------ |
+| Bad request or invalid JSON        | HTTP `400`                                  | Correct the URL, body or protocol message.      | No                                   |
+| Missing or unavailable credential  | HTTP `401`                                  | Fix the key or reconnect through OAuth.         | Not with the same invalid credential |
+| Blocked browser origin             | HTTP `403`                                  | Use an explicitly permitted origin.             | No                                   |
+| Unsupported method                 | HTTP `405`, `Allow: POST`                   | Use POST Streamable HTTP.                       | No                                   |
+| Missing Accept types               | HTTP `406`                                  | Accept JSON and event streams.                  | No                                   |
+| Body exceeds 16 KiB                | HTTP `413`                                  | Reduce the request size.                        | No                                   |
+| Wrong content type                 | HTTP `415`                                  | Send `application/json`.                        | No                                   |
+| Authentication rate limit          | HTTP `429`, `Retry-After: 60`               | Wait at least 60 seconds.                       | Bounded, after waiting               |
+| Server or backend failure          | HTTP `500` or `503`                         | Retry with backoff; escalate if persistent.     | Bounded                              |
+| Missing tool or invalid arguments  | Tool `isError: true`                        | Rediscover tools and correct arguments.         | No                                   |
+| Monthly allowance exhausted        | Tool `isError: true` with reset information | Wait for reset or ask the Owner about capacity. | No immediate retry                   |
+| Access changed or tool read failed | Tool `isError: true`                        | Follow the tool-failure guidance below.         | Do not blindly retry                 |
+
+## HTTP errors
+
+### 400 — Request rejected
+
+Kardy can return these messages:
+
+| Message                                               | Cause                                                                                               | Fix                                                              |
+| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `Use the Authorization header, not query parameters.` | The endpoint URL contains a query string. This check rejects any query parameters, not just tokens. | Use exactly `/api/mcp`; put the bearer token in `Authorization`. |
+| `Request body required.`                              | No readable body was supplied.                                                                      | Send a JSON-RPC request body.                                    |
+| `Could not read request.`                             | Reading the body stream failed.                                                                     | Check the client/proxy connection and reconstruct the request.   |
+| `Invalid JSON.`                                       | The bytes are not valid JSON; an empty body can also reach this check.                              | Fix JSON syntax and encoding.                                    |
+
+Valid JSON can still fail MCP validation. The SDK can return a JSON-RPC error for an invalid message or unsupported protocol version. Use a current compatible MCP client and let it negotiate the version; do not assume every `400` has Kardy's string-error shape.
+
+### 401 — Authentication required or unavailable
+
+**Messages:** `A merchant MCP key is required.` or `Key expired, revoked or unavailable.`
+
+The first means the Authorization header is absent or does not match a supported bearer credential. The second means authentication did not return usable access, including expired/revoked credentials or an unavailable workspace. Access also depends on subscription and ownership state.
+
+1. Confirm the request is going to the merchant host, not the consumer site.
+2. Send the complete token in `Authorization: Bearer <token>`. Browser sign-in cookies do not authenticate MCP.
+3. For a manual key, ask the Owner to inspect **Settings → Agent connections**. A lost secret cannot be recovered; create a replacement.
+4. For OAuth, let the client refresh an expired access token. If refresh is rejected or the connection was revoked, reconnect with explicit Owner consent.
+5. Check the workspace's subscription and whether ownership changed. Transferring ownership permanently revokes existing manual keys.
+
+The route includes a `WWW-Authenticate` challenge pointing to `/.well-known/oauth-protected-resource/api/mcp`. Use this for OAuth discovery. Do not repeatedly retry the same unavailable credential or put tokens in URLs.
+
+### 403 — Origin not allowed
+
+**Message:** `Origin not allowed.`
+
+A browser supplied an Origin that is neither the configured merchant origin nor an explicit entry in the server's `MCP_ALLOWED_ORIGINS` allowlist. Native clients may omit Origin. A disallowed OPTIONS preflight returns `403` without a JSON body; browsers may present this as a CORS/network error instead.
+
+Use the correct merchant origin. If an additional browser origin is intended, the deployment operator must explicitly allow that exact origin. Wildcards and `null` are not accepted allowlist entries. Do not disable browser security to work around this check.
+
+### 405 — Method not allowed
+
+**Response:** empty body with `Allow: POST`.
+
+Authenticated GET and DELETE requests are not supported. Kardy uses stateless POST Streamable HTTP with JSON responses, not a persistent GET event stream or a session-delete endpoint. Update the client transport rather than polling GET. Origin and authentication checks run first, so an unauthenticated GET may return `401` instead.
+
+### 406 — Response format not accepted
+
+The SDK requires both accepted media types, even though Kardy enables JSON responses:
+
+```http
+Accept: application/json, text/event-stream
+Content-Type: application/json
+```
+
+Configure the client headers and resend. This is a protocol-shaped error, not `{ "error": "..." }`.
+
+### 413 — Request too large
+
+**Message:** `Request too large.`
+
+The JSON body exceeds **16,384 bytes**. Kardy enforces the limit while reading, including when Content-Length is absent. Do not send conversation history, attachments or unrelated context as tool arguments. List tools use `offset` pagination; each response contains at most 50 entries.
+
+### 415 — Unsupported media type
+
+**Message:** `Use application/json.` The SDK may also issue a protocol-shaped content-type error.
+
+Send JSON with `Content-Type: application/json`. Do not use form data or plain text. Changing the header alone is insufficient if the body is not valid JSON.
+
+### 429 — Rate limit reached
+
+**Message:** `Too many requests. Try again in a minute.`
+
+**Header:** `Retry-After: 60`.
+
+Wait at least 60 seconds before retrying, then resume gradually. Each workspace and each key allow 120 database calls per minute. Authentication consumes a call; a scoped tool read consumes another. This usually permits up to 60 tool requests per minute before discovery and other traffic are counted. Parallel clients share workspace capacity.
+
+A limit reached during the tool read can instead appear as `isError: true`; it is not guaranteed to produce HTTP `429` or Retry-After. Avoid repeated polling of unchanged data. A new key does not bypass workspace limits.
+
+### 500 — MCP request failed
+
+**Message:** `MCP request failed.`
+
+An unexpected failure occurred while processing the MCP transport request. Retry a read with bounded exponential backoff and jitter. Stop after a small retry budget and report persistent failures. Private exception details are intentionally not included in this response.
+
+### 503 — MCP temporarily unavailable
+
+**Message:** `MCP is temporarily unavailable.`
+
+Authentication could not reach or use the backend. Possible causes include service availability, missing deployment configuration, or unapplied MCP setup. Retry later. If it persists, a deployment operator should verify configuration and backend availability; replacing otherwise-valid user credentials will not fix a backend outage.
+
+## Tool errors
+
+### Tool missing or arguments invalid
+
+The current SDK returns these as tool results with `isError: true`, including messages such as `Tool list_outlets not found` or input-validation details. Do not assume they are always top-level JSON-RPC errors.
+
+- Call `tools/list` again after changing credentials or permissions. Kardy only registers tools allowed by the credential's scopes.
+- `get_programme` accepts `{}` only.
+- `list_rewards` and `list_outlets` accept an optional integer `offset` from `0` to `10000`; the default is `0`.
+- Extra arguments, including a merchant ID, are rejected. The credential selects the workspace.
+- Use `nextOffset` from a successful page rather than inventing pagination values.
+
+Request only the permissions needed for the supported tools. There are no MCP tools for customer records, billing, broadcasts, or loyalty mutations.
+
+### Monthly allowance reached
+
+Example tool-result content, using illustrative usage and reset values:
+
+```json
+{
+  "isError": true,
+  "content": [
+    {
+      "type": "text",
+      "text": "Monthly MCP allowance reached (1000/1000 tool calls). Resets 2026-10-01T00:00:00Z. Ask the workspace owner to arrange a higher allowance. No automatic overage charges."
+    }
+  ]
+}
+```
+
+This is not the minute-based rate limit. Stop immediate retries. The Owner can review **Settings → Usage & limits** and arrange additional capacity, or wait for the stated reset. Monthly usage resets at 00:00 UTC on the first day of the month. The allowance is shared across keys and OAuth connections; rotating credentials does not create more capacity. See [MCP counting rules](/features/usage-limits#what-counts).
+
+The current response contains these values in human-readable text, not separate machine-readable quota fields. Do not build a brittle parser that depends on the exact sentence.
+
+### Access denied or rate limited
+
+**Message:** `Access denied or rate limited. Check your key and retry later.`
+
+The initial authentication succeeded, but the scoped read was rejected. Access may have changed between checks, or a rate limit may have been reached. This message deliberately does not identify a single cause.
+
+Pause concurrent calls, wait at least a minute if traffic was high, and rediscover tools. If the error persists, ask the Owner to verify permissions, key/connection status and subscription. Do not automatically broaden scopes, create keys, or start an endless retry loop.
+
+### Merchant workspace could not be read
+
+**Message:** `Could not read the merchant workspace. Try again later.`
+
+The read failed after authentication. Retry with a short bounded backoff. If it continues, stop and contact support; the response does not establish that the workspace is empty or that a reward/outlet does not exist.
+
+## Client recovery checklist
+
+1. Inspect HTTP status and content type before parsing JSON. Handle empty and non-JSON bodies safely.
+2. If the body has a JSON-RPC `error`, handle that failure before looking for tool data.
+3. For a tool result, check `isError` before consuming `content` or `structuredContent`.
+4. Use message text for human diagnosis, not as a stable application-code contract.
+5. Retry only likely transient read failures, with jitter, a maximum attempt count, and respect for Retry-After. Stop for permission, validation or monthly-capacity problems.
+6. Do not assume transport retries are free: repeated calls can consume rate-limit capacity and successful tool reads can count against the monthly allowance.
+
+Kardy's tools are read-only, but OAuth refresh is different: refresh tokens rotate and replay can revoke the connection. Serialize refresh operations and follow the client's OAuth flow. Errors from `/api/oauth/*` are outside this MCP endpoint reference; see [OAuth endpoints and deployment](/mcp/reference#oauth-endpoints-and-deployment).
+
+## Contact support safely
+
+Send [Kardy support](mailto:support@getkardy.com) the UTC timestamp, endpoint path, HTTP status, tool name, client/version, protocol version, and a redacted response. Include whether the issue affects one client or several and whether a recent permission change occurred.
+
+Never include bearer tokens, refresh tokens, authorization codes, admin keys, cookies, or unredacted request headers. Do not paste private merchant data into a public issue. A request ID is useful only if your client or hosting layer actually provides one; Kardy does not currently promise one in these error bodies.

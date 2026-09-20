@@ -4,4 +4,6 @@ node_modules/
 .husky/_/
 pnpm-lock.yaml
 navigation-progress.js
+merchant-flow-runtime.js
+merchant-flow-runtime.css
 .env*

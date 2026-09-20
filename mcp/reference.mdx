@@ -3,7 +3,7 @@ title: MCP technical reference
 description: Protocol, permissions and deployment details for developers integrating with Kardy.
 ---
 
-For everyday setup, start with [Connect your agent](/technical/merchant-mcp).
+For everyday setup, start with [Connect your agent](/mcp/connect).
 
 ## Permissions and tools
 
@@ -39,44 +39,10 @@ or an InsForge admin key with your agent.
 
 ## Troubleshooting
 
-<AccordionGroup>
-  <Accordion title="401: key unavailable">
-    Check that the full key is in the Authorization header, has not expired or
-    been revoked, and belongs to an active organisation with unchanged
-    ownership. Browser sign-in cookies do not authenticate MCP. Create a new key
-    if the secret was lost.
-  </Accordion>
-  <Accordion title="403: origin not allowed">
-    Browser-origin connections must match the merchant origin or an explicit
-    server-side `MCP_ALLOWED_ORIGINS` comma-separated allowlist. Never use a
-    wildcard. Native clients may omit Origin. The server uses
-    `NEXT_PUBLIC_MERCHANT_PORTAL_URL` for this check; configure the actual
-    merchant HTTPS origin before deployment. Wildcard CORS is not enabled.
-  </Accordion>
-  <Accordion title="A tool is missing or access was denied">
-    Your key may not include its read permission, or access changed during the
-    request. Create a replacement with the permissions you need. Requests cannot
-    select another brand.
-  </Accordion>
-  <Accordion title="429: too many requests">
-    Wait one minute. Each workspace and each key allow 120 database calls per
-    minute. Authentication uses one call; a tool request uses another for its
-    scoped read (typically up to 60 tool requests per minute, less when
-    discovering tools). Avoid polling an unchanged workspace.
-  </Accordion>
-  <Accordion title="Monthly MCP allowance reached">
-    The tool returns an error with the reset date; switching keys will not
-    bypass it. See [MCP counting rules](/features/usage-limits#what-counts) for
-    the shared allowance. The Owner can check **Settings → Usage & limits** or
-    contact Kardy for a higher allowance. No automatic overage charges apply.
-  </Accordion>
-  <Accordion title="405, 413 or 503">
-    GET streaming is not offered; use POST Streamable HTTP with JSON responses.
-    Requests over 16 KiB are rejected. A 503 means the backend is unavailable or
-    the MCP migration has not been applied; retry later or check development
-    setup.
-  </Accordion>
-</AccordionGroup>
+<Card title="MCP errors" icon="circle-exclamation" href="/mcp/errors">
+  Response shapes, HTTP status reference, tool failures, quota recovery, and
+  safe retry guidance.
+</Card>
 
 ## Implementation and testing
 

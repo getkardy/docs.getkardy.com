@@ -1,48 +1,58 @@
 ---
 title: Browser wallet and PWA
 sidebarTitle: Browser wallet
-description: Keep memberships and current stamp progress together without an app-store download.
+description: Keep memberships and stamp progress together without an app-store download.
 ---
 
 import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
 
-**Where:** Consumer portal → **Wallet**.
+**Where:** Consumer portal → Wallet.
 
 <Frame caption="Concept illustration. Customers choose whether to add Kardy to their home screen.">
   <FeatureIllustration type="browser-wallet" />
 </Frame>
 
-Kardy's mobile-first progressive web app holds a universal Kardy identity and
-merchant-branded memberships. Each brand keeps its own reward progress.
+Your wallet holds one Kardy identity and merchant-branded memberships, each
+with separate reward progress.
 
 ## What members can do
 
-- Open a brand's card and show their Kardy QR at the counter.
-- Check current stamp progress and reward availability.
-- Find merchant-specific referral links and referral tracking.
-- Open account settings and [membership email preferences](/features/email-preferences).
-- Review recent membership activity. On mobile, use **Wallet**, **Places**,
-  **Rewards** and **Activity** to move between the consumer sections.
+- Show a membership card and Kardy QR at the counter.
+- Check stamps, rewards and recent activity.
+- Share referral links and track bonuses.
+- Manage account details and [email preferences](/features/email-preferences).
+
+On mobile, navigate with **Wallet**, **Places**, **Rewards** and **Activity**.
 
 ## Add Kardy to the home screen
 
-Follow [Add Kardy to your home screen](/customer-journey/home-screen). Installation
-is the customer's choice; viewing an illustration or signing up does not install it.
+Follow [Home Screen setup](/customer-journey/home-screen). Installation is optional;
+signing up does not install the app.
 
 <Note>
-  The browser wallet is the place to check current progress. Do not promise
-  offline earning or automatic updates to Apple/Google Wallet passes.
+  Check current progress in the browser wallet. Offline earning and automatic
+  Apple/Google Wallet updates are not guaranteed.
 </Note>
 
 ## Claims and notifications
 
-After staff confirm a redemption, check the current membership in Kardy and refresh
-if needed. A saved card image or a native wallet pass is not a live reward balance.
+### Keeping progress up to date
 
-The public coffee-claim walkthrough uses the PWA interface and an iPhone-style
-Kardy notification. It is labelled **Notification concept**: production push
-delivery is not implemented. Home-screen installation does not enable claim
-notifications, and the animation is not a real transaction receipt.
+While unchanged, the wallet checks after **1 minute, then 2 minutes, then every
+5 minutes**. Checks stop while hidden or offline and resume on return or reconnect.
+Repeated requests are combined; only changed progress refreshes the page.
+
+Use **Refresh wallet** to check immediately. This update is pending production
+rollout; if the button is absent, reload while online. Native wallet passes
+have a separate update process.
+
+After a stamp or redemption, check your membership and
+[recorded activity](/customer-journey/earn-stamps#stamp-not-showing) before repeating
+the operation. Saved images and native passes are not live reward balances.
+
+The coffee-claim walkthrough's iPhone-style alert is a **notification concept**,
+not a receipt or a live consumer push feature. Home Screen installation does not
+enable claim notifications.
 
 <CardGroup cols={2}>
   <Card
@@ -57,6 +67,6 @@ notifications, and the animation is not a real transaction receipt.
     icon="mobile-screen"
     href="/features/native-wallets"
   >
-    Understand the separate save-to-wallet feature.
+    Understand save-to-wallet.
   </Card>
 </CardGroup>

@@ -23,7 +23,8 @@ description: Add a QR pass to Apple Wallet or Google Wallet when issuance is ena
   </Step>
   <Step title="Check the saved pass">
     Open your native wallet and confirm the pass is present. Starting a download
-    alone does not prove it was added.
+    alone does not prove it was added. Return to Kardy and choose **Yes, added
+    on this device**. This confirmation is saved in this browser only.
   </Step>
 </Steps>
 
@@ -32,8 +33,16 @@ description: Add a QR pass to Apple Wallet or Google Wallet when issuance is ena
 With automatic updates enabled, your saved membership pass can show new stamp
 progress after a visit or redemption. Refreshing is not instant. The update
 service for Apple Wallet is running, but saving passes remains disabled until
-device testing is complete. Google Wallet still needs production setup and
-approval. Use your Kardy browser wallet until save controls are available.
+device testing is complete. Google Wallet remains restricted to approved testers.
+Use your Kardy browser wallet until save controls are available.
+
+After confirming a saved pass, use its sync action to queue the latest balance.
+The pass's **Last synced** time describes when Kardy prepared the data, not when
+the phone received it. To remove it, follow the removal instructions, remove it
+in the wallet app, then confirm removal in Kardy. Google-account synchronisation
+may also remove it from other devices on that Google account. You can save and
+confirm the pass separately on another device; Kardy does not detect physical
+device ownership automatically.
 
 If preparation fails, use the retry option when offered or continue showing your
 QR in Kardy. See [native wallet boundaries](/features/native-wallets) for supported

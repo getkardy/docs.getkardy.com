@@ -35,25 +35,29 @@
     <text x="106" y="488" font-size="13" fill="#706A7A">Or share your join link</text>
     <!-- A single phone is the focal point, rather than another three-tile diagram. -->
     <path d="M304 292c24-27 37-32 66-22m-9-9 9 9-12 4" fill="none" stroke="#A99CC5" stroke-width="1.6" stroke-linecap="round"/>
-    <rect x="389" y="105" width="258" height="405" rx="39" fill="#DFD9E9"/>
-    <rect x="382" y="97" width="258" height="405" rx="39" fill="#29282D" stroke="#A6A1AD" stroke-width="2"/>
-    <rect x="389" y="104" width="244" height="391" rx="33" fill="white"/>
-    <rect x="475" y="112" width="75" height="18" rx="9" fill="#171A18"/>
-    <text x="409" y="127" font-size="10" font-weight="700">9:41</text>
-    <path d="M602 120h13v7h-13z" fill="none" stroke="#171A18"/><path d="M605 122h8v3" stroke="#171A18" stroke-width="2"/>
-    <rect x="404" y="146" width="214" height="25" rx="8" fill="#F7F6FB"/>
-    <text x="511" y="163" text-anchor="middle" font-size="11" fill="#706A7A">getkardy.com</text>
-    <rect x="487" y="189" width="48" height="48" rx="14" fill="#171A18"/>
-    <text x="511" y="224" text-anchor="middle" font-family="Georgia, serif" font-size="35" font-weight="700" fill="#ffebf3">s</text>
-    <text x="511" y="267" text-anchor="middle" font-size="23" font-weight="700" letter-spacing="-.8">Join Sunday Coffee</text>
-    <text x="511" y="291" text-anchor="middle" font-size="12" fill="#706A7A">Collect stamps. Enjoy your next cup.</text>
-    <rect x="406" y="310" width="210" height="56" rx="12" fill="#F4F0FC"/>
-    <text x="421" y="333" font-size="14" font-weight="700">A coffee, on us.</text>
-    <text x="421" y="352" font-size="11" fill="#706A7A">10 stamps · View programme terms</text>
-    <rect x="406" y="387" width="210" height="34" rx="9" fill="#171A18"/>
-    <text x="511" y="409" text-anchor="middle" font-size="12" font-weight="700" fill="white">Sign in to join →</text>
-    <text x="511" y="446" text-anchor="middle" font-size="12" fill="#706A7A">New to Kardy? Create an account</text>
-    <rect x="468" y="482" width="88" height="4" rx="2" fill="#171A18"/>
+    <!-- iPhone 16 Pro body ratio: 71.5 : 149.6. UI is reflowed, not stretched. -->
+    <rect x="416" y="101" width="194" height="406" rx="31" fill="#242429" opacity=".08"/>
+    <rect x="414" y="97" width="194" height="406" rx="31" fill="#26262A" stroke="#A5A5AC" stroke-width="1.4"/>
+    <rect x="418" y="101" width="186" height="398" rx="27" fill="#FFFFFF" stroke="#111114" stroke-width="1"/>
+    <rect x="487" y="108" width="49" height="13" rx="6.5" fill="#08080A"/>
+    <circle cx="528" cy="114.5" r="2" fill="#202332"/>
+    <path d="M412 169v20m0 12v27m198-29v38" stroke="#68686E" stroke-width="2" stroke-linecap="round"/>
+    <text x="431" y="119" font-size="7" font-weight="600">9:41</text>
+    <rect x="578" y="113" width="11" height="5" rx="1" fill="none" stroke="#515159" stroke-width=".8"/>
+    <rect x="580" y="114.5" width="6" height="2" rx=".5" fill="#515159"/>
+    <rect x="430" y="138" width="162" height="23" rx="7" fill="#F4F4F6"/>
+    <text x="511" y="153" text-anchor="middle" font-size="9" fill="#706A7A">getkardy.com</text>
+    <rect x="490" y="188" width="42" height="42" rx="12" fill="#171A18"/>
+    <text x="511" y="217" text-anchor="middle" font-family="Georgia, serif" font-size="29" font-weight="700" fill="#FFF0EE">s</text>
+    <text x="511" y="257" text-anchor="middle" font-size="18" font-weight="700" letter-spacing="-.5">Join Sunday Coffee</text>
+    <text x="511" y="278" text-anchor="middle" font-size="9" fill="#706A7A">Collect stamps. Enjoy your next cup.</text>
+    <rect x="432" y="299" width="158" height="62" rx="10" fill="#F5F5F7"/>
+    <text x="443" y="321" font-size="12" font-weight="600">A coffee, on us.</text>
+    <text x="443" y="342" font-size="8" fill="#706A7A">10 stamps · View programme terms</text>
+    <rect x="432" y="385" width="158" height="34" rx="8" fill="#42001C"/>
+    <text x="511" y="406" text-anchor="middle" font-size="10" font-weight="600" fill="white">Sign in to join →</text>
+    <text x="511" y="441" text-anchor="middle" font-size="9" fill="#706A7A">New to Kardy? Create an account</text>
+    <rect x="481" y="487" width="60" height="3" rx="1.5" fill="#171A18"/>
     <!-- The earned outcome floats beside the phone, carrying the shop's visual identity. -->
     <path d="M652 278c20-25 28-28 48-20m-8-9 8 9-11 4" fill="none" stroke="#A99CC5" stroke-width="1.6" stroke-linecap="round"/>
     <g transform="translate(696 203) rotate(5 135 106)">

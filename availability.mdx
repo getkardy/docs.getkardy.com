@@ -14,23 +14,42 @@ Production rollout and authenticated end-to-end verification are separate.
 
 ## Additional gates and known boundaries
 
+### Final reward: Reset / No reset
+
+The merchant choice for what happens [after the final reward is claimed](/features/rewards#after-the-final-reward-is-claimed)
+is implemented. **Reset** restarts at the first active reward with zero stamps;
+**No reset** completes the card and blocks further stamps and stamp-reward claims
+after the final redemption. Reaching the goal alone does not complete the card.
+Completed cards remain complete after later configuration changes.
+Owners and Managers can also pause reward collection when stock runs out without
+stopping stamp earning or extending existing reward deadlines.
+
+### Slide approval and timed reward QRs
+
+The [counter approval tutorial](/guides/scanning) and
+[customer claim tutorial](/customer-journey/rewards) describe the development
+implementation: four-checkpoint sliding, a non-drag alternative, optional sounds,
+single-use reward QRs valid for up to 10 minutes, and earned-reward deadlines.
+Production requires a coordinated backend and consumer/merchant rollout. These
+guides do not establish that the updated flow is already live.
+
 The account menu, animated dashboard, stamp cards and phone screens on public
 pages are demonstrations. Entering details in a signup preview is not a saved
 profile, opening a sample card is not joining, and a notification illustration
 does not mean a push message was sent.
 
-| Capability                                 | Check before promising availability                                                                                                                                                                    |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Programme operations](/merchants/billing) | Require authorised access and an active subscription. Free workspace creation does not activate operations.                                                                                            |
-| [Capacity](/features/usage-limits)         | Enforced in dev. Additional outlets and email require explicit allowances.                                                                                                                             |
-| [Kardy Rewards](/features/kardy-rewards)   | Only eligible, published live data appears. Setup alone does not publish a listing; samples require explicit demo mode.                                                                                |
-| [Email broadcasts](/features/broadcasts)   | <ComingSoonBadge /> Draft previews are available. Email sending and pricing are coming soon, not included with Growth or Scale today.                                                                  |
-| [Merchant MCP](/features/merchant-mcp)     | Read-only OAuth and manual-key access is implemented in dev. Owner approval and an active subscription are required; there is no consumer MCP.                                                         |
-| [Team access](/features/team-access)       | Share invitation links manually; automatic invitation emails are not connected. Ownership verification needs working auth email delivery.                                                              |
-| [Native wallets](/features/native-wallets) | The production Apple update service is running. Saving passes remains disabled pending device testing. Google updates are implemented but still need production configuration and publishing approval. |
-| PWA claim notifications                    | The iPhone-style coffee-claim notification is a labelled concept preview. Production push delivery is not implemented. Confirm redemption through staff and current Kardy data.                        |
-| [Card design](/features/branded-cards)     | Saved browser designs are supported in dev. Reward-specific icons and preview stamp counts remain illustrative.                                                                                        |
-| [Reporting](/features/analytics)           | Date-filtered totals and complete-day graphs are connected in app code. Incomplete reads show unavailable; authenticated deployment verification is separate. Demo charts use sample data.             |
+| Capability                                 | Check before promising availability                                                                                                                                                                                                                                               |
+| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Programme operations](/features/plans)    | Require authorised access and an active subscription. Free workspace creation does not activate operations.                                                                                                                                                                       |
+| [Capacity](/features/usage-limits)         | Enforced in dev. Additional outlets and email require explicit allowances.                                                                                                                                                                                                        |
+| [Kardy Rewards](/features/kardy-rewards)   | Only eligible, published live data appears. Setup alone does not publish a listing; samples require explicit demo mode.                                                                                                                                                           |
+| [Broadcasts](/features/broadcasts)         | <ComingSoonBadge /> Draft previews are available. Email sending and pricing are coming soon, not included with Growth or Scale today.                                                                                                                                             |
+| [Merchant MCP](/mcp/overview)              | Read-only OAuth and manual-key access is implemented in dev. Owner approval and an active subscription are required; there is no consumer MCP.                                                                                                                                    |
+| [Team access](/features/team-access)       | Share invitation links manually; automatic invitation emails are not connected. Ownership verification needs working auth email delivery.                                                                                                                                         |
+| [Native wallets](/features/native-wallets) | Both update services run with a 15-minute recovery schedule and earlier backlog processing. Apple saving remains disabled pending device testing; Google remains tester-only pending publishing approval. Browser confirmations are user-reported, not physical-device detection. |
+| PWA claim notifications                    | The iPhone-style coffee-claim notification is a labelled concept preview. Production push delivery is not implemented. Confirm redemption through staff and current Kardy data.                                                                                                   |
+| [Card design](/features/branded-cards)     | Saved browser designs are supported in dev. Reward-specific icons and preview stamp counts remain illustrative.                                                                                                                                                                   |
+| [Reporting](/features/analytics)           | Date-filtered totals and complete-day graphs are connected in app code. Incomplete reads show unavailable; authenticated deployment verification is separate. Demo charts use sample data.                                                                                        |
 
 [Activities and Live view](/features/live-view) are implemented in app code:
 searchable audit history and a store globe with checks every 15 seconds while

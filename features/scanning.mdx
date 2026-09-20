@@ -26,12 +26,21 @@ staff still confirm the correct membership, outlet and operation.
     QR.
   </Step>
   <Step title="Confirm the operation">
-    Issue the qualifying stamp or confirm an available reward claim. Each claim
-    is separate.
+    Review the details, then use **Slide to add stamp** for a qualifying visit.
+    For a claim, scan the customer's temporary reward QR and use **Slide to
+    redeem reward**. Move through all four checkpoints and release at the end.
+    Wait for the confirmed result before serving the next customer or handing
+    over a reward.
   </Step>
 </Steps>
 
 ## Permissions and safeguards
+
+Follow the [complete sliding and approval tutorial](/guides/scanning) for
+early release, keyboard and non-drag confirmation, sound settings, retries and
+expired codes. Customers follow [Claim a reward](/customer-journey/rewards) to
+prepare a QR valid for up to 10 minutes. This updated flow is implemented in
+development; production rollout is separate.
 
 Authorised staff need an active brand subscription. Redemption is checked against
 the reward's eligible outlets. Recorded events are audit history; retries must not
@@ -43,7 +52,7 @@ create duplicate stamps or claims. A QR contains an opaque token, not contact de
 </Note>
 
 <CardGroup cols={2}>
-  <Card title="Counter guide" icon="qrcode" href="/merchants/scanning">
+  <Card title="Counter guide" icon="qrcode" href="/guides/scanning">
     Day-to-day scanning instructions.
   </Card>
   <Card title="QR security" icon="shield" href="/technical/qr-and-security">

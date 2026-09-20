@@ -1,0 +1,370 @@
+h2:has(+ .kardy-flow) {
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+.kardy-flow {
+  --flow-surface: #ffffff;
+  --flow-canvas: #f6f8fa;
+  --flow-ink: #42001c;
+  --flow-muted: #75636c;
+  --flow-line: #dfe4ea;
+  --flow-dot: #d8dee6;
+  --flow-lifeline: #cbd3dd;
+  --flow-connector: #9aa6b5;
+  --flow-selected: #fff0f5;
+  --flow-accent: #bd3d77;
+  margin: 8px 0 2rem;
+  border: 0;
+  background: transparent;
+  color: var(--flow-ink);
+  font-family: inherit;
+}
+.dark .kardy-flow {
+  --flow-surface: #191516;
+  --flow-canvas: #14171b;
+  --flow-ink: #fff0ee;
+  --flow-muted: #c6b5bd;
+  --flow-line: #353d47;
+  --flow-dot: #303945;
+  --flow-lifeline: #485362;
+  --flow-connector: #8794a5;
+  --flow-selected: #39212c;
+  --flow-accent: #ff90c1;
+}
+.kardy-flow .kardy-flow-heading {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--flow-muted);
+  display: grid;
+  gap: 6px;
+  padding: 0 0 14px;
+  margin: 0;
+  text-align: left;
+}
+.kardy-flow .kardy-flow-eyebrow {
+  font:
+    10px ui-monospace,
+    monospace;
+  letter-spacing: 0.15em;
+  color: var(--flow-muted);
+}
+.kardy-flow .kardy-flow-heading strong {
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  color: var(--flow-ink);
+}
+.kardy-flow .kardy-flow-heading > span:last-child {
+  font-size: 12px;
+  color: var(--flow-muted);
+}
+.kardy-flow .kardy-flow-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 0 14px;
+}
+.kardy-flow .kardy-flow-options button,
+.kardy-flow .kardy-flow-tools button {
+  border: 1px solid var(--flow-line);
+  border-radius: 7px;
+  background: var(--flow-surface);
+  color: var(--flow-ink);
+  padding: 8px 12px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.kardy-flow .kardy-flow-options button[aria-pressed="true"] {
+  background: var(--flow-selected);
+  border-color: var(--flow-accent);
+}
+.kardy-flow .kardy-flow-view {
+  margin-left: auto;
+}
+.kardy-flow .kardy-flow-canvas {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  overflow: hidden;
+  scrollbar-width: none;
+  height: clamp(380px, 65vw, 600px);
+  background-color: var(--flow-canvas);
+}
+.kardy-flow .react-flow__node-sequence {
+  pointer-events: none;
+}
+.kardy-flow .react-flow__controls {
+  overflow: hidden;
+  border: 1px solid var(--flow-line);
+  border-radius: 7px;
+  box-shadow: 0 2px 8px #00000008;
+}
+.kardy-flow .react-flow__controls-button {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+  background: var(--flow-surface);
+  color: var(--flow-muted);
+  fill: currentColor;
+  border: 0;
+  border-bottom: 1px solid var(--flow-line);
+  cursor: pointer;
+}
+.kardy-flow .react-flow__controls-button:last-child {
+  border-bottom: 0;
+}
+.kardy-flow .react-flow__controls-button:hover {
+  background: var(--flow-selected);
+}
+.kardy-flow .react-flow__controls-button svg {
+  width: 14px;
+  height: 14px;
+}
+.kardy-flow .kardy-flow-canvas::-webkit-scrollbar {
+  display: none;
+}
+.kardy-flow .kardy-flow-canvas[data-dragging="true"],
+.kardy-flow .kardy-flow-canvas[data-dragging="true"] * {
+  cursor: grabbing;
+}
+.kardy-flow .kardy-flow-map {
+  position: relative;
+  border: 1px solid var(--flow-line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.kardy-flow .kardy-flow-size {
+  margin: auto;
+}
+.kardy-flow svg {
+  display: block;
+  margin: 0;
+  max-width: none;
+}
+.kardy-flow .kardy-flow-lane {
+  stroke: var(--flow-lifeline);
+  stroke-width: 1;
+}
+.kardy-flow .kardy-flow-lane-label {
+  fill: var(--flow-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+.kardy-flow .kardy-flow-accent-0 {
+  fill: #55b938;
+}
+.kardy-flow .kardy-flow-accent-1 {
+  fill: #f59b23;
+}
+.kardy-flow .kardy-flow-accent-2 {
+  fill: #3478ed;
+}
+.kardy-flow .kardy-flow-edge,
+.kardy-flow .kardy-flow-arrow {
+  stroke: var(--flow-connector);
+  stroke-width: 1.2;
+  fill: none;
+  stroke-linejoin: round;
+}
+.kardy-flow .kardy-flow-node {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 200px;
+  min-height: 52px;
+  margin: 4px;
+  padding: 8px 10px;
+  border: 1px solid var(--flow-line);
+  border-radius: 9px;
+  background: var(--flow-surface);
+  color: var(--flow-ink);
+  box-shadow: 0 2px 5px #42001c06;
+  text-align: left;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.35;
+  cursor: inherit;
+}
+.kardy-flow .kardy-flow-number {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffe0ed;
+  color: #42001c;
+  font:
+    10px ui-monospace,
+    monospace;
+}
+.kardy-flow .kardy-flow-map:focus-within {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--flow-accent) 25%, transparent);
+}
+.kardy-flow .kardy-flow-canvas:focus,
+.kardy-flow .kardy-flow-canvas:focus-visible {
+  outline: none;
+}
+.kardy-flow button:focus-visible {
+  outline: 2px solid var(--flow-accent);
+  outline-offset: -2px;
+}
+.kardy-flow .kardy-flow-tools {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 3px;
+  border: 1px solid var(--flow-line);
+  border-radius: 7px;
+  background: var(--flow-surface);
+  box-shadow: 0 2px 8px #00000008;
+}
+.kardy-flow .kardy-flow-tools button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  padding: 6px;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  color: var(--flow-muted);
+}
+.kardy-flow .kardy-flow-tools button:hover:not(:disabled) {
+  background: var(--flow-selected);
+  color: var(--flow-ink);
+}
+.kardy-flow .kardy-flow-tools span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.kardy-flow .kardy-flow-tools span {
+  font:
+    11px ui-monospace,
+    monospace;
+  color: var(--flow-muted);
+  min-width: 36px;
+  text-align: center;
+}
+.kardy-flow .kardy-flow-tools small {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--flow-muted);
+}
+.kardy-flow button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.kardy-flow .kardy-flow-detail {
+  display: grid;
+  gap: 5px;
+  padding: 16px 0 8px;
+}
+.kardy-flow .kardy-flow-detail > span,
+.kardy-flow .kardy-flow-text li > span {
+  color: var(--flow-muted);
+  font:
+    11px ui-monospace,
+    monospace;
+}
+.kardy-flow .kardy-flow-detail strong {
+  font-size: 14px;
+  color: var(--flow-ink);
+}
+.kardy-flow .kardy-flow-detail p,
+.kardy-flow .kardy-flow-text p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--flow-muted);
+}
+.kardy-flow .kardy-flow-note {
+  padding: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--flow-muted);
+  background: transparent;
+}
+.kardy-flow .kardy-flow-text {
+  margin: 0;
+  padding: 16px 0 8px;
+  list-style: none;
+  counter-reset: flow-step;
+}
+.kardy-flow .kardy-flow-text li {
+  position: relative;
+  padding: 8px 0 8px 36px;
+  counter-increment: flow-step;
+}
+.kardy-flow .kardy-flow-text li::before {
+  content: counter(flow-step);
+  position: absolute;
+  left: 0;
+  top: 8px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffe0ed;
+  color: #42001c;
+  font:
+    500 11px/1 ui-monospace,
+    monospace;
+}
+.kardy-flow .kardy-flow-text li > span,
+.kardy-flow .kardy-flow-text strong {
+  display: block;
+  margin: 0 0 5px;
+}
+.kardy-flow .kardy-flow-text strong {
+  color: var(--flow-ink);
+  font-size: 14px;
+}
+@media (max-width: 520px) {
+  .kardy-flow .kardy-flow-heading,
+  .kardy-flow .kardy-flow-detail,
+  .kardy-flow .kardy-flow-note {
+    padding-inline: 0;
+  }
+  .kardy-flow .kardy-flow-options {
+    padding-inline: 0;
+  }
+  .kardy-flow .kardy-flow-view {
+    margin-left: 0;
+  }
+  .kardy-flow .kardy-flow-tools {
+    padding-inline: 3px;
+  }
+  .kardy-flow .kardy-flow-tools small {
+    display: none;
+  }
+}
+@media print {
+  .kardy-flow .kardy-flow-canvas {
+    max-height: none;
+    overflow: visible;
+  }
+  .kardy-flow .kardy-flow-size {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .kardy-flow .kardy-flow-options,
+  .kardy-flow .kardy-flow-tools {
+    display: none;
+  }
+}

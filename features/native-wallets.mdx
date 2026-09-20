@@ -15,7 +15,7 @@ For device steps, follow [Save a native wallet pass](/customer-journey/save-wall
 </Frame>
 
 Native wallet signing and stamp-update services are built. Public availability is
-still pending device testing and, for Google, production configuration and approval. Until save controls are enabled,
+still pending device testing and, for Google, publishing approval beyond testers. Until save controls are enabled,
 use your Kardy browser wallet.
 
 The Apple endpoint produces a signed `.pkpass`. Google produces a signed save link for
@@ -33,9 +33,26 @@ updates the Google Wallet pass, or asks Apple Wallet to download the latest pass
 Failed attempts are retried. Updates can take time and do not guarantee a visible
 notification. Open Kardy if you need to check progress while a saved pass catches up.
 
-The Apple update service is running in production and checks for queued changes
-every minute. Saving passes remains disabled until device testing is complete.
-Google updates still need production configuration and publishing approval.
+Both update services use a 15-minute recovery check. Larger backlogs can trigger
+earlier processing, with follow-up runs while ready work remains. This is not a
+promise that a device refreshes within 15 minutes. Apple saving remains disabled
+pending device testing; Google remains restricted to approved testers.
+
+## Sync and remove a saved pass
+
+After saving, confirm **Yes, added on this device** in Kardy. This is your
+confirmation in the current browser, not automatic detection of your phone's wallet.
+Confirmed passes show a sync action and removal instructions instead of another
+Add action. Another browser or device can save and confirm independently.
+
+Sync queues the latest state; it does not award stamps or guarantee an immediate
+phone refresh. Requests are limited to once per minute per pass. **Last synced**
+on the pass means when Kardy prepared its data, not when your phone received it.
+
+Remove the pass in Apple Wallet or Google Wallet, then confirm removal in Kardy.
+This clears the browser's confirmation, not your membership. Google Wallet can
+sync across devices signed into the same Google account, so removal may affect
+those devices too. Clearing browser storage also clears the local confirmation.
 
 ## Your membership QR
 
@@ -59,7 +76,7 @@ See [Feature availability](/availability) for rollout status, or
 Native passes do not inherit every [browser card design](/features/branded-cards)
 option. Use the [browser wallet](/features/browser-wallet) for current reward progress.
 
-[Merchant MCP](/features/merchant-mcp) provides scoped, read-only agent access. Kardy
+[Merchant MCP](/mcp/overview) provides scoped, read-only agent access. Kardy
 does not publish a general write API or webhook contract. Do not rely on internal
 app routes as stable integration APIs; [contact Kardy](https://getkardy.com/contact)
 before planning a custom integration.

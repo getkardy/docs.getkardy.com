@@ -12,6 +12,7 @@ export default tseslint.config(
       ".mintlify/**",
       ".husky/**",
       "navigation-progress.js",
+      "merchant-flow-runtime.js",
     ],
   },
   js.configs.recommended,
@@ -24,10 +25,11 @@ export default tseslint.config(
     languageOptions: { globals: { ...globals.browser, ...globals.node } },
   },
   {
-    files: ["snippets/**/*.jsx"],
+    files: ["snippets/**/*.jsx", "runtime/**/*.jsx"],
     languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } },
     plugins: { react, "react-hooks": hooks },
     rules: {
+      "react/jsx-uses-react": "error",
       "react/jsx-uses-vars": "error",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",

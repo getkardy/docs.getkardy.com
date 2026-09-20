@@ -1,35 +1,50 @@
 ---
 title: Platform overview
-description: Understand how your organization, the customer wallet, and Kardy’s backend work together.
+description: See how your business, your customers and Kardy’s shared services work together.
 ---
 
-Kardy has two application surfaces. Your organization uses the management portal;
-customers use the browser wallet. The backend stores memberships and confirms operations.
+import { PlatformOverview } from "/snippets/platform-overview.jsx";
 
-The repository has **three projects**: the consumer Next.js app (public site and
-browser wallet), the merchant Next.js app, and this standalone Mintlify docs site.
-All three use a thin purple navigation-progress indicator. Documentation is also
-linked from the public footer and the Support help panel.
+Kardy connects the loyalty programme your business runs with the memberships your
+customers keep on their phones. Your team manages the programme in the merchant
+portal, while customers use their wallet to join, show their QR and check progress.
 
-<Frame>
-  <img
-    src="/images/platform-overview.svg"
-    alt="The merchant portal and customer wallet connect to authenticated server operations, which maintain organisation-scoped memberships and stamp and redemption history."
-  />
-</Frame>
+Behind both experiences, Kardy keeps membership records and confirmed activity
+together, so your team and your customers can refer to the same programme.
 
-## Where information lives
+<PlatformOverview />
 
-| Component                   | Responsibility                                                                      |
-| --------------------------- | ----------------------------------------------------------------------------------- |
-| Organization portal         | Configure the programme, manage outlets, and operate scans.                         |
-| Customer wallet             | Join programmes, present a QR, and view membership progress.                        |
-| Backend                     | Authenticate requests, enforce organization access, and record changes.             |
-| Wallet integration boundary | Sign native QR passes when issuer credentials and scanner readiness are configured. |
+## The main parts
 
-The apps use Next.js and TypeScript, with InsForge for authentication and data.
-Merchant-only, read-only agent access is documented in [Merchant MCP](/technical/merchant-mcp).
-It uses scoped Owner-approved OAuth connections or expiring manual keys; there is no consumer MCP or general-purpose database API.
+| Part              | What it does                                                                     |
+| ----------------- | -------------------------------------------------------------------------------- |
+| Merchant portal   | Your team manages members, rewards, outlets and day-to-day activity.             |
+| Customer wallet   | Customers keep memberships together, show their QR and see their progress.       |
+| Shared services   | Kardy checks access, stores memberships and records confirmed stamps and claims. |
+| Connected wallets | Customers can save a pass in Apple Wallet or Google Wallet where enabled.        |
 
-For a rollout, read [QR and security](/technical/qr-and-security),
+## How they work together
+
+1. A customer joins your programme and gets a membership in their wallet.
+2. Your team uses the merchant portal to record a qualifying visit or confirm a reward claim.
+3. Kardy checks that the action is allowed and saves the result.
+4. The customer can view their updated progress in their wallet. Saved Apple Wallet
+   and Google Wallet passes may take longer to update.
+
+## One account, separate programmes
+
+Customers can keep memberships from several businesses in one Kardy account.
+Each business still has its own programme, members, rewards and team access.
+Joining a programme as a customer does not give someone access to manage that business.
+
+An **outlet** is a physical location within a business. Outlets can share the
+business’s programme, while individual rewards may have their own eligible locations.
+
+## Optional connections
+
+Business owners can connect supported assistants to read selected programme
+information through [Merchant MCP](/mcp/connect). These connections
+do not issue stamps or redeem rewards.
+
+For more detail, read [QR and security](/technical/qr-and-security),
 [wallet integrations](/features/native-wallets), and [availability](/availability).

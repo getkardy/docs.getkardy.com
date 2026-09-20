@@ -4,6 +4,7 @@ description: Connect an agent to read your programme, rewards and outlets.
 ---
 
 import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
+import { MerchantFlow } from "/snippets/merchant-flow.jsx";
 
 **Where:** Merchant **Settings → Agent connections**.
 
@@ -13,6 +14,10 @@ import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
 
 Connect Claude, Codex or another compatible MCP client using OAuth or an expiring
 manual key. Only the organisation Owner can approve connections and manage keys.
+
+## How an agent reads your business
+
+<MerchantFlow type="mcp-read" />
 
 ## Available tools
 
@@ -63,14 +68,14 @@ provider's token usage or subscription balance.
   <Card
     title="Connect Claude, Codex or another client"
     icon="plug"
-    href="/technical/merchant-mcp"
+    href="/mcp/connect"
   >
     Simple setup steps and OAuth illustrations.
   </Card>
   <Card
     title="Security and troubleshooting"
     icon="shield"
-    href="/technical/mcp-reference"
+    href="/mcp/reference"
   >
     Protocol details, scopes and errors.
   </Card>

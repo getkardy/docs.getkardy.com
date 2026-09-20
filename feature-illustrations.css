@@ -1,9 +1,20 @@
-/* Same surface, line, ink and accent tokens as landing-merchant-features.module.css.
-   Art stays light in both documentation themes, like an embedded product preview. */
+.referral-bento-dark {
+  display: none;
+}
+.referral-bento-light {
+  display: block;
+}
+.dark .referral-bento-light {
+  display: none;
+}
+.dark .referral-bento-dark {
+  display: block;
+}
+/* Shared landing bento artwork; preserve the illustrative UI's own colours. */
 .kardy-feature-art {
   --bf-paper: #fff;
-  --bf-stage: #fff0ee;
-  --bf-line: #e2e2e9;
+  --bf-stage: #f5f5f7;
+  --bf-line: #dedee3;
   --bf-ink: #42001c;
   --bf-muted: #61616d;
   --bf-accent: #42001c;
@@ -11,7 +22,10 @@
   box-sizing: border-box;
   padding: clamp(18px, 4vw, 30px);
   border-radius: 14px;
-  background: var(--bf-stage);
+  background:
+    linear-gradient(#ffffff66, #ffffff66),
+    url("/images/features/bento-silk-v4.webp") center / cover no-repeat,
+    #fff;
   color: var(--bf-ink);
   text-align: left;
   font-family:
@@ -26,6 +40,20 @@
 }
 .kardy-feature-art * {
   box-sizing: border-box;
+}
+.dark .kardy-feature-art {
+  background:
+    linear-gradient(#00000040, #00000040),
+    url("/images/features/bento-silk-dark-v1.webp") center / cover no-repeat,
+    #090909;
+}
+.dark .kardy-feature-art .bf-intro {
+  --bf-ink: #fff0ee;
+  --bf-accent: #fff0ee;
+  color: #fff0ee;
+}
+.dark .kardy-feature-art .bf-example {
+  color: #e4dce7;
 }
 .kardy-feature-art b,
 .kardy-feature-art strong {
@@ -45,6 +73,200 @@
   flex-shrink: 0;
   margin: 0;
 }
+.bf-safari {
+  padding: 0 7px 7px;
+  border: 1px solid #ffffffb3;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ffffffad, #ffffff45);
+  backdrop-filter: blur(18px) saturate(1.3);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  box-shadow:
+    0 15px 40px #42001c0c,
+    0 0 0 1px #42001c08,
+    inset 0 1px #fff;
+}
+.bf-safari-toolbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 12px;
+  color: #616575;
+}
+.bf-safari-dots {
+  position: absolute;
+  left: 12px;
+  display: flex;
+  gap: 5px;
+}
+.bf-safari-dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #b7bccb80;
+}
+.bf-safari-address {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 62%;
+  min-width: 0;
+  height: 23px;
+  border: 1px solid #ffffffb3;
+  border-radius: 12px;
+  background: #ffffff80;
+  font-size: 9px;
+  white-space: nowrap;
+}
+.kardy-feature-art .bf-safari-address .bf-icon {
+  width: 10px;
+  height: 10px;
+}
+.bf-safari-content {
+  overflow: hidden;
+  border-radius: 6px;
+  background: #fff;
+}
+.bf-safari-content > .bf-panel {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.kardy-desktop-install {
+  margin: 24px 0;
+}
+.kardy-desktop-install .bf-safari-toolbar {
+  height: 44px;
+  padding-right: 36px;
+}
+.kardy-desktop-install .desktop-install-icon {
+  position: absolute;
+  right: 5px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  aspect-ratio: 1;
+  flex: 0 0 28px;
+  border-radius: 50%;
+  background: #ff90c1;
+  color: #42001c;
+}
+.kardy-desktop-install .desktop-install-icon svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+.desktop-install-scene {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: center;
+  gap: 22px;
+  padding: 24px;
+}
+.desktop-install-wallet > strong {
+  display: block;
+  font-size: 19px;
+  margin-bottom: 14px;
+}
+.desktop-install-membership {
+  min-height: 112px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #eadcfa;
+  color: #42001c;
+}
+.desktop-install-membership b {
+  font-size: 20px;
+}
+.kardy-desktop-install .desktop-install-membership small {
+  color: #42001c;
+  margin-top: 8px;
+}
+.desktop-install-dialog {
+  padding: 20px;
+  border: 1px solid var(--bf-line);
+  border-radius: 16px;
+  background: var(--bf-paper);
+  box-shadow: 0 8px 24px #42001c08;
+}
+.desktop-install-dialog > strong {
+  font-size: 16px;
+}
+.desktop-install-dialog > small {
+  margin-top: 6px;
+}
+.desktop-install-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-top: 28px;
+  font-size: 12px;
+  color: var(--bf-muted);
+}
+.desktop-install-confirm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  height: 34px;
+  padding: 0 18px;
+  border-radius: 8px;
+  background: #42001c;
+  color: #fff0ee;
+}
+.kardy-desktop-install figcaption {
+  margin-top: 18px;
+  color: var(--bf-ink);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.kardy-desktop-install figcaption small {
+  margin-top: 6px;
+}
+.dark .kardy-desktop-install {
+  --bf-paper: #19191e;
+  --bf-line: #ffffff26;
+  --bf-ink: #fff0ee;
+  --bf-muted: #bfb8c3;
+}
+.dark .kardy-desktop-install .bf-safari {
+  background: linear-gradient(135deg, #252329cc, #19191e88);
+  border-color: #ffffff30;
+  box-shadow:
+    0 15px 40px #0003,
+    inset 0 1px #ffffff20;
+}
+.dark .kardy-desktop-install .bf-safari-address {
+  background: #ffffff12;
+  border-color: #ffffff26;
+  color: #d9d2df;
+}
+.dark .kardy-desktop-install .bf-safari-content {
+  background: var(--bf-paper);
+}
+.dark .kardy-desktop-install .desktop-install-confirm {
+  background: #ff90c1;
+  color: #42001c;
+}
+@container (max-width: 420px) {
+  .desktop-install-scene {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+  .desktop-install-membership {
+    min-height: 80px;
+  }
+  .desktop-install-dialog {
+    padding: 16px;
+  }
+}
 .bf-intro {
   margin-bottom: 24px;
 }
@@ -52,7 +274,7 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  color: #7354a1;
+  color: var(--bf-ink);
   font-size: 11px;
 }
 .bf-intro .bf-icon {
@@ -80,7 +302,7 @@
   border-radius: 17px;
   background: var(--bf-paper);
   box-shadow:
-    0 3px 0 #e9e7ef,
+    0 3px 0 #ebebee,
     0 12px 30px #30234405;
   min-width: 0;
 }
@@ -110,8 +332,10 @@
 }
 .bf-field > div {
   background: white;
-  border: 1px solid var(--bf-line);
-  border-radius: 7px;
+  border: 1px solid rgba(15, 23, 28, 0.2);
+  border-radius: 8px;
+  color: #0e1417;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
   padding: 9px 10px;
   font-size: 12px;
 }
@@ -132,6 +356,187 @@
   object-fit: contain;
   border-radius: 0;
   background: transparent;
+}
+/* Portable counterpart of landing-card.module.css; artwork is exported unchanged. */
+.bf-landing-card {
+  container-type: inline-size;
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+  border: 1px solid #ffffff85;
+  border-radius: 18px;
+  background-color: #eee5ff;
+  background-image:
+    linear-gradient(
+      to bottom,
+      #fffffff5 0%,
+      #ffffffd9 28px,
+      #ffffff80 52px,
+      #ffffff26 76px,
+      #ffffff00 104px
+    ),
+    linear-gradient(to top, #fffffff5 0%, #ffffff80 18px, #ffffff00 48px),
+    url("/images/landing/wallet-drift.svg");
+  background-size: cover;
+  background-position: center;
+  color: #42001c;
+  box-shadow:
+    0 12px 28px #1c143b20,
+    inset 0 1px #ffffff70;
+}
+.bf-landing-card-brand .bf-brand {
+  width: 132px;
+  max-width: 85%;
+  height: auto;
+  margin: 0;
+}
+.bf-landing-stamp-panel {
+  margin-top: 23px;
+  padding: 15px 10px 10px;
+  border-radius: 12px;
+  background: #fff;
+}
+.bf-landing-stamps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  justify-items: center;
+  gap: 12px 6px;
+}
+.bf-landing-stamps > span {
+  display: flex;
+  color: #71717a;
+}
+.kardy-feature-art .bf-landing-stamps .bf-icon {
+  width: 19px;
+  height: 19px;
+}
+.bf-landing-stamps > span[data-filled="true"] {
+  color: #42001c;
+}
+.bf-landing-stamps > span[data-filled="true"]:not([data-reward="true"]) svg {
+  fill: currentColor;
+}
+.bf-landing-stamps > span[data-reward="true"] {
+  color: #252333;
+}
+.bf-landing-stamp-count {
+  display: block;
+  margin-top: 12px;
+  font-size: 10px;
+  color: #3f3f46;
+}
+.bf-landing-card-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-top: 16px;
+  font-size: 9px;
+}
+.bf-landing-card-qr img {
+  display: block;
+  width: 84px;
+  height: 84px;
+  margin: 0;
+  padding: 5px;
+  background: white;
+  border-radius: 6px;
+}
+.bf-phone .bf-landing-card {
+  padding: 10px;
+  border-radius: 12px;
+}
+.bf-phone .bf-landing-card-brand .bf-brand {
+  width: 90px;
+}
+.bf-phone .bf-landing-stamp-panel {
+  margin-top: 16px;
+  padding: 10px 7px 7px;
+  border-radius: 8px;
+}
+.bf-phone .bf-landing-stamps {
+  gap: 8px 4px;
+}
+.kardy-feature-art .bf-phone .bf-landing-stamps .bf-icon {
+  width: 13px;
+  height: 13px;
+}
+.bf-phone .bf-landing-stamp-count {
+  margin-top: 8px;
+  font-size: 7px;
+}
+.bf-phone .bf-landing-card-qr {
+  margin-top: 11px;
+  font-size: 6px;
+  gap: 3px;
+}
+.bf-phone .bf-landing-card-qr img {
+  width: 57px;
+  height: 57px;
+  padding: 3px;
+  border-radius: 4px;
+}
+.bf-wallet-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0 16px;
+}
+.bf-wallet-heading b {
+  font-size: 19px;
+  letter-spacing: -0.8px;
+}
+.bf-wallet-heading > span {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 9px;
+  background: #ff90c1;
+}
+.bf-wallet-heading img {
+  width: 20px;
+  height: auto;
+  margin: 0;
+}
+.kardy-feature-art .bf-wallet-greeting {
+  font-size: 8px;
+}
+.bf-wallet-instruction {
+  margin: 9px 0;
+  text-align: center;
+  font-size: 7px;
+  color: #60606b;
+}
+.bf-wallet-nav {
+  position: absolute;
+  bottom: 23px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #d4d4dc;
+  padding-top: 9px;
+}
+.bf-wallet-nav > span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 6px;
+  color: #60606b;
+}
+.bf-wallet-nav > span:first-child {
+  color: #42001c;
+}
+.kardy-feature-art .bf-wallet-nav .bf-icon {
+  width: 13px;
+  height: 13px;
+}
+.bf-app-mark img {
+  width: 32px;
+  height: auto;
+  margin: 0;
 }
 .bf-pass {
   overflow: hidden;
@@ -239,9 +644,9 @@
 }
 .bf-pill {
   display: inline-block;
-  color: #7354a1;
-  border: 1px solid #e0d7f3;
-  background: #fff5f9;
+  color: var(--bf-ink);
+  border: 1px solid var(--bf-line);
+  background: #f7f7f8;
   padding: 4px 7px;
   border-radius: 6px;
   font-size: 10px;
@@ -266,13 +671,17 @@
   height: 32px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: #e5daf6;
-  color: #7354a1;
-  font-size: 12px;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 0.8);
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
 }
-.bf-avatar-green {
-  background: #e5ebdb;
-  color: #43553a;
+.bf-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: inherit;
 }
 .bf-chat {
   max-width: 95%;
@@ -351,8 +760,7 @@
 .bf-tool {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  gap: 11px;
   padding: 10px 12px;
   margin-top: 7px;
   border: 1px solid #eeedf2;
@@ -361,6 +769,76 @@
   font-family: "SFMono-Regular", Consolas, monospace;
   font-size: 12px;
   color: #464352;
+}
+.bf-mcp-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+}
+.bf-mcp-mark {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #c5ff3d;
+}
+.bf-mcp-mark img {
+  width: 27px;
+  height: auto;
+  margin: 0;
+}
+.bf-mcp-identity {
+  flex: 1;
+  min-width: 0;
+}
+.bf-mcp-identity small {
+  margin-top: 4px;
+  font-size: 10px;
+}
+.bf-mcp-lockup {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.bf-mcp-lockup img {
+  width: 88px;
+  height: 24px;
+  margin: 0;
+}
+.bf-mcp-lockup > span {
+  border-left: 1px solid #39205a30;
+  padding-left: 9px;
+  color: #39205a;
+  font: 10px/16px monospace;
+  letter-spacing: 0.12em;
+}
+.bf-tool > div {
+  flex: 1;
+  min-width: 0;
+}
+.bf-tool small {
+  margin-top: 4px;
+  font:
+    10px/1.4 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+.bf-mcp-access {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.bf-mcp-access .bf-icon {
+  width: 13px;
+  height: 13px;
+}
+.bf-mcp-boundary {
+  color: var(--bf-ink);
+  margin-top: 24px;
 }
 .bf-tool .bf-icon {
   width: 14px;
@@ -408,13 +886,22 @@
   background: #fff8f3;
 }
 .bf-client-1 {
-  background: #232625;
+  background: linear-gradient(160deg, #353633, #111211);
 }
 .kardy-feature-art .bf-client-mark img {
   width: 30px;
   height: 30px;
   margin: 0;
   border-radius: 0;
+}
+.kardy-feature-art .bf-client-1 img {
+  width: 42px;
+  height: 42px;
+}
+@container (max-width: 360px) {
+  .bf-mcp-header > .bf-pill {
+    display: none;
+  }
 }
 .bf-client b {
   font-size: 11px;
@@ -438,8 +925,9 @@
   display: flex;
   gap: 8px;
   align-items: center;
-  border: 1px solid var(--bf-line);
-  background: #fff0ee;
+  border: 1px solid rgba(15, 23, 28, 0.2);
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
   border-radius: 8px;
   padding: 10px;
   color: var(--bf-muted);
@@ -480,14 +968,14 @@
 .bf-meter {
   height: 6px;
   border-radius: 4px;
-  background: #ede8f8;
+  background: #e8e8ec;
   overflow: hidden;
   margin-bottom: 13px;
 }
 .bf-meter span {
   display: block;
   height: 100%;
-  background: #8b6ce1;
+  background: var(--bf-accent);
   border-radius: inherit;
 }
 .bf-usage {
@@ -519,7 +1007,7 @@
   font-size: 10px;
 }
 .bf-node > .bf-icon {
-  color: #7354a1;
+  color: var(--bf-ink);
 }
 .bf-node .bf-brand {
   width: 100%;
@@ -609,10 +1097,10 @@
   gap: 10px;
   padding: 24px 8px;
   margin-top: 18px;
-  border: 1px dashed #cbc3d7;
+  border: 1px dashed #cdcdd3;
   border-radius: 9px;
   text-align: center;
-  color: #7354a1;
+  color: var(--bf-ink);
   font-size: 12px;
 }
 .bf-qr-placeholder .bf-icon {
@@ -621,35 +1109,197 @@
 }
 .bf-device-pair {
   display: grid;
-  grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
-  gap: 25px;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  gap: 32px;
   align-items: center;
 }
-.bf-phone {
-  background: linear-gradient(155deg, #f8f7fc 20%, #ece5fb);
-  border: 5px solid #252626;
-  border-radius: 29px;
-  padding: 10px 7px 9px;
+.bf-native-wallets {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+.bf-wallet-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+.bf-wallet-brand img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 0;
+}
+.bf-native-pass {
+  display: flex;
+  flex-direction: column;
+  min-height: 340px;
+  overflow: hidden;
+  border: 1px solid var(--bf-line);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--bf-ink);
   box-shadow:
-    0 0 0 2px #b8b6bd,
-    0 9px 18px #23143315;
+    0 3px 6px #18181b05,
+    0 16px 28px -16px #18181b26;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+}
+.bf-native-pass-google {
+  border-radius: 24px;
+}
+.bf-native-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 62px;
+  padding: 14px 16px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.bf-native-progress {
+  text-align: right;
+}
+.bf-native-progress b {
+  display: block;
+  font-size: 19px;
+  line-height: 1.2;
+}
+.bf-native-details {
+  padding: 10px 16px 0;
+}
+.bf-native-details > b {
+  display: block;
+  font-size: 24px;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  margin-top: 4px;
+}
+.bf-native-pass small {
+  color: var(--bf-muted);
+  font-size: 9px;
+}
+.bf-native-reward {
+  margin-top: 18px;
+  font-size: 12px;
+}
+.bf-native-qr {
+  margin-top: auto;
+  padding: 20px 12px 14px;
+  text-align: center;
+}
+.bf-native-qr img {
+  width: 114px;
+  height: 114px;
+  margin: 0 auto 7px;
+  border-radius: 6px;
+}
+@container (max-width: 420px) {
+  .bf-native-wallets {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 270px;
+    margin-inline: auto;
+    gap: 28px;
+  }
+}
+.bf-phone {
+  /* iPhone 16 Pro body dimensions: 71.5 × 149.6 mm. */
+  position: relative;
+  width: 220px;
+  max-width: 100%;
+  aspect-ratio: 71.5 / 149.6;
+  margin-inline: auto;
+  border: 1px solid #717074;
+  border-radius: 32px;
+  background: linear-gradient(
+    105deg,
+    #adabb1,
+    #414044 8%,
+    #18181b 50%,
+    #77757c 95%,
+    #343337
+  );
+  box-shadow:
+    inset 0 0 0 1.5px #d3d1d540,
+    0 1px 0 #101014,
+    0 16px 36px #1e183e22;
+}
+.bf-phone::before,
+.bf-phone::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #7d7b80, #2b2a2e);
+}
+.bf-phone::before {
+  left: -3px;
+  top: 76px;
+  height: 22px;
+  box-shadow:
+    0 33px 0 #454448,
+    0 60px 0 #454448;
+}
+.bf-phone::after {
+  right: -3px;
+  top: 117px;
+  height: 42px;
+}
+.bf-phone-screen {
+  position: absolute;
+  inset: 4px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 2px solid #101012;
+  border-radius: 27px;
+  padding-bottom: 22px;
+  background: #f5f5f7;
+  color: #42001c;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
 }
 .bf-phone-status {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  flex-shrink: 0;
+  height: 32px;
+  padding: 5px 12px 0;
   font-size: 8px;
-  margin: 0 5px 15px;
+  font-weight: 600;
 }
 .bf-phone-status i {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 58px;
   height: 16px;
-  background: #161717;
+  background: #000;
   border-radius: 20px;
 }
+.bf-phone-status i::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #333448, #08080c 70%);
+}
+.bf-phone-status .bf-phone-connection {
+  width: 29px;
+  height: 10px;
+  margin: 0;
+}
 .bf-phone-content {
-  padding: 0 3px;
+  min-height: 0;
+  padding: 14px 11px 0;
 }
 .bf-phone-content > .bf-brand {
   width: 90px;
@@ -687,11 +1337,14 @@
   font-size: 7px;
 }
 .bf-home-bar {
-  margin: 19px auto 0;
-  width: 65px;
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68px;
   height: 3px;
   border-radius: 3px;
-  background: #242326;
+  background: #42001c;
 }
 .bf-device-note {
   display: grid;
@@ -713,7 +1366,7 @@
   width: 52px;
   height: 52px;
   border-radius: 13px;
-  background: #42001c;
+  background: #ff90c1;
   color: white;
   font-weight: 650;
   font-size: 36px;
@@ -748,7 +1401,7 @@
     gap: 26px;
   }
   .bf-phone {
-    width: 230px;
+    width: 220px;
     max-width: 100%;
   }
   .bf-device-note {

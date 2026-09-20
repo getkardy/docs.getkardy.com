@@ -1,11 +1,14 @@
 ---
-title: Multiple brands
-description: Create and switch organisations with separate teams, customers, and billing.
+title: Multiple businesses and outlets
+description: Manage separate businesses and their outlets with one account.
 ---
 
 import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
 
-**Where:** Merchant workspace → **organisation menu**.
+**Where:** Merchant workspace → organisation menu.
+
+**One login can own multiple businesses, each with multiple outlets.**
+Each business has separate billing; an outlet belongs to exactly one business.
 
 <Frame caption="Concept illustration: one account, separate brand workspaces.">
   <FeatureIllustration type="multiple-brands" />
@@ -17,25 +20,38 @@ import { FeatureIllustration } from "/snippets/feature-illustration.jsx";
 
 ## Separate brands from outlets
 
-Sunday Coffee and Forma Studio are separate brands, each with its own organisation,
-programme, team, subscription, and outlets. Two Sunday Coffee counters belong to
-one organisation and should be added in **Locations**, not as separate brands.
+Sunday Coffee and Forma Studio are separate businesses, with their own
+programmes, teams, subscriptions and outlets. Two Sunday Coffee counters belong
+to one business—add them in **Locations**, not as separate brands.
 
 ## Create another organisation
 
-Choose **Create organisation** in the organisation menu and complete setup. The
-new organisation becomes your selected one. Each organisation has its own subscription;
-creating it does not activate a paid plan or charge a payment method.
+Choose **Create organisation** and complete setup. The new business becomes
+selected, but creating it does not charge you or activate a subscription.
+
+Start with **one outlet**. Add others in **Locations** after setup and arrange
+paid capacity before activation.
+
+<Note>
+  Single-outlet enforcement and quantity billing require rollout. If **Settings
+  → Billing** has no paid-outlet control, contact Kardy.
+</Note>
+
+Each business has one subscription. Three paid Growth outlets cost S&#36;150/month;
+creating locations alone does not increase capacity. Added capacity requires
+confirmed payment.
+
+Each eligible new business can receive **S&#36;25 for its first outlet's first month**,
+then S&#36;50/month. Additional outlets do not restart the offer.
+See [billing terms](/features/plans#first-outlet-offer-per-business).
 
 ## Switch organisations
 
-When you have access to multiple organisations, use the organisation selector above
-the portal and select **Switch organisation**. It shows your role for each brand.
-The selector is also available while a selected organisation is awaiting activation.
+Open the organisation selector → **Switch organisation**. It shows your role
+in each business and works while a business awaits activation.
 
-The selection is saved in an HTTP-only cookie, but that cookie does not grant access:
-the server verifies your current relationship to the selected organisation on every
-load. Billing actions also check that you own the selected organisation.
+Kardy remembers your selection but checks current access on every load.
+Only the selected business's Owner can manage billing.
 
-Accepting a [team invitation](/features/team-access) adds that organisation to your choices.
-Use one Kardy account; separate consumer accounts are not necessary.
+Accepting a [team invitation](/features/team-access) adds that business to your
+choices. No separate login is needed.
